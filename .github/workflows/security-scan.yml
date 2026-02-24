@@ -25,13 +25,13 @@ jobs:
         run: npm audit --audit-level=high || echo "::warning::Dev dependencies have vulnerabilities. Review manually."
         continue-on-error: true
 
-  gitleaks:
+  secret-scanning:
     name: Secret Scanning
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - uses: gitleaks/gitleaks-action@v2
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: trufflesecurity/trufflehog@main
+        with:
+          extra_args: --only-verified
