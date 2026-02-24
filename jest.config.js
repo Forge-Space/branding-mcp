@@ -24,6 +24,8 @@ export default {
     '!src/lib/logger.ts',
     '!src/lib/branding-core/documents/**',
     '!src/lib/branding-core/validators/token-schema.ts',
+    '!src/lib/branding-core/ai/claude-interpreter.ts',
+    '!src/lib/branding-core/ai/prompts.ts',
     '!src/**/*.d.ts',
     '!src/__tests__/**',
   ],

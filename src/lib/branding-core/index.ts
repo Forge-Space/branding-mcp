@@ -15,3 +15,8 @@ export { exportReactTheme } from './exporters/react-theme.js';
 export { exportSassVariables } from './exporters/sass-variables.js';
 export { validateBrandConsistency } from './validators/brand-consistency.js';
 export { validateContrast } from './validators/contrast-checker.js';
+export { interpretFeedback } from './ai/brand-interpreter.js';
+export { interpretWithKeywords } from './ai/keyword-interpreter.js';
+export { applyIntent } from './ai/intent-applier.js';
+export type { BrandIntent, ColorIntent, TypographyIntent, InterpreterOptions } from './ai/types.js';
+export type { InterpreterStrategy } from './ai/brand-interpreter.js';
