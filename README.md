@@ -1,9 +1,11 @@
 # @forgespace/branding-mcp
 
+> **AI-powered brand identity generation via MCP — part of the [Forge Space](https://github.com/Forge-Space) open developer workspace.**
+
 [![CI](https://github.com/Forge-Space/branding-mcp/actions/workflows/ci.yml/badge.svg)](https://github.com/Forge-Space/branding-mcp/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-MCP server for AI-powered brand identity generation. Generate color palettes, typography systems, design tokens, and brand guidelines with multi-format export.
+Generate color palettes, typography systems, design tokens, and brand guidelines with multi-format export. 7 MCP tools, zero API dependencies, algorithmic-first generation.
 
 ## Features
 
