@@ -1,0 +1,14 @@
+title = "Branding MCP Gitleaks Config"
+
+[allowlist]
+description = "Allowlist for placeholder values"
+regexTarget = "match"
+regexes = [
+  '''REPLACE_WITH_.*''',
+  '''your-.*-here''',
+  '''example\.com''',
+]
+paths = [
+  '''.env\.example''',
+  '''data/.*''',
+]
