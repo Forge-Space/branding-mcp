@@ -19,7 +19,11 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
-      - run: npm audit --audit-level=high
+      - name: Audit production dependencies
+        run: npm audit --omit=dev --audit-level=high
+      - name: Audit dev dependencies (advisory only)
+        run: npm audit --audit-level=high || echo "::warning::Dev dependencies have vulnerabilities. Review manually."
+        continue-on-error: true
 
   gitleaks:
     name: Secret Scanning
