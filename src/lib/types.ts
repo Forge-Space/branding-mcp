@@ -107,6 +107,38 @@ export interface LogoOutput {
   png?: Buffer;
 }
 
+export type ShadowLevelName = 'none' | 'sm' | 'md' | 'lg' | 'xl' | '2xl';
+
+export interface ShadowLevel {
+  offsetX: number;
+  offsetY: number;
+  blur: number;
+  spread: number;
+  color: string;
+  opacity: number;
+  cssValue: string;
+}
+
+export interface ShadowSystem {
+  levels: Record<ShadowLevelName, ShadowLevel>;
+}
+
+export type BorderRadiusName = 'none' | 'sm' | 'md' | 'lg' | 'xl' | 'full' | 'circle';
+
+export interface BorderSystem {
+  radii: Record<BorderRadiusName, string>;
+  widths: { thin: string; medium: string; thick: string };
+}
+
+export type DurationName = 'instant' | 'fast' | 'normal' | 'slow' | 'slower';
+export type EasingName = 'ease-in' | 'ease-out' | 'ease-in-out' | 'spring' | 'bounce';
+
+export interface MotionSystem {
+  durations: Record<DurationName, string>;
+  easings: Record<EasingName, string>;
+  transitions: Record<string, string>;
+}
+
 export interface BrandIdentity {
   id: string;
   name: string;
@@ -116,6 +148,9 @@ export interface BrandIdentity {
   colors: ColorPalette;
   typography: TypographySystem;
   spacing: SpacingScale;
+  shadows?: ShadowSystem;
+  borders?: BorderSystem;
+  motion?: MotionSystem;
   logo?: LogoOutput;
   createdAt: string;
 }
@@ -125,6 +160,9 @@ export interface DesignTokens {
   color: Record<string, Record<string, { $value: string; $type: string }>>;
   typography: Record<string, Record<string, { $value: string | number; $type: string }>>;
   spacing: Record<string, { $value: string; $type: string }>;
+  shadow?: Record<string, { $value: string; $type: string }>;
+  border?: Record<string, { $value: string; $type: string }>;
+  motion?: Record<string, { $value: string; $type: string }>;
 }
 
 export interface BrandGenerationInput {

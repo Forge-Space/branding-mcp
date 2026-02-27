@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.3.0] - 2026-02-28
+
+### Added
+
+- Shadow/elevation system generator with 6 levels (none, sm, md, lg, xl, 2xl), brand-tinted colors, light/dark theme support
+- Border/shape system generator with style-aware radius scales and border widths for all 8 brand styles
+- Motion/animation system generator with duration scales, cubic-bezier easings, and transition presets per brand style
+- New token types in `BrandIdentity`: `shadows`, `borders`, `motion` (backward-compatible, optional)
+- All 6 exporters updated: CSS variables, Tailwind preset, W3C JSON, Figma tokens, React theme, Sass variables now include shadow, border, and motion tokens
+- `generate_brand_identity` tool now includes shadows, borders, and motion in output
+- 36 new tests (133 total), 98.36% statement coverage, 100% function coverage
+
 ## [0.2.0] - 2026-02-24
 
 ### Added

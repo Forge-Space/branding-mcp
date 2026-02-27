@@ -5,13 +5,16 @@
 [![CI](https://github.com/Forge-Space/branding-mcp/actions/workflows/ci.yml/badge.svg)](https://github.com/Forge-Space/branding-mcp/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Generate color palettes, typography systems, design tokens, and brand guidelines with multi-format export. 7 MCP tools, zero API dependencies, algorithmic-first generation.
+Generate complete design systems — colors, typography, spacing, shadows, borders, motion tokens, and brand guidelines with multi-format export. 7 MCP tools, zero API dependencies, algorithmic-first generation.
 
 ## Features
 
 - **Color Palette Generation** — HSL-based color harmonies (complementary, analogous, triadic, etc.) with WCAG contrast validation
 - **Typography System** — Modular type scales with curated font pairings
 - **Spacing Scale** — Geometric progression spacing system
+- **Shadow/Elevation System** — 6-level elevation scale with brand-tinted shadows, light/dark theme support
+- **Border/Shape System** — Style-aware radius scales and border widths for all 8 brand styles
+- **Motion/Animation System** — Duration scales, cubic-bezier easings, and transition presets per brand style
 - **SVG Logo Generation** — Text-based logos with brand colors
 - **Multi-Format Export** — W3C Design Tokens, CSS custom properties, Tailwind preset, Figma tokens, React theme, Sass variables
 - **Brand Validation** — WCAG contrast checking, completeness scoring, consistency analysis

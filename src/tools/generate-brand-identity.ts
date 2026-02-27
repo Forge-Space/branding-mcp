@@ -4,6 +4,9 @@ import {
   generateColorPalette,
   generateTypographySystem,
   generateSpacingScale,
+  generateShadowSystem,
+  generateBorderSystem,
+  generateMotionSystem,
   generateSvgLogo,
   defaultLogoConfig,
 } from '../lib/branding-core/index.js';
@@ -68,6 +71,9 @@ export function registerGenerateBrandIdentity(server: McpServer): void {
           scaleRatio ?? 'major-third'
         );
         const spacing = generateSpacingScale();
+        const shadows = generateShadowSystem(colors.primary.hex, theme);
+        const borders = generateBorderSystem(style);
+        const motion = generateMotionSystem(style);
         const logoConfig = defaultLogoConfig(brandName, colors.primary.hex);
         const logo = generateSvgLogo(logoConfig);
 
@@ -80,6 +86,9 @@ export function registerGenerateBrandIdentity(server: McpServer): void {
           colors,
           typography,
           spacing,
+          shadows,
+          borders,
+          motion,
           logo,
           createdAt: new Date().toISOString(),
         };

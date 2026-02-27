@@ -29,6 +29,36 @@ export function exportCssVariables(brand: BrandIdentity): string {
     lines.push(`  --spacing-${key}: ${value};`);
   }
 
+  if (brand.shadows) {
+    lines.push('');
+    for (const [name, level] of Object.entries(brand.shadows.levels)) {
+      lines.push(`  --shadow-${name}: ${level.cssValue};`);
+    }
+  }
+
+  if (brand.borders) {
+    lines.push('');
+    for (const [name, value] of Object.entries(brand.borders.radii)) {
+      lines.push(`  --radius-${name}: ${value};`);
+    }
+    for (const [name, value] of Object.entries(brand.borders.widths)) {
+      lines.push(`  --border-${name}: ${value};`);
+    }
+  }
+
+  if (brand.motion) {
+    lines.push('');
+    for (const [name, value] of Object.entries(brand.motion.durations)) {
+      lines.push(`  --duration-${name}: ${value};`);
+    }
+    for (const [name, value] of Object.entries(brand.motion.easings)) {
+      lines.push(`  --ease-${name}: ${value};`);
+    }
+    for (const [name, value] of Object.entries(brand.motion.transitions)) {
+      lines.push(`  --transition-${name}: ${value};`);
+    }
+  }
+
   lines.push('}');
   return lines.join('\n');
 }

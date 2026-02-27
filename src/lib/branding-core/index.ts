@@ -6,6 +6,9 @@ export {
 } from './generators/color-palette.js';
 export { generateTypographySystem } from './generators/typography-system.js';
 export { generateSpacingScale } from './generators/spacing-scale.js';
+export { generateShadowSystem } from './generators/shadow-system.js';
+export { generateBorderSystem } from './generators/border-system.js';
+export { generateMotionSystem } from './generators/motion-system.js';
 export { generateSvgLogo, defaultLogoConfig } from './generators/logo-generator.js';
 export { exportDesignTokens } from './exporters/design-tokens.js';
 export { exportCssVariables } from './exporters/css-variables.js';

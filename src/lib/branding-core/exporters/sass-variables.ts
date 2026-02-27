@@ -32,5 +32,35 @@ export function exportSassVariables(brand: BrandIdentity): string {
     lines.push(`$spacing-${key}: ${value};`);
   }
 
+  if (brand.shadows) {
+    lines.push('');
+    lines.push('// Shadows');
+    for (const [name, level] of Object.entries(brand.shadows.levels)) {
+      lines.push(`$shadow-${name}: ${level.cssValue};`);
+    }
+  }
+
+  if (brand.borders) {
+    lines.push('');
+    lines.push('// Borders');
+    for (const [name, value] of Object.entries(brand.borders.radii)) {
+      lines.push(`$radius-${name}: ${value};`);
+    }
+    for (const [name, value] of Object.entries(brand.borders.widths)) {
+      lines.push(`$border-${name}: ${value};`);
+    }
+  }
+
+  if (brand.motion) {
+    lines.push('');
+    lines.push('// Motion');
+    for (const [name, value] of Object.entries(brand.motion.durations)) {
+      lines.push(`$duration-${name}: ${value};`);
+    }
+    for (const [name, value] of Object.entries(brand.motion.easings)) {
+      lines.push(`$ease-${name}: ${value};`);
+    }
+  }
+
   return lines.join('\n') + '\n';
 }
