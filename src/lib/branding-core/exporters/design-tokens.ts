@@ -41,10 +41,39 @@ export function exportDesignTokens(brand: BrandIdentity): DesignTokens {
     spacingTokens[key] = { $value: value, $type: 'dimension' };
   }
 
-  return {
+  const result: DesignTokens = {
     $schema: 'https://design-tokens.github.io/community-group/format/',
     color: colorTokens,
     typography: typographyTokens,
     spacing: spacingTokens,
   };
+
+  if (brand.shadows) {
+    result.shadow = {};
+    for (const [name, level] of Object.entries(brand.shadows.levels)) {
+      result.shadow[name] = { $value: level.cssValue, $type: 'shadow' };
+    }
+  }
+
+  if (brand.borders) {
+    result.border = {};
+    for (const [name, value] of Object.entries(brand.borders.radii)) {
+      result.border[`radius-${name}`] = { $value: value, $type: 'dimension' };
+    }
+    for (const [name, value] of Object.entries(brand.borders.widths)) {
+      result.border[`width-${name}`] = { $value: value, $type: 'dimension' };
+    }
+  }
+
+  if (brand.motion) {
+    result.motion = {};
+    for (const [name, value] of Object.entries(brand.motion.durations)) {
+      result.motion[`duration-${name}`] = { $value: value, $type: 'duration' };
+    }
+    for (const [name, value] of Object.entries(brand.motion.easings)) {
+      result.motion[`easing-${name}`] = { $value: value, $type: 'cubicBezier' };
+    }
+  }
+
+  return result;
 }

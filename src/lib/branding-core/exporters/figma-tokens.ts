@@ -39,5 +39,41 @@ export function exportFigmaTokens(
     spacingGroup[key] = { value, type: 'spacing' };
   }
 
-  return { color: colorGroup, typography: typographyGroup, spacing: spacingGroup };
+  const result: Record<string, Record<string, FigmaToken>> = {
+    color: colorGroup,
+    typography: typographyGroup,
+    spacing: spacingGroup,
+  };
+
+  if (brand.shadows) {
+    const shadowGroup: Record<string, FigmaToken> = {};
+    for (const [name, level] of Object.entries(brand.shadows.levels)) {
+      shadowGroup[name] = { value: level.cssValue, type: 'boxShadow' };
+    }
+    result.shadow = shadowGroup;
+  }
+
+  if (brand.borders) {
+    const borderGroup: Record<string, FigmaToken> = {};
+    for (const [name, value] of Object.entries(brand.borders.radii)) {
+      borderGroup[`radius-${name}`] = { value, type: 'borderRadius' };
+    }
+    for (const [name, value] of Object.entries(brand.borders.widths)) {
+      borderGroup[`width-${name}`] = { value, type: 'borderWidth' };
+    }
+    result.border = borderGroup;
+  }
+
+  if (brand.motion) {
+    const motionGroup: Record<string, FigmaToken> = {};
+    for (const [name, value] of Object.entries(brand.motion.durations)) {
+      motionGroup[`duration-${name}`] = { value, type: 'duration' };
+    }
+    for (const [name, value] of Object.entries(brand.motion.easings)) {
+      motionGroup[`easing-${name}`] = { value, type: 'other' };
+    }
+    result.motion = motionGroup;
+  }
+
+  return result;
 }

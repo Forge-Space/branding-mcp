@@ -27,7 +27,28 @@ export function exportReactTheme(brand: BrandIdentity): string {
     fontSizes: Object.fromEntries(typography.steps.map((s) => [s.name, s.size])),
     lineHeights: Object.fromEntries(typography.steps.map((s) => [s.name, s.lineHeight])),
     space: spacing.values,
-  };
+  } as Record<string, unknown>;
+
+  if (brand.shadows) {
+    const shadowObj: Record<string, string> = {};
+    for (const [name, level] of Object.entries(brand.shadows.levels)) {
+      shadowObj[name] = level.cssValue;
+    }
+    theme.shadows = shadowObj;
+  }
+
+  if (brand.borders) {
+    theme.radii = brand.borders.radii;
+    theme.borderWidths = brand.borders.widths;
+  }
+
+  if (brand.motion) {
+    theme.motion = {
+      durations: brand.motion.durations,
+      easings: brand.motion.easings,
+      transitions: brand.motion.transitions,
+    };
+  }
 
   return [
     "import type { CSSProperties } from 'react';",
