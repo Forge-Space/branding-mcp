@@ -19,3 +19,57 @@ npm-debug.log*
 .serena/
 .claude/
 CLAUDE.md
+
+# IDE and editors
+.idea/
+.vscode/
+*.swp
+*.swo
+.windsurf/
+.cursor/
+
+# Task-specific docs
+*_REPORT.md
+*_COMPLETE.md
+*_SUMMARY.md
+*_CHECKLIST.md
+STATUS_*.md
+PHASE*.md
+
+# Root demo/test scripts
+demo_*.py
+test_*.py
+demo*.sh
+test*.sh
+
+# Security scan reports
+*.sarif
+bandit-report.json
+safety-report.json
+
+# Backup files
+*.bak
+*.backup
+*.original
+
+# OS
+Thumbs.db
+
+# Ad-hoc local files
+*.temp.js
+*.temp.ts
+stdin
+PLAN.md
+plan.MD
+
+# Testing
+test-results/
+playwright-report/
+
+# Timestamped generated files
+*-[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]-*.md
+*-[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]-*.json
+
+# Planning files
+.windsurf/plans/
+.claude/plans/
