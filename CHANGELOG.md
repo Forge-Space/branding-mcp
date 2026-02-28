@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.5.0] - 2026-02-28
+
+### Added
+
+- New MCP tool: `generate_design_system` — complete design system in one call (identity + token export combined)
+- 10 new tests for design system tool (198 total across 16 suites)
+
 ## [0.4.0] - 2026-02-28
 
 ### Added
