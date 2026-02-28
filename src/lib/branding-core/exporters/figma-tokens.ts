@@ -75,5 +75,13 @@ export function exportFigmaTokens(
     result.motion = motionGroup;
   }
 
+  if (brand.gradients) {
+    const gradientGroup: Record<string, FigmaToken> = {};
+    for (const [name, gradient] of Object.entries(brand.gradients.presets)) {
+      gradientGroup[name] = { value: gradient.cssValue, type: 'gradient' };
+    }
+    result.gradient = gradientGroup;
+  }
+
   return result;
 }

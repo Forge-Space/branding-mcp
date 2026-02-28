@@ -5,7 +5,7 @@
 [![CI](https://github.com/Forge-Space/branding-mcp/actions/workflows/ci.yml/badge.svg)](https://github.com/Forge-Space/branding-mcp/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Generate complete design systems — colors, typography, spacing, shadows, borders, motion tokens, and brand guidelines with multi-format export. 7 MCP tools, zero API dependencies, algorithmic-first generation.
+Generate complete design systems — colors, typography, spacing, shadows, borders, motion tokens, gradients, multi-variant logos, favicons, and OG images with multi-format export. 8 MCP tools, zero API dependencies, algorithmic-first generation.
 
 ## Features
 
@@ -15,7 +15,10 @@ Generate complete design systems — colors, typography, spacing, shadows, borde
 - **Shadow/Elevation System** — 6-level elevation scale with brand-tinted shadows, light/dark theme support
 - **Border/Shape System** — Style-aware radius scales and border widths for all 8 brand styles
 - **Motion/Animation System** — Duration scales, cubic-bezier easings, and transition presets per brand style
-- **SVG Logo Generation** — Text-based logos with brand colors
+- **Gradient System** — 5 style-aware gradient presets (hero, button, card, text, background)
+- **Multi-Variant Logo** — Wordmark, monogram, abstract, and icon variants with style-aware shapes
+- **Favicon Generation** — 4 sizes (16, 32, 180 apple-touch, 512 PWA) from brand icon
+- **OG Image Templates** — Default, article, and social formats with brand gradients
 - **Multi-Format Export** — W3C Design Tokens, CSS custom properties, Tailwind preset, Figma tokens, React theme, Sass variables
 - **Brand Validation** — WCAG contrast checking, completeness scoring, consistency analysis
 - **Brand Guidelines** — HTML brand book generation
@@ -51,6 +54,7 @@ npm run build
 | `create_brand_guidelines`    | Generate HTML brand book                           |
 | `validate_brand_consistency` | Check WCAG compliance and completeness             |
 | `refine_brand_element`       | Iterate on specific brand elements                 |
+| `generate_brand_assets`      | Generate favicons and OG images from brand         |
 
 ### MCP Resources
 
@@ -76,14 +80,14 @@ src/
 ├── index.ts                    # MCP server entry
 ├── lib/
 │   ├── branding-core/          # Core library (reusable)
-│   │   ├── generators/         # Color, typography, spacing, logo
+│   │   ├── generators/         # Color, typography, spacing, logo, gradients, favicons, OG
 │   │   ├── exporters/          # Multi-format token export
 │   │   ├── validators/         # WCAG, consistency checks
 │   │   └── documents/          # Brand book generation
 │   ├── config.ts               # Environment config
 │   ├── logger.ts               # Pino logging
 │   └── types.ts                # TypeScript interfaces
-├── tools/                      # 7 MCP tool registrations
+├── tools/                      # 8 MCP tool registrations
 └── resources/                  # Templates + knowledge base
 ```
 

@@ -53,6 +53,14 @@ export function exportTailwindPreset(brand: BrandIdentity): string {
     extend.transitionTimingFunction = brand.motion.easings;
   }
 
+  if (brand.gradients) {
+    const bgImage: Record<string, string> = {};
+    for (const [name, gradient] of Object.entries(brand.gradients.presets)) {
+      bgImage[name] = gradient.cssValue;
+    }
+    extend.backgroundImage = bgImage;
+  }
+
   const preset = { theme: { extend } };
 
   return `/** @type {import('tailwindcss').Config} */\nexport default ${JSON.stringify(preset, null, 2)};\n`;

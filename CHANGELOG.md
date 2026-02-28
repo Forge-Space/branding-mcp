@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.4.0] - 2026-02-28
+
+### Added
+
+- Gradient system generator with 5 style-aware presets (hero, button, card, text, background) across 8 brand styles
+- Multi-variant logo generator: wordmark, monogram, abstract, icon (4 SVG variants per brand)
+- Favicon generator producing 4 sizes (16, 32, 180, 512) with stroke optimization for small sizes
+- OG image templates: default (1200x630), article (1200x630), social (1200x1200) with brand gradient backgrounds
+- New MCP tool: `generate_brand_assets` for favicon and OG image generation from existing brand identity
+- All 6 exporters support gradient tokens (CSS, Tailwind, W3C JSON, Figma, React, Sass)
+- 55 new tests (188 total), 15 test suites
+
+### Changed
+
+- Logo generator uses brand typography font instead of hardcoded Inter
+- `LogoOutput` now includes `variants` record alongside backward-compatible `svg` field
+- `LogoConfig` accepts optional `style` for style-aware monogram/abstract shapes
+
 ## [0.3.0] - 2026-02-28
 
 ### Added
