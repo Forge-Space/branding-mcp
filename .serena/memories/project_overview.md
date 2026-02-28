@@ -2,14 +2,14 @@
 
 ## Identity
 
-- Package: @forgespace/branding-mcp v0.3.0
+- Package: @forgespace/branding-mcp v0.4.0
 - GitHub: Forge-Space/branding-mcp
 - Local: ~/Desenvolvimento/forge-space/branding-mcp
 - Node.js 22, TypeScript, ESM
 
 ## Architecture
 
-- MCP server (stdio transport): 7 tools, 2 resources
+- MCP server (stdio transport): 8 tools, 2 resources
 - Algorithmic-first generation (zero external API calls)
 - Optional AI enhancement via Anthropic API (brand-interpreter)
 - Core library: `src/lib/branding-core/` — reusable generators, exporters, validators
@@ -24,15 +24,18 @@
 6. `validate` — Brand consistency scoring + WCAG validation
 7. `refine_brand_element` — AI-powered natural language refinement
 
-## Generators (7 total)
+## Generators (10 total)
 
-- `color-palette.ts` — HSL harmonies, WCAG contrast
+- `color-palette.ts` — HSL harmonies, WCAG contrast, hexToHsl/hslToHex utilities
 - `typography-system.ts` — Modular type scales, curated font pairings
 - `spacing-scale.ts` — Geometric spacing progression
-- `logo-generator.ts` — SVG text-based logos
+- `logo-generator.ts` — 4 SVG variants: wordmark, monogram, abstract, icon (v0.4.0)
 - `shadow-system.ts` — 6-level elevation, brand-tinted, light/dark themes (v0.3.0)
 - `border-system.ts` — Style-aware radii + border widths for all 8 brand styles (v0.3.0)
 - `motion-system.ts` — Durations, cubic-bezier easings, transition presets (v0.3.0)
+- `gradient-system.ts` — 5 presets (hero/button/card/text/background), linear/radial/conic (v0.4.0)
+- `favicon-generator.ts` — 4 sizes (16/32/180/512), stroke optimization (v0.4.0)
+- `og-image-generator.ts` — default/article/social templates with brand gradients (v0.4.0)
 
 ## Resources
 
@@ -42,7 +45,7 @@
 ## Test & Coverage
 
 - 98.36% statement coverage, 100% function coverage, 89.72% branches
-- 11 suites, 133 tests
+- 15 suites, 188 tests
 - Generators: shadow (8), border (9), motion (10), plus exporter tests (9 new)
 
 ## CI Status
@@ -66,11 +69,14 @@
 - v0.1.0 — Initial: 7 tools, 4 generators, 6 exporters
 - v0.2.0 — AI interpretation layer for natural language refinement
 - v0.3.0 — Design system completeness: shadow, border, motion generators + exporter updates
+- v0.4.0 — Brand asset expansion: gradients, multi-variant logos, favicons, OG images, generate_brand_assets tool
 
-## Open Issues
+## Key Patterns
 
-- None
+- Optional field + if-guard for backward compat (gradients?, shadows?, borders?, motion?)
+- BrandStyle-aware generation: each of 8 styles maps to different configs
+- LogoOutput.svg preserved as wordmark for backward compat; .variants record adds all 4
 
-## Open PRs
+## Open Issues / PRs
 
 - None
