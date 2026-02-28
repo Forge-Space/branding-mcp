@@ -5,7 +5,7 @@
 [![CI](https://github.com/Forge-Space/branding-mcp/actions/workflows/ci.yml/badge.svg)](https://github.com/Forge-Space/branding-mcp/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Generate complete design systems — colors, typography, spacing, shadows, borders, motion tokens, gradients, multi-variant logos, favicons, and OG images with multi-format export. 8 MCP tools, zero API dependencies, algorithmic-first generation.
+Generate complete design systems — colors, typography, spacing, shadows, borders, motion tokens, gradients, multi-variant logos, favicons, and OG images with multi-format export. 9 MCP tools, zero API dependencies, algorithmic-first generation.
 
 ## Features
 
@@ -45,16 +45,17 @@ npm run build
 
 ### MCP Tools
 
-| Tool                         | Description                                        |
-| ---------------------------- | -------------------------------------------------- |
-| `generate_brand_identity`    | Complete brand from name, industry, and style      |
-| `generate_color_palette`     | Color palette with harmony and WCAG data           |
-| `generate_typography_system` | Font pairing + modular type scale                  |
-| `export_design_tokens`       | Export brand to JSON/CSS/Tailwind/Figma/React/Sass |
-| `create_brand_guidelines`    | Generate HTML brand book                           |
-| `validate_brand_consistency` | Check WCAG compliance and completeness             |
-| `refine_brand_element`       | Iterate on specific brand elements                 |
-| `generate_brand_assets`      | Generate favicons and OG images from brand         |
+| Tool                         | Description                                            |
+| ---------------------------- | ------------------------------------------------------ |
+| `generate_brand_identity`    | Complete brand from name, industry, and style          |
+| `generate_color_palette`     | Color palette with harmony and WCAG data               |
+| `generate_typography_system` | Font pairing + modular type scale                      |
+| `export_design_tokens`       | Export brand to JSON/CSS/Tailwind/Figma/React/Sass     |
+| `create_brand_guidelines`    | Generate HTML brand book                               |
+| `validate_brand_consistency` | Check WCAG compliance and completeness                 |
+| `refine_brand_element`       | Iterate on specific brand elements                     |
+| `generate_brand_assets`      | Generate favicons and OG images from brand             |
+| `generate_design_system`     | Complete design system in one call (identity + export) |
 
 ### MCP Resources
 
