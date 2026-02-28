@@ -59,6 +59,13 @@ export function exportCssVariables(brand: BrandIdentity): string {
     }
   }
 
+  if (brand.gradients) {
+    lines.push('');
+    for (const [name, gradient] of Object.entries(brand.gradients.presets)) {
+      lines.push(`  --gradient-${name}: ${gradient.cssValue};`);
+    }
+  }
+
   lines.push('}');
   return lines.join('\n');
 }

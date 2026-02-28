@@ -75,5 +75,12 @@ export function exportDesignTokens(brand: BrandIdentity): DesignTokens {
     }
   }
 
+  if (brand.gradients) {
+    result.gradient = {};
+    for (const [name, gradient] of Object.entries(brand.gradients.presets)) {
+      result.gradient[name] = { $value: gradient.cssValue, $type: 'gradient' };
+    }
+  }
+
   return result;
 }

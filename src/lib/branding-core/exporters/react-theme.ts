@@ -50,6 +50,14 @@ export function exportReactTheme(brand: BrandIdentity): string {
     };
   }
 
+  if (brand.gradients) {
+    const gradientObj: Record<string, string> = {};
+    for (const [name, gradient] of Object.entries(brand.gradients.presets)) {
+      gradientObj[name] = gradient.cssValue;
+    }
+    theme.gradients = gradientObj;
+  }
+
   return [
     "import type { CSSProperties } from 'react';",
     '',

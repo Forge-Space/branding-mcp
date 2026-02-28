@@ -100,11 +100,48 @@ export interface LogoConfig {
   backgroundColor: string;
   width: number;
   height: number;
+  style?: BrandStyle;
 }
+
+export type LogoVariant = 'wordmark' | 'monogram' | 'abstract' | 'icon';
 
 export interface LogoOutput {
   svg: string;
-  png?: Buffer;
+  variants: Record<LogoVariant, string>;
+}
+
+export type GradientType = 'linear' | 'radial' | 'conic';
+export type GradientPresetName = 'hero' | 'button' | 'card' | 'text' | 'background';
+
+export interface GradientStop {
+  color: string;
+  position: number;
+}
+
+export interface Gradient {
+  type: GradientType;
+  angle?: number;
+  stops: GradientStop[];
+  cssValue: string;
+}
+
+export interface GradientSystem {
+  presets: Record<GradientPresetName, Gradient>;
+}
+
+export type FaviconSize = 16 | 32 | 180 | 512;
+
+export interface FaviconSet {
+  sizes: Record<FaviconSize, string>;
+}
+
+export type OgTemplate = 'default' | 'article' | 'social';
+
+export interface OgImageOutput {
+  template: OgTemplate;
+  svg: string;
+  width: number;
+  height: number;
 }
 
 export type ShadowLevelName = 'none' | 'sm' | 'md' | 'lg' | 'xl' | '2xl';
@@ -151,6 +188,7 @@ export interface BrandIdentity {
   shadows?: ShadowSystem;
   borders?: BorderSystem;
   motion?: MotionSystem;
+  gradients?: GradientSystem;
   logo?: LogoOutput;
   createdAt: string;
 }
@@ -163,6 +201,7 @@ export interface DesignTokens {
   shadow?: Record<string, { $value: string; $type: string }>;
   border?: Record<string, { $value: string; $type: string }>;
   motion?: Record<string, { $value: string; $type: string }>;
+  gradient?: Record<string, { $value: string; $type: string }>;
 }
 
 export interface BrandGenerationInput {

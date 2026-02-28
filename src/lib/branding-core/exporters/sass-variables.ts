@@ -62,5 +62,13 @@ export function exportSassVariables(brand: BrandIdentity): string {
     }
   }
 
+  if (brand.gradients) {
+    lines.push('');
+    lines.push('// Gradients');
+    for (const [name, gradient] of Object.entries(brand.gradients.presets)) {
+      lines.push(`$gradient-${name}: ${gradient.cssValue};`);
+    }
+  }
+
   return lines.join('\n') + '\n';
 }

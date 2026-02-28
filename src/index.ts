@@ -12,6 +12,7 @@ import { registerExportDesignTokens } from './tools/export-design-tokens.js';
 import { registerCreateBrandGuidelines } from './tools/create-brand-guidelines.js';
 import { registerValidateBrandConsistency } from './tools/validate-brand-consistency.js';
 import { registerRefineBrandElement } from './tools/refine-brand-element.js';
+import { registerGenerateBrandAssets } from './tools/generate-brand-assets.js';
 
 import { registerBrandTemplates } from './resources/brand-templates.js';
 import { registerBrandKnowledge } from './resources/brand-knowledge.js';
@@ -32,6 +33,7 @@ async function main(): Promise<void> {
   registerCreateBrandGuidelines(server);
   registerValidateBrandConsistency(server);
   registerRefineBrandElement(server);
+  registerGenerateBrandAssets(server);
 
   registerBrandTemplates(server);
   registerBrandKnowledge(server);
