@@ -2,7 +2,7 @@
 
 ## Identity
 
-- Package: @forgespace/branding-mcp v0.2.0
+- Package: @forgespace/branding-mcp v0.3.0
 - GitHub: Forge-Space/branding-mcp
 - Local: ~/Desenvolvimento/forge-space/branding-mcp
 - Node.js 22, TypeScript, ESM
@@ -16,7 +16,7 @@
 
 ## Tools
 
-1. `generate_brand_identity` — Full brand system from keywords/description
+1. `generate_brand_identity` — Full brand system (colors + typography + spacing + shadows + borders + motion)
 2. `color_palette` — HSL color harmony with WCAG contrast
 3. `typography_system` — Modular type scale + font pairing
 4. `export_tokens` — Multi-format design token export (W3C JSON, CSS, Tailwind, Figma, React, Sass)
@@ -24,38 +24,48 @@
 6. `validate` — Brand consistency scoring + WCAG validation
 7. `refine_brand_element` — AI-powered natural language refinement
 
+## Generators (7 total)
+
+- `color-palette.ts` — HSL harmonies, WCAG contrast
+- `typography-system.ts` — Modular type scales, curated font pairings
+- `spacing-scale.ts` — Geometric spacing progression
+- `logo-generator.ts` — SVG text-based logos
+- `shadow-system.ts` — 6-level elevation, brand-tinted, light/dark themes (v0.3.0)
+- `border-system.ts` — Style-aware radii + border widths for all 8 brand styles (v0.3.0)
+- `motion-system.ts` — Durations, cubic-bezier easings, transition presets (v0.3.0)
+
 ## Resources
 
-- Templates catalog
-- Knowledge base
+- Templates catalog (`brand://templates`)
+- Knowledge base (`brand://knowledge`)
 
 ## Test & Coverage
 
-- 97.63% coverage, 8 suites, 97 tests
-- Generators: 98.16%, Validators: 97.36%, AI interpreters: 92.45%
+- 98.36% statement coverage, 100% function coverage, 89.72% branches
+- 11 suites, 133 tests
+- Generators: shadow (8), border (9), motion (10), plus exporter tests (9 new)
 
 ## CI Status
 
-- CI: passing (PR #5 merged — fixed Prettier formatting)
-- Security scan: passing
-- Release workflow: should pass now (was blocked by same Prettier issue)
+- CI: passing (PR #6 merged — v0.3.0 design system completeness)
+- Security scan: passing (trufflehog pinned to @v3.93.4, was @main)
+- Release: v0.3.0 tagged and released on GitHub
+- .gitignore expanded to 18 lines (was 7) — covers .uiforge/, .serena/, .claude/, SQLite
 
 ## Key Files
 
 - `src/index.ts` — MCP server entry + tool registration
 - `src/tools/` — 7 tool definitions with Zod schemas
-- `src/lib/branding-core/generators/` — Color, typography, spacing, logo
-- `src/lib/branding-core/exporters/` — 6 format exporters
+- `src/lib/branding-core/generators/` — 7 generators (color, typography, spacing, logo, shadow, border, motion)
+- `src/lib/branding-core/exporters/` — 6 format exporters (CSS, Tailwind, W3C JSON, Figma, React, Sass)
 - `src/lib/branding-core/validators/` — WCAG contrast, consistency
-- `src/ai/` — Brand interpretation layer (keyword/Claude/auto strategies)
+- `src/lib/branding-core/ai/` — Brand interpretation layer (keyword/Claude/auto strategies)
 
-## Next: v0.3.0 — Design System Completeness
+## Release History
 
-- Plan at `.claude/plans/design-system-completeness.md`
-- 3 new generators: shadow/elevation, border/shape, motion/animation
-- 1 new tool: `generate_design_system` (combines all generators)
-- All 6 exporters to be updated with new token types
-- Task claimed: `branding-mcp-feature-expansion` in queue
+- v0.1.0 — Initial: 7 tools, 4 generators, 6 exporters
+- v0.2.0 — AI interpretation layer for natural language refinement
+- v0.3.0 — Design system completeness: shadow, border, motion generators + exporter updates
 
 ## Open Issues
 
