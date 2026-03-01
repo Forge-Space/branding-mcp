@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.6.0] - 2026-03-01
+
+### Added
+
+- Public type exports from package entry point: `BrandIdentity`, `ColorPalette`, `TypographySystem`, `SpacingScale`, `ShadowSystem`, `BorderSystem`, `MotionSystem`, `GradientSystem`, `LogoOutput`, `BrandStyle`, `ColorHarmony`, `ExportFormat`
+- Enables downstream packages (`@forgespace/brand-guide`) to re-export types without reaching into internal paths
+
 ## [0.5.0] - 2026-02-28
 
 ### Added

@@ -1,5 +1,20 @@
 #!/usr/bin/env node
 
+export type {
+  BrandIdentity,
+  ColorPalette,
+  TypographySystem,
+  SpacingScale,
+  ShadowSystem,
+  BorderSystem,
+  MotionSystem,
+  GradientSystem,
+  LogoOutput,
+  BrandStyle,
+  ColorHarmony,
+  ExportFormat,
+} from './lib/types.js';
+
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';
 import { loadConfig } from './lib/config.js';
