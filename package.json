@@ -1,6 +1,6 @@
 {
   "name": "@forgespace/branding-mcp",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "MCP server for AI-powered brand identity generation — color palettes, typography systems, design tokens, and brand guidelines with multi-format export",
   "type": "module",
   "main": "dist/index.js",
