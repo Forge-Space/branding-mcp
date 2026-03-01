@@ -1,6 +1,10 @@
-# @forgespace/branding-mcp
-
-> **AI-powered brand identity generation via MCP — part of the [Forge Space](https://github.com/Forge-Space) open developer workspace.**
+<div align="center">
+  <a href="https://forgespace.co">
+    <img src="https://brand.forgespace.co/logos/wordmark.svg" alt="Forge Space" height="48">
+  </a>
+  <h1>@forgespace/branding-mcp</h1>
+  <p>AI-powered brand identity generation via MCP — part of the <a href="https://github.com/Forge-Space">Forge Space</a> open developer workspace.</p>
+</div>
 
 [![CI](https://github.com/Forge-Space/branding-mcp/actions/workflows/ci.yml/badge.svg)](https://github.com/Forge-Space/branding-mcp/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
