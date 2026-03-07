@@ -1,0 +1,10 @@
+{
+  "$schema": "https://unpkg.com/knip@5/schema.json",
+  "ignoreDependencies": ["lint-staged"],
+  "ignore": [
+    "src/lib/branding-core/documents/html-generator.ts",
+    "src/lib/branding-core/documents/pdf-generator.ts"
+  ],
+  "ignoreExportsUsedInFile": true,
+  "exclude": ["exports", "types"]
+}
