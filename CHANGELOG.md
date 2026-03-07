@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.6.2] - 2026-03-07
+
+### Fixed
+
+- **WCAG contrast compliance** — Secondary (#3B82F6→#2563EB) and accent (#F59E0B→#B45309) colors now pass AA 4.5:1 on white backgrounds. Brand consistency score 75→100
+
 ## [0.6.1] - 2026-03-06
 
 ### Changed

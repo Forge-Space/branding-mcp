@@ -73,14 +73,14 @@ const FORGE_SPACE_BRAND: BrandIdentity = {
     },
     secondary: {
       name: 'Forge Blue',
-      hex: '#3B82F6',
-      hsl: { h: 217, s: 91, l: 60 },
+      hex: '#2563EB',
+      hsl: { h: 217, s: 83, l: 53 },
       usage: 'Secondary brand color',
     },
     accent: {
       name: 'Forge Amber',
-      hex: '#F59E0B',
-      hsl: { h: 43, s: 96, l: 50 },
+      hex: '#B45309',
+      hsl: { h: 33, s: 92, l: 37 },
       usage: 'Accent and highlight color',
     },
     neutral: [
@@ -157,8 +157,8 @@ const FORGE_SPACE_BRAND: BrandIdentity = {
     contrast: {
       'primary-on-white': { ratio: 5.67, aa: true, aaLarge: true, aaa: false, aaaLarge: true },
       'primary-on-dark': { ratio: 3.07, aa: false, aaLarge: true, aaa: false, aaaLarge: false },
-      'secondary-on-white': { ratio: 4.35, aa: false, aaLarge: true, aaa: false, aaaLarge: false },
-      'accent-on-white': { ratio: 3.52, aa: false, aaLarge: true, aaa: false, aaaLarge: false },
+      'secondary-on-white': { ratio: 5.17, aa: true, aaLarge: true, aaa: false, aaaLarge: true },
+      'accent-on-white': { ratio: 5.02, aa: true, aaLarge: true, aaa: false, aaaLarge: true },
     },
   },
   typography: {
