@@ -5,6 +5,7 @@ All notable changes to this project will be documented in this file.
 ## [0.6.1] - 2026-03-06
 
 ### Changed
+
 - **Modern Horn brand templates** — Default Forge Space logo SVGs updated to Modern Horn icon geometry and Sora wordmark (#A78BFA/#8B5CF6/#6D28D9)
 
 ## [0.6.0] - 2026-03-01
