@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [Unreleased]
+
+### Added
+
+- **Import cycle detection** — `madge --circular` via `npm run check:cycles`
+- **Dead code detection** — knip config with library export exclusions
+
+### Removed
+
+- Unused dependencies: `culori`, `pdfkit`, `satori`, `sharp`, `@types/pdfkit`
+
 ## [0.6.2] - 2026-03-07
 
 ### Fixed
