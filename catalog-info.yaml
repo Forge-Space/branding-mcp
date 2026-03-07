@@ -1,0 +1,16 @@
+apiVersion: backstage.io/v1alpha1
+kind: Service
+metadata:
+  name: branding-mcp
+  description: MCP server for brand-aware design generation and WCAG validation
+  tags:
+    - typescript
+    - mcp
+    - design
+    - npm
+spec:
+  owner: forge-space
+  system: siza
+  lifecycle: production
+  dependsOn:
+    - brand-guide
