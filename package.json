@@ -60,7 +60,7 @@
   "devDependencies": {
     "@commitlint/cli": "^20.4.3",
     "@commitlint/config-conventional": "^20.4.3",
-    "@types/node": "^22.15.0",
+    "@types/node": "^25.3.5",
     "@types/pdfkit": "^0.17.5",
     "@typescript-eslint/eslint-plugin": "^8.32.0",
     "@typescript-eslint/parser": "^8.32.0",
