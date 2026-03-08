@@ -4,10 +4,21 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [0.7.0] - 2026-03-07
+
 ### Added
 
 - **Import cycle detection** — `madge --circular` via `npm run check:cycles`
 - **Dead code detection** — knip config with library export exclusions
+- **Security scanning** — Semgrep CE and Trivy integration in CI
+- **Issue templates** — Bug report and feature request templates
+- **Service catalog** — catalog-info.yaml for IDP service discovery
+- **Ecosystem health** — Dependabot config, .nvmrc, CODEOWNERS
+
+### Changed
+
+- **CI workflows** — Migrated to org-wide reusable workflows for security scans and Node.js setup
+- **Dependency updates** — Bumped lint-staged (15.5.2→16.3.2), actions/setup-node (4→6), actions/checkout (4→6), trufflesecurity/trufflehog (3.93.3→3.93.7), and minor/patch group updates
 
 ### Removed
 
