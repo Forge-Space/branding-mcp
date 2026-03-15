@@ -61,7 +61,9 @@ function collectFindings(pkg, server, packPaths, publishedVersions) {
     errors.push('server.json version must match package.json version.');
 
   if (npmPackages.length !== 1) {
-    errors.push(`server.json must include exactly one npm package entry (found ${npmPackages.length}).`);
+    errors.push(
+      `server.json must include exactly one npm package entry (found ${npmPackages.length}).`
+    );
   } else {
     if (npmPackage.identifier !== pkg.name)
       errors.push('server.json npm identifier must match package name.');
@@ -88,8 +90,11 @@ function collectFindings(pkg, server, packPaths, publishedVersions) {
   const serverRepoUrl = server.repository?.url ?? '';
   if (!packageRepoUrl) errors.push('package.json repository.url is required.');
   if (!serverRepoUrl) errors.push('server.json repository.url is required.');
-  if (packageRepoUrl && serverRepoUrl &&
-      normalizeRepoUrl(packageRepoUrl) !== normalizeRepoUrl(serverRepoUrl)) {
+  if (
+    packageRepoUrl &&
+    serverRepoUrl &&
+    normalizeRepoUrl(packageRepoUrl) !== normalizeRepoUrl(serverRepoUrl)
+  ) {
     errors.push('package.json repository.url must match server.json repository.url.');
   }
   if (publishedVersions[pkg.version]) {

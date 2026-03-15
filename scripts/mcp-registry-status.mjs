@@ -50,7 +50,8 @@ function pickRegistryEntry(results, server) {
 function buildActionItems(pkg, npmVersion, registryVersion, registryEntry, lookupErrors) {
   // Surface transient lookup failures rather than issuing bogus publish instructions.
   if (lookupErrors?.npm) return [`⚠ npm lookup failed — retry: ${lookupErrors.npm}`];
-  if (lookupErrors?.registry) return [`⚠ MCP Registry lookup failed — retry: ${lookupErrors.registry}`];
+  if (lookupErrors?.registry)
+    return [`⚠ MCP Registry lookup failed — retry: ${lookupErrors.registry}`];
   if (!npmVersion || npmVersion !== pkg.version) {
     return [`Publish ${pkg.name}@${pkg.version} to npm from tag v${pkg.version}.`];
   }
