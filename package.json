@@ -1,6 +1,7 @@
 {
   "name": "@forgespace/branding-mcp",
-  "version": "0.7.0",
+  "version": "0.7.1",
+  "mcpName": "io.github.forge-space/branding-mcp",
   "description": "MCP server for AI-powered brand identity generation — color palettes, typography systems, design tokens, and brand guidelines with multi-format export",
   "type": "module",
   "main": "dist/index.js",
@@ -26,18 +27,34 @@
     "typecheck": "tsc --noEmit",
     "check:cycles": "madge --circular --extensions ts src/",
     "knip": "knip",
+    "registry:check": "node scripts/registry-check.mjs",
     "pre-commit": "npm run lint && npm run format && npm run test",
-    "prepare": "husky"
+    "prepare": "husky",
+    "prepublishOnly": "npm run build",
+    "prepack": "npm run build"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "server.json"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   },
   "keywords": [
     "mcp",
+    "mcp-server",
     "branding",
     "design-tokens",
     "color-palette",
     "typography",
     "brand-identity",
+    "agent-tools",
     "ai",
-    "forge-space"
+    "forge-space",
+    "internal-developer-platform"
   ],
   "author": "Forge Space",
   "license": "MIT",

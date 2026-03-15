@@ -7,6 +7,7 @@
 </div>
 
 [![CI](https://github.com/Forge-Space/branding-mcp/actions/workflows/ci.yml/badge.svg)](https://github.com/Forge-Space/branding-mcp/actions/workflows/ci.yml)
+[![npm version](https://img.shields.io/npm/v/@forgespace/branding-mcp)](https://www.npmjs.com/package/@forgespace/branding-mcp)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 Generate complete design systems — colors, typography, spacing, shadows, borders, motion tokens, gradients, multi-variant logos, favicons, and OG images with multi-format export. 9 MCP tools, zero API dependencies, algorithmic-first generation.
@@ -34,18 +35,34 @@ npm install
 npm run build
 ```
 
-### As MCP Server (stdio)
+### Run from npm (stdio)
+
+```bash
+npx -y @forgespace/branding-mcp@latest
+```
+
+### Install globally
+
+```bash
+npm install -g @forgespace/branding-mcp
+forgespace-branding-mcp
+```
+
+### IDE / client config
 
 ```json
 {
   "mcpServers": {
-    "branding": {
-      "command": "node",
-      "args": ["path/to/branding-mcp/dist/index.js"]
+    "forgespace-branding": {
+      "command": "npx",
+      "args": ["-y", "@forgespace/branding-mcp@latest"]
     }
   }
 }
 ```
+
+Set `ANTHROPIC_API_KEY` when you want AI-assisted refinement. The server also
+works in algorithmic-only mode without external APIs.
 
 ### MCP Tools
 
@@ -78,6 +95,19 @@ npm run test:coverage # Coverage report
 npm run build        # Build TypeScript
 ```
 
+## Distribution
+
+- **npm** — installable as
+  [`@forgespace/branding-mcp`](https://www.npmjs.com/package/@forgespace/branding-mcp)
+- **MCP Registry metadata** — `server.json` and `mcpName` are included for
+  registry submission
+- **Tag release automation** — pushing `v*` runs npm publish with provenance,
+  then publishes the same version to the MCP Registry via GitHub OIDC
+- **Weekly registry ops** — `.github/workflows/mcp-registry-status.yml` refreshes
+  one issue with npm and MCP Registry drift, visibility, and next actions
+- **GitHub** —
+  [Forge-Space/branding-mcp](https://github.com/Forge-Space/branding-mcp)
+
 ## Architecture
 
 ```
@@ -101,9 +131,15 @@ src/
 Part of the [Forge Space](https://github.com/Forge-Space) ecosystem:
 
 - **mcp-gateway** — Register as MCP server (port 8033)
-- **uiforge-mcp** — Consumes brand tokens via `brandId` parameter
+- **ui-mcp** — Consumes brand tokens via `brandId` parameter
 - **uiforge-webapp** — Brand management UI at `/branding/*`
 - **forge-patterns** — Shared configs and conventions
+
+## Community
+
+- [Documentation](https://docs.forgespace.co/docs)
+- [GitHub Discussions](https://github.com/orgs/Forge-Space/discussions)
+- [Issue tracker](https://github.com/Forge-Space/branding-mcp/issues)
 
 ## License
 
