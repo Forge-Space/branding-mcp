@@ -2,7 +2,11 @@
 
 import { execFileSync } from 'node:child_process';
 import { readFileSync } from 'node:fs';
+import { execPath } from 'node:process';
+import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+
+const npmBin = path.join(path.dirname(execPath), 'npm');
 
 const root = new URL('../', import.meta.url);
 const rootPath = fileURLToPath(root);
@@ -19,8 +23,8 @@ function normalizeRepoUrl(url) {
 }
 
 function getPackPaths() {
-  execFileSync('npm', ['run', 'build'], { cwd: rootPath, encoding: 'utf8' });
-  const output = execFileSync('npm', ['pack', '--dry-run', '--json', '--ignore-scripts'], {
+  execFileSync(npmBin, ['run', 'build'], { cwd: rootPath, encoding: 'utf8' });
+  const output = execFileSync(npmBin, ['pack', '--dry-run', '--json', '--ignore-scripts'], {
     cwd: rootPath,
     encoding: 'utf8',
   });

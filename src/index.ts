@@ -39,7 +39,7 @@ async function main(): Promise<void> {
 
   const server = new McpServer({
     name: '@forgespace/branding-mcp',
-    version: '0.7.0',
+    version: '0.7.1',
   });
 
   registerGenerateBrandIdentity(server);
