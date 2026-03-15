@@ -1,0 +1,29 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.forge-space/branding-mcp",
+  "description": "AI-powered brand identity generation via MCP with design tokens, typography, logo assets, and brand guidelines export.",
+  "version": "0.7.1",
+  "registryType": "npm",
+  "repository": {
+    "url": "https://github.com/Forge-Space/branding-mcp",
+    "source": "github"
+  },
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "@forgespace/branding-mcp",
+      "version": "0.7.1",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "environmentVariables": [
+    {
+      "name": "ANTHROPIC_API_KEY",
+      "description": "Optional. Enables natural-language brand refinement with Anthropic when the AI strategy is selected.",
+      "isRequired": false,
+      "isSecret": true
+    }
+  ]
+}

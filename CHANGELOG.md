@@ -4,6 +4,28 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [0.7.1] - 2026-03-14
+
+### Added
+
+- **MCP Registry metadata** — Added `mcpName`, `server.json`, and npm publish
+  metadata so `@forgespace/branding-mcp` is ready for MCP Registry submission
+  and scoped npm distribution
+- **Tag-driven publish automation** — Added a release workflow that validates,
+  publishes npm with provenance, and publishes the same version to the MCP
+  Registry via GitHub OIDC
+- **Weekly MCP Registry status issue** — Added a scheduled workflow that
+  refreshes one distribution issue with discovery and version-drift status
+
+### Changed
+
+- **README distribution paths** — Documented npm-first install/config flows,
+  docs/community entry points, and aligned ecosystem naming with `ui-mcp`
+- **Runtime version metadata** — Updated MCP server self-reported version to
+  match package release `0.7.1`
+- **Registry schema contract** — `server.json` now uses the current MCP
+  Registry field names for package and environment metadata
+
 ## [0.7.0] - 2026-03-07
 
 ### Added
