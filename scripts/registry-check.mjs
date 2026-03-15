@@ -15,7 +15,7 @@ function readJson(name) {
   return JSON.parse(readFileSync(new URL(name, root), 'utf8'));
 }
 
-function normalizeRepoUrl(url) {
+function normalizeRepoUrl(url = '') {
   return url
     .replace(/^git\+/, '')
     .replace(/\.git$/, '')
@@ -33,6 +33,8 @@ function getPackPaths() {
 }
 
 async function getPublishedVersions(name) {
+  // The name is from package.json (trusted local config), not user-controlled input.
+  // codeql[js/request-forgery] intentional: url built from local manifest name, not user-controlled data.
   const response = await fetch(`https://registry.npmjs.org/${encodeURIComponent(name)}`, {
     headers: { accept: 'application/json' },
   });
@@ -49,18 +51,26 @@ async function getPublishedVersions(name) {
 function collectFindings(pkg, server, packPaths, publishedVersions) {
   const errors = [];
   const warnings = [];
-  const npmPackage = server.packages?.find((entry) => entry.registryType === 'npm');
+  // Require exactly one npm package entry to avoid false-positives from zero or multiple matches.
+  const npmPackages = server.packages?.filter((entry) => entry.registryType === 'npm') ?? [];
+  const [npmPackage] = npmPackages;
+
   if (!pkg.mcpName) errors.push('package.json is missing mcpName.');
   if (server.name !== pkg.mcpName) errors.push('server.json name must match package.json mcpName.');
   if (server.version !== pkg.version)
     errors.push('server.json version must match package.json version.');
-  if (!npmPackage) errors.push('server.json must include one npm package entry.');
-  if (npmPackage?.identifier !== pkg.name)
-    errors.push('server.json npm identifier must match package name.');
-  if (npmPackage?.version !== pkg.version)
-    errors.push('server.json npm version must match package version.');
-  if (npmPackage?.transport?.type !== 'stdio')
-    errors.push('server.json npm package transport must be stdio.');
+
+  if (npmPackages.length !== 1) {
+    errors.push(`server.json must include exactly one npm package entry (found ${npmPackages.length}).`);
+  } else {
+    if (npmPackage.identifier !== pkg.name)
+      errors.push('server.json npm identifier must match package name.');
+    if (npmPackage.version !== pkg.version)
+      errors.push('server.json npm version must match package version.');
+    if (npmPackage.transport?.type !== 'stdio')
+      errors.push('server.json npm package transport must be stdio.');
+  }
+
   if (!Array.isArray(server.environmentVariables))
     errors.push('server.json environmentVariables must be an array.');
   if (pkg.publishConfig?.access !== 'public')
@@ -72,7 +82,14 @@ function collectFindings(pkg, server, packPaths, publishedVersions) {
   if (!packPaths.some((item) => item.startsWith('dist/')))
     errors.push('npm pack --dry-run must include built dist artifacts.');
   if (!packPaths.includes('README.md')) errors.push('npm pack --dry-run must include README.md.');
-  if (normalizeRepoUrl(pkg.repository.url) !== normalizeRepoUrl(server.repository.url)) {
+
+  // Guard against missing repository.url before comparing.
+  const packageRepoUrl = pkg.repository?.url ?? '';
+  const serverRepoUrl = server.repository?.url ?? '';
+  if (!packageRepoUrl) errors.push('package.json repository.url is required.');
+  if (!serverRepoUrl) errors.push('server.json repository.url is required.');
+  if (packageRepoUrl && serverRepoUrl &&
+      normalizeRepoUrl(packageRepoUrl) !== normalizeRepoUrl(serverRepoUrl)) {
     errors.push('package.json repository.url must match server.json repository.url.');
   }
   if (publishedVersions[pkg.version]) {

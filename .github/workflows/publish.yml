@@ -26,6 +26,17 @@ jobs:
           registry-url: https://registry.npmjs.org
 
       - run: npm ci
+
+      - name: Verify tag matches package version
+        if: startsWith(github.ref, 'refs/tags/v')
+        run: |
+          TAG_VERSION="${GITHUB_REF_NAME#v}"
+          PKG_VERSION="$(node -p "require('./package.json').version")"
+          [ "$TAG_VERSION" = "$PKG_VERSION" ] || {
+            echo "Error: tag version ($TAG_VERSION) != package.json version ($PKG_VERSION)"
+            exit 1
+          }
+
       - run: npm run validate
       - run: npm run typecheck
       - run: npm run build
@@ -55,9 +66,19 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Install MCP publisher
+        env:
+          MCP_PUBLISHER_VERSION: "v1.5.0"
         run: |
-          curl -L "https://github.com/modelcontextprotocol/registry/releases/latest/download/mcp-publisher_$(uname -s | tr '[:upper:]' '[:lower:]')_$(uname -m | sed 's/x86_64/amd64/;s/aarch64/arm64/').tar.gz" | tar xz mcp-publisher
+          OS="$(uname -s | tr '[:upper:]' '[:lower:]')"
+          ARCH="$(uname -m | sed 's/x86_64/amd64/;s/aarch64/arm64/')"
+          ARCHIVE="mcp-publisher_${OS}_${ARCH}.tar.gz"
+          BASE_URL="https://github.com/modelcontextprotocol/registry/releases/download/${MCP_PUBLISHER_VERSION}"
+          curl -fsSL "${BASE_URL}/${ARCHIVE}" -o mcp-publisher.tar.gz
+          curl -fsSL "${BASE_URL}/registry_${MCP_PUBLISHER_VERSION#v}_checksums.txt" -o checksums.txt
+          grep "${ARCHIVE}" checksums.txt | sha256sum -c -
+          tar xz -f mcp-publisher.tar.gz mcp-publisher
           chmod +x mcp-publisher
+          rm mcp-publisher.tar.gz checksums.txt
 
       - name: Authenticate to MCP Registry
         run: ./mcp-publisher login github-oidc
