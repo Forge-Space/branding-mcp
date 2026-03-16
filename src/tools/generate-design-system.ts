@@ -17,6 +17,7 @@ import {
   exportFigmaTokens,
   exportReactTheme,
   exportSassVariables,
+  exportStyleDictionary,
 } from '../lib/branding-core/index.js';
 import {
   brandStyleSchema,
@@ -48,6 +49,7 @@ const EXPORTERS: Record<ExportFormat, (brand: BrandIdentity) => string | object>
   figma: exportFigmaTokens,
   react: exportReactTheme,
   sass: exportSassVariables,
+  'style-dictionary': exportStyleDictionary,
 };
 
 function buildIdentity(params: {

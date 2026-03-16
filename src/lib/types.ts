@@ -20,7 +20,14 @@ export type TypeScaleRatio =
   | 'perfect-fifth'
   | 'golden-ratio';
 
-export type ExportFormat = 'json' | 'css' | 'tailwind' | 'figma' | 'react' | 'sass';
+export type ExportFormat =
+  | 'json'
+  | 'css'
+  | 'tailwind'
+  | 'figma'
+  | 'react'
+  | 'sass'
+  | 'style-dictionary';
 
 export type BrandDocFormat = 'pdf' | 'html';
 
@@ -219,6 +226,51 @@ export interface BrandGenerationInput {
     headingCategory?: FontCategory;
     bodyCategory?: FontCategory;
     scaleRatio?: TypeScaleRatio;
+  };
+}
+
+export type BrandVoiceTone =
+  | 'professional'
+  | 'friendly'
+  | 'playful'
+  | 'authoritative'
+  | 'empathetic'
+  | 'inspirational'
+  | 'minimalist'
+  | 'bold';
+
+export type BrandVoiceAudience =
+  | 'b2b'
+  | 'b2c'
+  | 'enterprise'
+  | 'startup'
+  | 'consumer'
+  | 'technical'
+  | 'creative'
+  | 'general';
+
+export interface BrandVoiceGuidelines {
+  tone: BrandVoiceTone;
+  audience: BrandVoiceAudience;
+  vocabulary: {
+    preferred: string[];
+    avoided: string[];
+  };
+  sentenceStyle: {
+    averageLength: 'short' | 'medium' | 'long';
+    structure: 'simple' | 'varied' | 'complex';
+  };
+  personality: string[];
+  taglineSuggestions: string[];
+  sampleCopy: {
+    headline: string;
+    subheadline: string;
+    cta: string;
+    aboutUs: string;
+  };
+  doAndDont: {
+    do: string[];
+    dont: string[];
   };
 }
 

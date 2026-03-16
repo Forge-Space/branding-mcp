@@ -13,6 +13,9 @@ export type {
   BrandStyle,
   ColorHarmony,
   ExportFormat,
+  BrandVoiceGuidelines,
+  BrandVoiceTone,
+  BrandVoiceAudience,
 } from './lib/types.js';
 
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
@@ -29,6 +32,7 @@ import { registerValidateBrandConsistency } from './tools/validate-brand-consist
 import { registerRefineBrandElement } from './tools/refine-brand-element.js';
 import { registerGenerateBrandAssets } from './tools/generate-brand-assets.js';
 import { registerGenerateDesignSystem } from './tools/generate-design-system.js';
+import { registerGenerateBrandVoice } from './tools/generate-brand-voice.js';
 
 import { registerBrandTemplates } from './resources/brand-templates.js';
 import { registerBrandKnowledge } from './resources/brand-knowledge.js';
@@ -51,6 +55,7 @@ async function main(): Promise<void> {
   registerRefineBrandElement(server);
   registerGenerateBrandAssets(server);
   registerGenerateDesignSystem(server);
+  registerGenerateBrandVoice(server);
 
   registerBrandTemplates(server);
   registerBrandKnowledge(server);

@@ -7,6 +7,7 @@ import {
   exportFigmaTokens,
   exportReactTheme,
   exportSassVariables,
+  exportStyleDictionary,
 } from '../lib/branding-core/index.js';
 import { exportFormatSchema } from '../lib/branding-core/validators/token-schema.js';
 import type { BrandIdentity, ExportFormat } from '../lib/types.js';
@@ -19,6 +20,7 @@ const EXPORTERS: Record<ExportFormat, (brand: BrandIdentity) => string | object>
   figma: exportFigmaTokens,
   react: exportReactTheme,
   sass: exportSassVariables,
+  'style-dictionary': exportStyleDictionary,
 };
 
 export function registerExportDesignTokens(server: McpServer): void {

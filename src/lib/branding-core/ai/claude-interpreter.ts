@@ -1,33 +1,19 @@
+import Anthropic from '@anthropic-ai/sdk';
 import type { BrandIdentity } from '../../types.js';
 import type { BrandIntent, InterpreterOptions } from './types.js';
 import { buildRefinementPrompt, buildGenerationPrompt } from './prompts.js';
 import { logger } from '../../logger.js';
 
 async function callClaude(prompt: string, options: Required<InterpreterOptions>): Promise<string> {
-  const response = await fetch('https://api.anthropic.com/v1/messages', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'x-api-key': options.anthropicApiKey,
-      'anthropic-version': '2023-06-01',
-    },
-    body: JSON.stringify({
-      model: options.model,
-      max_tokens: options.maxTokens,
-      messages: [{ role: 'user', content: prompt }],
-    }),
+  const client = new Anthropic({ apiKey: options.anthropicApiKey });
+  const message = await client.messages.create({
+    model: options.model,
+    max_tokens: options.maxTokens,
+    messages: [{ role: 'user', content: prompt }],
   });
-
-  if (!response.ok) {
-    const body = await response.text();
-    throw new Error(`Anthropic API error ${response.status}: ${body}`);
-  }
-
-  const data = (await response.json()) as {
-    content: Array<{ type: string; text: string }>;
-  };
-  const textBlock = data.content.find((b) => b.type === 'text');
-  if (!textBlock) throw new Error('No text content in Anthropic response');
+  const textBlock = message.content.find((b) => b.type === 'text');
+  if (!textBlock || textBlock.type !== 'text')
+    throw new Error('No text content in Anthropic response');
   return textBlock.text;
 }
 

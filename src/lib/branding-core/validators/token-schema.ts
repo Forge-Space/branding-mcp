@@ -34,7 +34,15 @@ export const typeScaleRatioSchema = z.enum([
   'golden-ratio',
 ]);
 
-export const exportFormatSchema = z.enum(['json', 'css', 'tailwind', 'figma', 'react', 'sass']);
+export const exportFormatSchema = z.enum([
+  'json',
+  'css',
+  'tailwind',
+  'figma',
+  'react',
+  'sass',
+  'style-dictionary',
+]);
 
 export const brandStyleSchema = z.enum([
   'minimal',
