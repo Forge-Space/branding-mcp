@@ -106,8 +106,15 @@ describe('startHttpServer', () => {
     expect(mockListenFn).toHaveBeenCalledWith(4000, expect.any(Function));
   });
 
-  it('returns 404 for paths other than /mcp', async () => {
+  it('returns 200 for GET /health', async () => {
     const req = makeReq('GET', '/health');
+    const res = makeRes();
+    await capturedHandler!(req, res);
+    expect(res._status).toBe(200);
+  });
+
+  it('returns 404 for unknown paths', async () => {
+    const req = makeReq('GET', '/unknown-path');
     const res = makeRes();
     await capturedHandler!(req, res);
     expect(res._status).toBe(404);

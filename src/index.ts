@@ -18,6 +18,7 @@ export type {
   BrandVoiceAudience,
 } from './lib/types.js';
 
+import { parseArgs } from 'node:util';
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';
 import { loadConfig } from './lib/config.js';
@@ -39,6 +40,16 @@ import { registerBrandTemplates } from './resources/brand-templates.js';
 import { registerBrandKnowledge } from './resources/brand-knowledge.js';
 
 async function main(): Promise<void> {
+  const { values: cliArgs } = parseArgs({
+    args: process.argv.slice(2),
+    options: { transport: { type: 'string' } },
+    strict: false,
+  });
+
+  if (cliArgs.transport) {
+    process.env.MCP_TRANSPORT = cliArgs.transport as string;
+  }
+
   const config = loadConfig();
   logger.info({ env: config.nodeEnv }, 'Starting branding-mcp server');
 

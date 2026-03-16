@@ -10,6 +10,12 @@ export async function startHttpServer(server: McpServer, port: number): Promise<
   const httpServer = createServer(async (req: IncomingMessage, res: ServerResponse) => {
     const url = new URL(req.url ?? '/', `http://localhost:${port}`);
 
+    if (url.pathname === '/health') {
+      res.writeHead(200, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ status: 'ok', transport: 'http' }));
+      return;
+    }
+
     if (url.pathname !== '/mcp') {
       res.writeHead(404, { 'Content-Type': 'application/json' });
       res.end(JSON.stringify({ error: 'Not found. Use POST /mcp' }));
