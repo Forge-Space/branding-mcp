@@ -4,6 +4,18 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [0.12.0] - 2026-03-16
+
+### Added
+
+- **`generate_brand_pitch` tool** — New MCP tool that generates a complete brand pitch package.
+  Returns 3 elevator pitches (15s/30s/60s scripts with word counts), a 7-slide pitch deck outline
+  (with speaker notes), one-line pitch, problem statement, solution statement, unique value
+  proposition, target audience profile, 4 competitive advantages, call-to-action, and 4 investor
+  highlights. Adapts tone and CTA per brand style; industry-aware problem statements for tech,
+  finance, health, education, food, retail, creative, travel, and real estate. New types exported:
+  `BrandPitchOutput`, `ElevatorPitch`, `PitchDeckSlide`, `InvestorHighlight`
+
 ## [0.11.0] - 2026-03-16
 
 ### Added

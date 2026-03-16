@@ -359,3 +359,34 @@ export interface BrandSocialOutput {
     sampleCopy: Record<string, string>;
   };
 }
+
+export interface ElevatorPitch {
+  duration: '15s' | '30s' | '60s';
+  script: string;
+  wordCount: number;
+}
+
+export interface PitchDeckSlide {
+  title: string;
+  content: string[];
+  speakerNotes: string;
+}
+
+export interface InvestorHighlight {
+  category: string;
+  headline: string;
+  detail: string;
+}
+
+export interface BrandPitchOutput {
+  elevatorPitches: ElevatorPitch[];
+  pitchDeck: PitchDeckSlide[];
+  oneLinePitch: string;
+  problemStatement: string;
+  solutionStatement: string;
+  uniqueValueProposition: string;
+  targetAudienceProfile: string;
+  competitiveAdvantages: string[];
+  callToAction: string;
+  investorHighlights: InvestorHighlight[];
+}

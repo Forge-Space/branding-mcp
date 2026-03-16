@@ -1,4 +1,3 @@
- 
 import { jest, describe, it, expect, beforeAll, beforeEach } from '@jest/globals';
 
 jest.unstable_mockModule('../../lib/branding-core/ai/claude-interpreter.js', () => ({
