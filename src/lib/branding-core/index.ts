@@ -25,6 +25,7 @@ export { generateBrandNaming } from './generators/brand-naming.js';
 export { generateBrandMotion } from './generators/brand-motion.js';
 export { generateBrandSocial } from './generators/brand-social.js';
 export { generateBrandPitch } from './generators/brand-pitch.js';
+export { generateBrandEmail } from './generators/brand-email.js';
 export { validateBrandConsistency } from './validators/brand-consistency.js';
 export { validateContrast } from './validators/contrast-checker.js';
 export { interpretFeedback } from './ai/brand-interpreter.js';

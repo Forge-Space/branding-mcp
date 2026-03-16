@@ -4,6 +4,18 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [0.13.0] - 2026-03-16
+
+### Added
+
+- **`generate_brand_email` tool** — New MCP tool that generates email marketing templates, campaigns,
+  and guidelines. Returns 4 email templates (Welcome, Announcement, Newsletter, Re-engagement), at
+  least 2 campaigns with cadence and key messages, subject line examples, preheader examples, color
+  usage guidelines, typography guidelines, copy tone description, best practices, footer elements,
+  and accessibility notes. Adapts to all 8 brand styles with style-specific subject formulas, copy
+  tone, and CTA text. Industry-aware campaign strategies. New types exported: `BrandEmailOutput`,
+  `EmailTemplate`, `EmailCampaign`
+
 ## [0.12.0] - 2026-03-16
 
 ### Added

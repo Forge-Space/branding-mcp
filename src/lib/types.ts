@@ -390,3 +390,43 @@ export interface BrandPitchOutput {
   callToAction: string;
   investorHighlights: InvestorHighlight[];
 }
+
+export interface EmailTemplate {
+  name: string;
+  purpose: string;
+  subjectLineFormulas: string[];
+  preheaderText: string;
+  structure: string[];
+  designNotes: string;
+}
+
+export interface EmailCampaign {
+  type: string;
+  goal: string;
+  frequency: string;
+  keyMessages: string[];
+  callToAction: string;
+}
+
+export interface BrandEmailOutput {
+  templates: EmailTemplate[];
+  campaigns: EmailCampaign[];
+  subjectLineExamples: string[];
+  preheaderExamples: string[];
+  colorUsage: {
+    background: string;
+    text: string;
+    accent: string;
+    button: string;
+  };
+  typographyGuidelines: {
+    headingFont: string;
+    bodyFont: string;
+    fontSize: string;
+    lineHeight: string;
+  };
+  copyTone: string;
+  bestPractices: string[];
+  footerElements: string[];
+  accessibilityNotes: string[];
+}
