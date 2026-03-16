@@ -1265,3 +1265,16 @@ export interface BrandB2bOutput {
   successMetrics: Record<string, string>;
   b2bBriefSummary: string;
 }
+
+export interface BrandSaasOutput {
+  positioning: string;
+  pricingModel: string[];
+  trialStrategy: string;
+  onboardingFlow: string[];
+  retentionTactics: string[];
+  keyIntegrations: string[];
+  supportModel: string;
+  churnWarningSignals: string[];
+  complianceCertifications: string[];
+  saasBriefSummary: string;
+}

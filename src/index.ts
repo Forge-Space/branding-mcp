@@ -111,6 +111,7 @@ export type {
   SubscriptionPricingTier,
   BrandSubscriptionOutput,
   BrandB2bOutput,
+  BrandSaasOutput,
 } from './lib/types.js';
 
 import { parseArgs } from 'node:util';
@@ -175,6 +176,7 @@ import { registerGenerateBrandEcommerce } from './tools/generate-brand-ecommerce
 import { registerGenerateBrandMarketplace } from './tools/generate-brand-marketplace.js';
 import { registerGenerateBrandSubscription } from './tools/generate-brand-subscription.js';
 import { registerGenerateBrandB2b } from './tools/generate-brand-b2b.js';
+import { registerGenerateBrandSaas } from './tools/generate-brand-saas.js';
 
 import { registerBrandTemplates } from './resources/brand-templates.js';
 import { registerBrandKnowledge } from './resources/brand-knowledge.js';
@@ -195,7 +197,7 @@ async function main(): Promise<void> {
 
   const server = new McpServer({
     name: '@forgespace/branding-mcp',
-    version: '0.53.0',
+    version: '0.54.0',
   });
 
   registerGenerateBrandIdentity(server);
@@ -253,6 +255,7 @@ async function main(): Promise<void> {
   registerGenerateBrandMarketplace(server);
   registerGenerateBrandSubscription(server);
   registerGenerateBrandB2b(server);
+  registerGenerateBrandSaas(server);
 
   registerBrandTemplates(server);
   registerBrandKnowledge(server);

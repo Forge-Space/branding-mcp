@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [0.54.0] - 2026-03-16
+
+### Added
+
+- `generate_brand_saas` MCP tool — SaaS-specific brand strategy including positioning, pricing model, trial strategy, onboarding flow, retention tactics, key integrations, support model, churn warning signals, and compliance certifications
+
 ## [0.53.0] - 2026-03-16
 
 ### Added
