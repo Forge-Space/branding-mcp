@@ -786,3 +786,20 @@ export interface BrandLegalOutput {
   accessibilityCompliance: string[];
   legalBriefSummary: string;
 }
+
+export interface AccessibilityChecklistSection {
+  section: string;
+  items: string[];
+}
+
+export interface BrandAccessibilityOutput {
+  wcagTarget: string;
+  colourContrastStrategy: string;
+  focusIndicatorStyle: string;
+  motionGuidance: string;
+  typographyGuidance: string;
+  checklistSections: AccessibilityChecklistSection[];
+  testingProtocol: string[];
+  designTokenRequirements: Record<string, string>;
+  accessibilityBriefSummary: string;
+}

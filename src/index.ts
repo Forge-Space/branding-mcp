@@ -64,6 +64,8 @@ export type {
   PressRelease,
   MediaContact,
   BrandLegalOutput,
+  AccessibilityChecklistSection,
+  BrandAccessibilityOutput,
 } from './lib/types.js';
 
 import { parseArgs } from 'node:util';
@@ -101,6 +103,7 @@ import { registerGenerateBrandContent } from './tools/generate-brand-content.js'
 import { registerGenerateBrandPartnership } from './tools/generate-brand-partnership.js';
 import { registerGenerateBrandPr } from './tools/generate-brand-pr.js';
 import { registerGenerateBrandLegal } from './tools/generate-brand-legal.js';
+import { registerGenerateBrandAccessibility } from './tools/generate-brand-accessibility.js';
 
 import { registerBrandTemplates } from './resources/brand-templates.js';
 import { registerBrandKnowledge } from './resources/brand-knowledge.js';
@@ -121,7 +124,7 @@ async function main(): Promise<void> {
 
   const server = new McpServer({
     name: '@forgespace/branding-mcp',
-    version: '0.26.0',
+    version: '0.27.0',
   });
 
   registerGenerateBrandIdentity(server);
@@ -152,6 +155,7 @@ async function main(): Promise<void> {
   registerGenerateBrandPartnership(server);
   registerGenerateBrandPr(server);
   registerGenerateBrandLegal(server);
+  registerGenerateBrandAccessibility(server);
 
   registerBrandTemplates(server);
   registerBrandKnowledge(server);

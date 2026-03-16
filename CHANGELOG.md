@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [0.27.0] - 2026-03-16
+
+### Added
+
+- `generate_brand_accessibility` MCP tool: WCAG compliance targets, colour contrast strategies, focus indicator styles, motion guidance, typography guidance, 4-section accessibility checklist (Perceivable/Operable/Understandable/Robust), testing protocols including axe-core CI gate, and design token requirements
+
 ## [0.26.0] - 2026-03-16
 
 ### Added
