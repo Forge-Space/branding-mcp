@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [0.39.0] - 2026-03-16
+
+### Added
+
+- `generate_brand_crisis` tool: brand crisis communications framework with five-phase response plan (first alert through post-crisis recovery), dark-site content checklist, stakeholder matrix (6 groups with priority, channel, message frame, and response time), monitoring checklist, do-not-say list, and style-specific spokesperson guidance
+
 ## [0.38.0] - 2026-03-16
 
 ### Added

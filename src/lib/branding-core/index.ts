@@ -58,3 +58,4 @@ export { generateBrandAnalytics } from './generators/brand-analytics.js';
 export { generateBrandCompetitive } from './generators/brand-competitive.js';
 export { generateBrandInnovation } from './generators/brand-innovation.js';
 export { generateBrandGlobalisation } from './generators/brand-globalisation.js';
+export { generateBrandCrisis } from './generators/brand-crisis.js';

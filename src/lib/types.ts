@@ -1028,3 +1028,31 @@ export interface BrandGlobalisationOutput {
   complianceRequirements: string[];
   globalisationBriefSummary: string;
 }
+
+export interface CrisisResponsePhase {
+  phase: string;
+  objectives: string[];
+  actions: string[];
+  communicationsAction: string;
+}
+
+export interface CrisisStakeholder {
+  group: string;
+  priority: string;
+  channel: string;
+  messageFrame: string;
+  responseTime: string;
+}
+
+export interface BrandCrisisOutput {
+  crisisTone: string;
+  firstResponseGuidelines: string[];
+  spokespersonGuidance: string;
+  channelPriority: string[];
+  responsePhases: CrisisResponsePhase[];
+  darkSiteContent: string[];
+  stakeholderMatrix: CrisisStakeholder[];
+  monitoringChecklist: string[];
+  doNotSayList: string[];
+  crisisBriefSummary: string;
+}
