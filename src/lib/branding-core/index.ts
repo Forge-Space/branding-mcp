@@ -42,3 +42,4 @@ export { generateBrandEvent } from './generators/brand-event.js';
 export { generateBrandInterior } from './generators/brand-interior.js';
 export { generateBrandDigital } from './generators/brand-digital.js';
 export { generateBrandUx } from './generators/brand-ux.js';
+export { generateBrandContent } from './generators/brand-content.js';

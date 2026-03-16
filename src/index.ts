@@ -54,6 +54,9 @@ export type {
   DigitalComponentSpec,
   DigitalAccessibilitySpec,
   BrandUxOutput,
+  BrandContentOutput,
+  ContentPillarItem,
+  ContentCalendarWeekItem,
 } from './lib/types.js';
 
 import { parseArgs } from 'node:util';
@@ -87,6 +90,7 @@ import { registerGenerateBrandEvent } from './tools/generate-brand-event.js';
 import { registerGenerateBrandInterior } from './tools/generate-brand-interior.js';
 import { registerGenerateBrandDigital } from './tools/generate-brand-digital.js';
 import { registerGenerateBrandUx } from './tools/generate-brand-ux.js';
+import { registerGenerateBrandContent } from './tools/generate-brand-content.js';
 
 import { registerBrandTemplates } from './resources/brand-templates.js';
 import { registerBrandKnowledge } from './resources/brand-knowledge.js';
@@ -107,7 +111,7 @@ async function main(): Promise<void> {
 
   const server = new McpServer({
     name: '@forgespace/branding-mcp',
-    version: '0.22.0',
+    version: '0.23.0',
   });
 
   registerGenerateBrandIdentity(server);
@@ -134,6 +138,7 @@ async function main(): Promise<void> {
   registerGenerateBrandInterior(server);
   registerGenerateBrandDigital(server);
   registerGenerateBrandUx(server);
+  registerGenerateBrandContent(server);
 
   registerBrandTemplates(server);
   registerBrandKnowledge(server);

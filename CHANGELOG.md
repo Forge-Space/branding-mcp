@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [0.23.0] - 2026-03-16
+
+### Added
+
+- `generate_brand_content` tool: editorial tone, content types, headline patterns, SEO approach, content pillars, editorial guidelines, distribution strategy, and a 4-week content calendar
+
 ## [0.22.0] - 2026-03-16
 
 ### Added

@@ -667,6 +667,32 @@ export interface BrandDigitalOutput {
   digitalBriefSummary: string;
 }
 
+// generate_brand_content types
+export interface ContentPillarItem {
+  name: string;
+  purpose: string;
+  topics: string[];
+  formats: string[];
+}
+
+export interface ContentCalendarWeekItem {
+  week: number;
+  theme: string;
+  formats: string[];
+}
+
+export interface BrandContentOutput {
+  editorialTone: string;
+  contentTypes: string[];
+  headlinePattern: string;
+  seoApproach: string;
+  contentPillars: ContentPillarItem[];
+  editorialGuidelines: Record<string, string>;
+  distributionStrategy: Record<string, string>;
+  contentCalendar: ContentCalendarWeekItem[];
+  contentBriefSummary: string;
+}
+
 // generate_brand_ux types
 export interface BrandUxOutput {
   writingVoice: string;
