@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [0.47.0] - 2026-03-16
+
+### Added
+
+- `generate_brand_podcast` MCP tool: podcast strategy including show concept, recommended formats, host persona, guest selection criteria, distribution channels, monetisation strategy, production checklist, growth strategy, and accessibility notes
+
 ## [0.46.0] - 2026-03-16
 
 ### Added

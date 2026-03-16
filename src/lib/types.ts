@@ -1168,3 +1168,17 @@ export interface BrandLoyaltyOutput {
   analyticsKpis: Record<string, string>;
   loyaltyBriefSummary: string;
 }
+
+export interface BrandPodcastOutput {
+  showConcept: string;
+  recommendedFormats: string[];
+  publishingCadence: string;
+  hostPersona: string;
+  guestSelectionCriteria: string[];
+  distributionChannels: string[];
+  monetisationStrategy: string[];
+  productionChecklist: string[];
+  growthStrategy: string[];
+  accessibilityNotes: string[];
+  podcastBriefSummary: string;
+}
