@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [0.36.0] - 2026-03-16
+
+### Added
+
+- `generate_brand_competitive` tool: competitive intelligence and positioning strategy including competitor profiles (Market Leader, Low-Cost Challenger, Niche Specialist, New Entrant), positioning matrix (4 axes), win/loss theme analysis, objection handling playbooks, and per-style competitive moat identification
+
 ## [0.35.0] - 2026-03-16
 
 ### Added

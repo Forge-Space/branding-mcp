@@ -945,3 +945,36 @@ export interface BrandAnalyticsOutput {
   measurementFramework: string[];
   analyticsBriefSummary: string;
 }
+
+export interface CompetitorProfile {
+  competitorType: string;
+  description: string;
+  theirStrengths: string[];
+  theirWeaknesses: string[];
+  ourCounterMessage: string;
+  winProbability: string;
+}
+
+export interface PositioningAxis {
+  axis: string;
+  ourPosition: string;
+  competitorPosition: string;
+}
+
+export interface WinLossTheme {
+  theme: string;
+  reasons: string[];
+  implication: string;
+}
+
+export interface BrandCompetitiveOutput {
+  positioningApproach: string;
+  competitiveAdvantages: string[];
+  competitiveMoat: string;
+  battlecardTone: string;
+  competitorProfiles: CompetitorProfile[];
+  positioningMatrix: PositioningAxis[];
+  winLossThemes: WinLossTheme[];
+  objectionHandling: string[];
+  competitiveBriefSummary: string;
+}
