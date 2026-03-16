@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [0.55.1] - 2026-03-16
+
+### Fixed
+
+- MCP Registry publish: corrected server ID casing from `io.github.forge-space/branding-mcp` to `io.github.Forge-Space/branding-mcp` in `package.json` and `server.json` to match OIDC token permissions
+
 ## [0.55.0] - 2026-03-16
 
 ### Added
