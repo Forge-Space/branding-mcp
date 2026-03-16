@@ -495,3 +495,27 @@ export interface BrandPhotographyOutput {
   technicalRequirements: Record<string, string>;
   shootBriefSummary: string;
 }
+
+// Packaging
+export interface PackagingFormat {
+  type: string;
+  primaryUse: string;
+  sizeGuidance: string;
+  dieCutNotes: string;
+}
+
+export interface BrandPackagingOutput {
+  formLanguage: string;
+  materials: string[];
+  colorApproach: string;
+  colorPaletteSummary: string[];
+  typographyApproach: string;
+  brandingElements: string[];
+  formats: PackagingFormat[];
+  printSpecs: Record<string, string>;
+  legalZones: Record<string, string>;
+  dilineGuide: string;
+  sustainability: string[];
+  unboxingExperience: string;
+  packagingBriefSummary: string;
+}

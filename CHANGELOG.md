@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [0.16.0] - 2026-03-16
+
+### Added
+
+- `generate_brand_packaging` MCP tool: generates packaging design guidelines including form language, materials, print specs, die-line guide, legal zones, sustainability notes, unboxing experience, and per-format specifications (primary box, shipping mailer, retail sleeve, hang tag, premium gift box for elegant/bold styles)
+- `BrandPackagingOutput` and `PackagingFormat` TypeScript types exported from the package
+
 ## [0.15.0] - 2026-03-16
 
 ### Added
