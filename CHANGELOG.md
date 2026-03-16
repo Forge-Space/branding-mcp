@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [0.28.0] - 2026-03-16
+
+### Added
+
+- `generate_brand_sustainability` MCP tool: ESG approach per brand style, environmental commitments, social commitments, governance principles, certifications (B Corp, SBTi, ISO 14001, Fairtrade, GRI, etc.), UN SDG alignment, reporting framework guidance, and sustainability brief summary
+
 ## [0.27.0] - 2026-03-16
 
 ### Added

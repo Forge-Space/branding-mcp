@@ -803,3 +803,14 @@ export interface BrandAccessibilityOutput {
   designTokenRequirements: Record<string, string>;
   accessibilityBriefSummary: string;
 }
+
+export interface BrandSustainabilityOutput {
+  esgApproach: string;
+  environmentalCommitments: string[];
+  socialCommitments: string[];
+  governancePrinciples: string[];
+  certifications: string[];
+  sdgAlignment: string[];
+  reportingFramework: string;
+  sustainabilityBriefSummary: string;
+}
