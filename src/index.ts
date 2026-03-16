@@ -106,6 +106,7 @@ export type {
   BrandPodcastOutput,
   BrandWebinarOutput,
   BrandNewsletterOutput,
+  BrandEcommerceOutput,
 } from './lib/types.js';
 
 import { parseArgs } from 'node:util';
@@ -166,6 +167,7 @@ import { registerGenerateBrandLoyalty } from './tools/generate-brand-loyalty.js'
 import { registerGenerateBrandPodcast } from './tools/generate-brand-podcast.js';
 import { registerGenerateBrandWebinar } from './tools/generate-brand-webinar.js';
 import { registerGenerateBrandNewsletter } from './tools/generate-brand-newsletter.js';
+import { registerGenerateBrandEcommerce } from './tools/generate-brand-ecommerce.js';
 
 import { registerBrandTemplates } from './resources/brand-templates.js';
 import { registerBrandKnowledge } from './resources/brand-knowledge.js';
@@ -186,7 +188,7 @@ async function main(): Promise<void> {
 
   const server = new McpServer({
     name: '@forgespace/branding-mcp',
-    version: '0.49.0',
+    version: '0.50.0',
   });
 
   registerGenerateBrandIdentity(server);
@@ -240,6 +242,7 @@ async function main(): Promise<void> {
   registerGenerateBrandPodcast(server);
   registerGenerateBrandWebinar(server);
   registerGenerateBrandNewsletter(server);
+  registerGenerateBrandEcommerce(server);
 
   registerBrandTemplates(server);
   registerBrandKnowledge(server);

@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [0.50.0] - 2026-03-16
+
+### Added
+
+- New `generate_brand_ecommerce` tool — generates ecommerce strategy and UX guidelines including store concept, product page layout, checkout principles, merchandising strategy, trust signals, SEO guidelines, and accessibility guidelines
+
 ## [0.49.0] - 2026-03-16
 
 ### Added

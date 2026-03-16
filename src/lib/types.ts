@@ -1208,3 +1208,14 @@ export interface BrandNewsletterOutput {
   successMetrics: Record<string, string>;
   newsletterBriefSummary: string;
 }
+
+export interface BrandEcommerceOutput {
+  storeConcept: string;
+  productPageLayout: string[];
+  checkoutPrinciples: string[];
+  merchandisingStrategy: string[];
+  trustSignals: string[];
+  seoGuidelines: string[];
+  accessibilityGuidelines: string[];
+  ecommerceBriefSummary: string;
+}
