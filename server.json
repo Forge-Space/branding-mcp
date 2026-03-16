@@ -24,6 +24,18 @@
       "description": "Optional. Enables natural-language brand refinement with Anthropic when the AI strategy is selected.",
       "isRequired": false,
       "isSecret": true
+    },
+    {
+      "name": "MCP_TRANSPORT",
+      "description": "Optional. Transport mode: 'stdio' (default) or 'http' for HTTP/SSE transport.",
+      "isRequired": false,
+      "isSecret": false
+    },
+    {
+      "name": "PORT",
+      "description": "Optional. HTTP port when MCP_TRANSPORT=http. Defaults to 3000.",
+      "isRequired": false,
+      "isSecret": false
     }
   ]
 }

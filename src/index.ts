@@ -22,6 +22,7 @@ import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';
 import { loadConfig } from './lib/config.js';
 import { logger } from './lib/logger.js';
+import { startHttpServer } from './lib/http-server.js';
 
 import { registerGenerateBrandIdentity } from './tools/generate-brand-identity.js';
 import { registerGenerateColorPalette } from './tools/generate-color-palette.js';
@@ -60,9 +61,13 @@ async function main(): Promise<void> {
   registerBrandTemplates(server);
   registerBrandKnowledge(server);
 
-  const transport = new StdioServerTransport();
-  await server.connect(transport);
-  logger.info('Branding MCP server connected via stdio');
+  if (config.transport === 'http') {
+    await startHttpServer(server, config.port);
+  } else {
+    const transport = new StdioServerTransport();
+    await server.connect(transport);
+    logger.info('Branding MCP server connected via stdio');
+  }
 }
 
 main().catch((error) => {
