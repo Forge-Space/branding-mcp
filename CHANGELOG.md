@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [0.53.0] - 2026-03-16
+
+### Added
+
+- `generate_brand_b2b` tool: B2B brand strategy with ICP definition, ABM approach, buyer journey mapping, sales enablement kit, and qualification framework
+
 ## [0.52.0] - 2026-03-16
 
 ### Added

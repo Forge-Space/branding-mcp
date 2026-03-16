@@ -1253,3 +1253,15 @@ export interface BrandSubscriptionOutput {
   copyTone: string;
   subscriptionBriefSummary: string;
 }
+
+export interface BrandB2bOutput {
+  salesApproach: string;
+  idealCustomerProfile: string[];
+  abmStrategy: string;
+  buyerJourney: string[];
+  salesEnablementKit: string[];
+  qualificationFramework: Record<string, string>;
+  partnerChannels: string[];
+  successMetrics: Record<string, string>;
+  b2bBriefSummary: string;
+}

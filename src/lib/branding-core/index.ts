@@ -74,3 +74,5 @@ export { generateBrandEcommerce } from './generators/brand-ecommerce.js';
 export { generateBrandMarketplace } from './generators/brand-marketplace.js';
 
 export { generateBrandSubscription } from './generators/brand-subscription.js';
+
+export { generateBrandB2b } from './generators/brand-b2b.js';
