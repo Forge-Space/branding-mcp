@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [0.51.0] - 2026-03-16
+
+### Added
+
+- `generate_brand_marketplace` tool — marketplace strategy with platform selection, listing principles, advertising approach, review strategy, pricing, fulfilment options, compliance checklist, and success metrics
+- `BrandMarketplaceOutput` type exported from main index
+
 ## [0.50.0] - 2026-03-16
 
 ### Added

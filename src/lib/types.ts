@@ -1219,3 +1219,16 @@ export interface BrandEcommerceOutput {
   accessibilityGuidelines: string[];
   ecommerceBriefSummary: string;
 }
+
+export interface BrandMarketplaceOutput {
+  marketplaceApproach: string;
+  primaryMarketplaces: string[];
+  listingPrinciples: string[];
+  advertisingApproach: string[];
+  reviewStrategy: string[];
+  pricingApproach: string;
+  fulfilmentOptions: string[];
+  complianceChecklist: string[];
+  successMetrics: Record<string, string>;
+  marketplaceBriefSummary: string;
+}
