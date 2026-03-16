@@ -21,6 +21,9 @@ export type {
   DomainSuggestion,
   BrandMotionOutput,
   BrandMotionPrinciple,
+  BrandSocialOutput,
+  SocialPlatformConfig,
+  ContentPillar,
 } from './lib/types.js';
 
 import { parseArgs } from 'node:util';
@@ -42,6 +45,7 @@ import { registerGenerateDesignSystem } from './tools/generate-design-system.js'
 import { registerGenerateBrandVoice } from './tools/generate-brand-voice.js';
 import { registerGenerateBrandNaming } from './tools/generate-brand-naming.js';
 import { registerGenerateBrandMotion } from './tools/generate-brand-motion.js';
+import { registerGenerateBrandSocial } from './tools/generate-brand-social.js';
 
 import { registerBrandTemplates } from './resources/brand-templates.js';
 import { registerBrandKnowledge } from './resources/brand-knowledge.js';
@@ -62,7 +66,7 @@ async function main(): Promise<void> {
 
   const server = new McpServer({
     name: '@forgespace/branding-mcp',
-    version: '0.10.0',
+    version: '0.11.0',
   });
 
   registerGenerateBrandIdentity(server);
@@ -77,6 +81,7 @@ async function main(): Promise<void> {
   registerGenerateBrandVoice(server);
   registerGenerateBrandNaming(server);
   registerGenerateBrandMotion(server);
+  registerGenerateBrandSocial(server);
 
   registerBrandTemplates(server);
   registerBrandKnowledge(server);

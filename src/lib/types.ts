@@ -326,3 +326,36 @@ export interface BrandMotionOutput {
   };
   cssCustomProperties: string;
 }
+
+export interface SocialPlatformConfig {
+  platform: string;
+  handle: string;
+  bioTemplate: string;
+  postFrequency: string;
+  contentFocus: string;
+  hashtagStrategy: string;
+  profileImageStyle: string;
+  coverImageStyle: string;
+  optimalPostLength: string;
+}
+
+export interface ContentPillar {
+  name: string;
+  description: string;
+  contentTypes: string[];
+}
+
+export interface BrandSocialOutput {
+  platforms: SocialPlatformConfig[];
+  contentPillars: ContentPillar[];
+  brandedHashtag: string;
+  hashtags: string[];
+  bioVariations: string[];
+  postingStrategy: string;
+  contentCalendar: Record<string, string[]>;
+  voiceGuidelines: {
+    tone: string;
+    doAndDont: { do: string[]; dont: string[] };
+    sampleCopy: Record<string, string>;
+  };
+}

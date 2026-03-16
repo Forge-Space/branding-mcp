@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
+ 
 import { jest } from '@jest/globals';
 import { EventEmitter } from 'node:events';
 

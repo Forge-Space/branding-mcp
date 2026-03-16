@@ -4,6 +4,17 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [0.11.0] - 2026-03-16
+
+### Added
+
+- **`generate_brand_social` tool** — New MCP tool that generates a complete social media strategy
+  for a brand. Returns platform-specific configs (LinkedIn, Instagram, Twitter/X, TikTok, Pinterest,
+  GitHub — adapted per brand style), content pillars (3-4 per style), branded hashtag, 10 hashtags
+  (industry-aware), 5 bio variations, posting strategy, weekly content calendar, and voice guidelines
+  (tone, do/don't, sample copy). New types exported: `BrandSocialOutput`, `SocialPlatformConfig`,
+  `ContentPillar`
+
 ## [0.10.0] - 2026-03-16
 
 ### Added
