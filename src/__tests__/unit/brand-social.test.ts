@@ -1,3 +1,4 @@
+import { describe, it, expect } from '@jest/globals';
 import { generateColorPalette } from '../../lib/branding-core/generators/color-palette.js';
 import { generateTypographySystem } from '../../lib/branding-core/generators/typography-system.js';
 import { generateSpacingScale } from '../../lib/branding-core/generators/spacing-scale.js';
@@ -143,5 +144,110 @@ describe('generateBrandSocial', () => {
     const brand = createTestBrand({ name: 'My Brand' });
     const social = generateBrandSocial(brand);
     expect(social.brandedHashtag).toBe('#mybrand');
+  });
+
+  it('adapts platforms for elegant style', () => {
+    const brand = createTestBrand({ style: 'elegant' });
+    const social = generateBrandSocial(brand);
+    const platformNames = social.platforms.map((p) => p.platform);
+    expect(platformNames.some((n) => n === 'Instagram' || n === 'Pinterest')).toBe(true);
+    expect(social.contentPillars.some((p) => p.name === 'Craft' || p.name === 'Lifestyle')).toBe(
+      true
+    );
+  });
+
+  it('adapts platforms for corporate style', () => {
+    const brand = createTestBrand({ style: 'corporate' });
+    const social = generateBrandSocial(brand);
+    const platformNames = social.platforms.map((p) => p.platform);
+    expect(platformNames.some((n) => n === 'LinkedIn' || n === 'Twitter/X')).toBe(true);
+    expect(
+      social.contentPillars.some(
+        (p) => p.name === 'Thought Leadership' || p.name === 'Company News'
+      )
+    ).toBe(true);
+  });
+
+  it('adapts platforms for organic style', () => {
+    const brand = createTestBrand({ style: 'organic' });
+    const social = generateBrandSocial(brand);
+    const platformNames = social.platforms.map((p) => p.platform);
+    expect(platformNames.some((n) => n === 'Instagram' || n === 'Pinterest')).toBe(true);
+    expect(social.contentPillars.some((p) => p.name === 'Sustainability')).toBe(true);
+  });
+
+  it('adapts platforms for retro style', () => {
+    const brand = createTestBrand({ style: 'retro' });
+    const social = generateBrandSocial(brand);
+    const platformNames = social.platforms.map((p) => p.platform);
+    expect(platformNames.some((n) => n === 'Instagram' || n === 'Twitter/X')).toBe(true);
+    expect(social.contentPillars.some((p) => p.name === 'Nostalgia' || p.name === 'Heritage')).toBe(
+      true
+    );
+  });
+
+  it('adapts platforms for playful style', () => {
+    const brand = createTestBrand({ style: 'playful' });
+    const social = generateBrandSocial(brand);
+    const platformNames = social.platforms.map((p) => p.platform);
+    expect(platformNames.some((n) => n === 'Instagram' || n === 'TikTok')).toBe(true);
+    expect(social.contentPillars.some((p) => p.name === 'Entertainment')).toBe(true);
+  });
+
+  it('adapts hashtags to fashion industry', () => {
+    const brand = createTestBrand({ industry: 'fashion style apparel' });
+    const social = generateBrandSocial(brand);
+    expect(social.hashtags.some((h) => h === '#fashion' || h === '#style' || h === '#ootd')).toBe(
+      true
+    );
+  });
+
+  it('adapts hashtags to food industry', () => {
+    const brand = createTestBrand({ industry: 'food restaurant cuisine' });
+    const social = generateBrandSocial(brand);
+    expect(social.hashtags.some((h) => h === '#foodie' || h === '#food' || h === '#eat')).toBe(
+      true
+    );
+  });
+
+  it('adapts hashtags to education industry', () => {
+    const brand = createTestBrand({ industry: 'education learning edtech' });
+    const social = generateBrandSocial(brand);
+    expect(
+      social.hashtags.some((h) => h === '#education' || h === '#learning' || h === '#edtech')
+    ).toBe(true);
+  });
+
+  it('falls back to generic hashtags for unknown industry', () => {
+    const brand = createTestBrand({ industry: 'xyz' });
+    const social = generateBrandSocial(brand);
+    expect(
+      social.hashtags.some((h) => h === '#brand' || h === '#business' || h === '#innovation')
+    ).toBe(true);
+  });
+
+  it('generates bio without tagline (undefined)', () => {
+    const brand = createTestBrand({ tagline: undefined });
+    const social = generateBrandSocial(brand);
+    expect(social.bioVariations.length).toBe(5);
+    social.bioVariations.forEach((bio) => expect(typeof bio).toBe('string'));
+  });
+
+  it('content calendar for elegant style includes Sunday', () => {
+    const brand = createTestBrand({ style: 'elegant' });
+    const social = generateBrandSocial(brand);
+    expect(Object.keys(social.contentCalendar)).toContain('Sunday');
+  });
+
+  it('content calendar for retro style includes Thursday', () => {
+    const brand = createTestBrand({ style: 'retro' });
+    const social = generateBrandSocial(brand);
+    expect(Object.keys(social.contentCalendar)).toContain('Thursday');
+  });
+
+  it('content calendar for organic style includes Sunday', () => {
+    const brand = createTestBrand({ style: 'organic' });
+    const social = generateBrandSocial(brand);
+    expect(Object.keys(social.contentCalendar)).toContain('Sunday');
   });
 });

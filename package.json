@@ -1,6 +1,6 @@
 {
   "name": "@forgespace/branding-mcp",
-  "version": "0.55.1",
+  "version": "0.55.2",
   "mcpName": "io.github.Forge-Space/branding-mcp",
   "description": "MCP server for AI-powered brand identity generation — color palettes, typography systems, design tokens, and brand guidelines with multi-format export",
   "type": "module",

@@ -119,4 +119,136 @@ describe('generateBrandSeo', () => {
     const hasBrandName = result.targetKeywords.some((k) => k.toLowerCase().includes('techcorp'));
     expect(hasBrandName).toBe(true);
   });
+
+  it('minimal style uses clean content-first approach', () => {
+    const minimalBrand: BrandIdentity = { ...brand, style: 'minimal' };
+    const result = generateBrandSeo(minimalBrand);
+    expect(result.seoApproach.toLowerCase()).toContain('clean');
+    expect(result.contentTypes).toBeDefined();
+    expect(result.linkBuildingStrategy).toBeDefined();
+    expect(result.technicalPriorities).toBeDefined();
+  });
+
+  it('playful style uses viral content hooks', () => {
+    const playfulBrand: BrandIdentity = { ...brand, style: 'playful' };
+    const result = generateBrandSeo(playfulBrand);
+    expect(result.seoApproach.toLowerCase()).toContain('viral');
+    expect(
+      result.contentTypes.some(
+        (t) => t.toLowerCase().includes('quiz') || t.toLowerCase().includes('interactive')
+      )
+    ).toBe(true);
+  });
+
+  it('corporate style uses enterprise SEO', () => {
+    const corporateBrand: BrandIdentity = { ...brand, style: 'corporate' };
+    const result = generateBrandSeo(corporateBrand);
+    expect(result.seoApproach.toLowerCase()).toContain('enterprise');
+    expect(
+      result.technicalPriorities.some(
+        (t) => t.toLowerCase().includes('sitemap') || t.toLowerCase().includes('hreflang')
+      )
+    ).toBe(true);
+  });
+
+  it('retro style uses niche community SEO', () => {
+    const retroBrand: BrandIdentity = { ...brand, style: 'retro' };
+    const result = generateBrandSeo(retroBrand);
+    expect(result.seoApproach.toLowerCase()).toContain('niche');
+    expect(
+      result.contentTypes.some(
+        (t) => t.toLowerCase().includes('nostalgia') || t.toLowerCase().includes('heritage')
+      )
+    ).toBe(true);
+  });
+
+  it('fashion industry keywords extraction', () => {
+    const fashionBrand: BrandIdentity = { ...brand, industry: 'fashion apparel clothing' };
+    const result = generateBrandSeo(fashionBrand);
+    expect(
+      result.targetKeywords.some(
+        (k) => k.toLowerCase().includes('fashion') || k.toLowerCase().includes('apparel')
+      )
+    ).toBe(true);
+  });
+
+  it('food industry keywords extraction', () => {
+    const foodBrand: BrandIdentity = { ...brand, industry: 'food restaurant dining' };
+    const result = generateBrandSeo(foodBrand);
+    expect(
+      result.targetKeywords.some(
+        (k) => k.toLowerCase().includes('food') || k.toLowerCase().includes('dining')
+      )
+    ).toBe(true);
+  });
+
+  it('health industry keywords extraction', () => {
+    const healthBrand: BrandIdentity = { ...brand, industry: 'health wellness fitness' };
+    const result = generateBrandSeo(healthBrand);
+    expect(
+      result.targetKeywords.some(
+        (k) => k.toLowerCase().includes('health') || k.toLowerCase().includes('wellness')
+      )
+    ).toBe(true);
+  });
+
+  it('finance industry keywords extraction', () => {
+    const financeBrand: BrandIdentity = { ...brand, industry: 'finance banking investment' };
+    const result = generateBrandSeo(financeBrand);
+    expect(
+      result.targetKeywords.some(
+        (k) => k.toLowerCase().includes('finance') || k.toLowerCase().includes('investment')
+      )
+    ).toBe(true);
+  });
+
+  it('education industry keywords extraction', () => {
+    const eduBrand: BrandIdentity = { ...brand, industry: 'education learning training' };
+    const result = generateBrandSeo(eduBrand);
+    expect(
+      result.targetKeywords.some(
+        (k) => k.toLowerCase().includes('education') || k.toLowerCase().includes('learning')
+      )
+    ).toBe(true);
+  });
+
+  it('generic industry falls back to first word', () => {
+    const genericBrand: BrandIdentity = { ...brand, industry: 'consulting services' };
+    const result = generateBrandSeo(genericBrand);
+    expect(result.targetKeywords.some((k) => k.toLowerCase().includes('consulting'))).toBe(true);
+  });
+
+  it('brand without tagline omits tagline from summary', () => {
+    const noTaglineBrand: BrandIdentity = { ...brand, tagline: '' };
+    const result = generateBrandSeo(noTaglineBrand);
+    expect(result.seoBriefSummary).not.toContain('"');
+  });
+
+  it('minimal link building includes guest posts', () => {
+    const minimalBrand: BrandIdentity = { ...brand, style: 'minimal' };
+    const result = generateBrandSeo(minimalBrand);
+    expect(result.linkBuildingStrategy.some((s) => s.toLowerCase().includes('guest'))).toBe(true);
+  });
+
+  it('retro local SEO mentions vintage', () => {
+    const retroBrand: BrandIdentity = { ...brand, style: 'retro' };
+    const result = generateBrandSeo(retroBrand);
+    expect(result.localSeoGuidance.toLowerCase()).toContain('vintage');
+  });
+
+  it('bold content calendar has weekly cadence', () => {
+    const boldBrand: BrandIdentity = { ...brand, style: 'bold' };
+    const result = generateBrandSeo(boldBrand);
+    expect(result.contentCalendar.some((entry) => entry.toLowerCase().startsWith('week'))).toBe(
+      true
+    );
+  });
+
+  it('elegant content calendar has monthly cadence', () => {
+    const elegantBrand: BrandIdentity = { ...brand, style: 'elegant' };
+    const result = generateBrandSeo(elegantBrand);
+    expect(result.contentCalendar.some((entry) => entry.toLowerCase().startsWith('month'))).toBe(
+      true
+    );
+  });
 });

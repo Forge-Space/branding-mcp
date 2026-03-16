@@ -33,7 +33,7 @@ jobs:
         run: npm ci
 
       - name: Initialize CodeQL
-        uses: github/codeql-action/init@v4
+        uses: github/codeql-action/init@f0213c31c702f929cf06ddb900ac315d246a8997 # v4.33.0
         with:
           languages: javascript-typescript
           queries: +security-and-quality
@@ -42,6 +42,6 @@ jobs:
         run: npm run build
 
       - name: Perform CodeQL Analysis
-        uses: github/codeql-action/analyze@v4
+        uses: github/codeql-action/analyze@f0213c31c702f929cf06ddb900ac315d246a8997 # v4.33.0
         with:
           category: '/language:javascript-typescript'

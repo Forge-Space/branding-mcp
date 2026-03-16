@@ -1,3 +1,4 @@
+import { describe, it, expect } from '@jest/globals';
 import { generateColorPalette } from '../../lib/branding-core/generators/color-palette.js';
 import { generateTypographySystem } from '../../lib/branding-core/generators/typography-system.js';
 import { generateSpacingScale } from '../../lib/branding-core/generators/spacing-scale.js';
@@ -130,6 +131,47 @@ describe('generateBrandEmail', () => {
     const corpBrand = createTestBrand({ style: 'corporate', industry: 'finance banking' });
     const result = generateBrandEmail(corpBrand);
     expect(result.copyTone.toLowerCase()).toContain('professional');
+    expect(result.campaigns.length).toBeGreaterThanOrEqual(2);
+  });
+
+  it('adapts to bold style', () => {
+    const boldBrand = createTestBrand({ style: 'bold' });
+    const result = generateBrandEmail(boldBrand);
+    expect(result.copyTone).toBeTruthy();
+    expect(result.subjectLineExamples.length).toBeGreaterThanOrEqual(4);
+  });
+
+  it('adapts to elegant style', () => {
+    const elegantBrand = createTestBrand({ style: 'elegant' });
+    const result = generateBrandEmail(elegantBrand);
+    expect(result.copyTone).toBeTruthy();
+    expect(result.campaigns.length).toBeGreaterThanOrEqual(2);
+  });
+
+  it('adapts to organic style', () => {
+    const organicBrand = createTestBrand({ style: 'organic' });
+    const result = generateBrandEmail(organicBrand);
+    expect(result.copyTone).toBeTruthy();
+    expect(result.campaigns.length).toBeGreaterThanOrEqual(2);
+  });
+
+  it('adapts to retro style', () => {
+    const retroBrand = createTestBrand({ style: 'retro' });
+    const result = generateBrandEmail(retroBrand);
+    expect(result.copyTone).toBeTruthy();
+    expect(result.campaigns.length).toBeGreaterThanOrEqual(2);
+  });
+
+  it('falls back gracefully for unknown style', () => {
+    const unknownBrand = createTestBrand({ style: 'unknown' as never });
+    const result = generateBrandEmail(unknownBrand);
+    expect(result.copyTone).toBeTruthy();
+    expect(result.campaigns.length).toBeGreaterThanOrEqual(2);
+  });
+
+  it('handles empty industry in campaigns', () => {
+    const noBrand = createTestBrand({ industry: '' });
+    const result = generateBrandEmail(noBrand);
     expect(result.campaigns.length).toBeGreaterThanOrEqual(2);
   });
 });

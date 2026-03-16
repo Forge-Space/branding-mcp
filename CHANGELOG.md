@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [0.55.2] - 2026-03-16
+
+### Improved
+
+- Branch coverage: added tests for all missing style branches in `brand-social.ts` (`elegant`, `corporate`, `organic`, `retro`, `playful`), `brand-email.ts`, and `brand-seo.ts` — test count 1056 → 1090
+- Security: SHA-pinned `github/codeql-action/init` and `github/codeql-action/analyze` to `v4.33.0` in `codeql.yml` to satisfy SonarCloud pinning requirement
+
 ## [0.55.1] - 2026-03-16
 
 ### Fixed
