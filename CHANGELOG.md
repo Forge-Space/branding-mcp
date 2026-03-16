@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [0.18.0] - 2026-03-16
+
+### Added
+
+- `generate_brand_retail` MCP tool: generates retail store experience guidelines including store concept, materials, lighting approach, signage types, display systems, customer journey touchpoints, floor plan guidance by zone, staff guidelines, window display brief, digital integration features, and sustainability features
+- `BrandRetailOutput` and `RetailWindowDisplay` TypeScript types exported from the package
+
 ## [0.17.0] - 2026-03-16
 
 ### Added

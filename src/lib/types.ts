@@ -564,3 +564,25 @@ export interface BrandPackagingOutput {
   unboxingExperience: string;
   packagingBriefSummary: string;
 }
+
+export interface RetailWindowDisplay {
+  concept: string;
+  changeFrequency: string;
+  keyElements: string[];
+  lightingApproach: string;
+}
+
+export interface BrandRetailOutput {
+  storeConcept: string;
+  materials: string[];
+  lighting: string;
+  signageTypes: string[];
+  displaySystems: string[];
+  customerJourney: string[];
+  floorPlanGuidance: Record<string, string>;
+  staffGuidelines: string[];
+  windowDisplay: RetailWindowDisplay;
+  digitalIntegration: string[];
+  sustainabilityFeatures: string[];
+  retailBriefSummary: string;
+}
