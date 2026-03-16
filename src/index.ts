@@ -87,6 +87,8 @@ export type {
   BrandInnovationOutput,
   IdeationMethod,
   InnovationPillar,
+  BrandGlobalisationOutput,
+  LocaleAdaptation,
 } from './lib/types.js';
 
 import { parseArgs } from 'node:util';
@@ -135,6 +137,7 @@ import { registerGenerateBrandTraining } from './tools/generate-brand-training.j
 import { registerGenerateBrandAnalytics } from './tools/generate-brand-analytics.js';
 import { registerGenerateBrandCompetitive } from './tools/generate-brand-competitive.js';
 import { registerGenerateBrandInnovation } from './tools/generate-brand-innovation.js';
+import { registerGenerateBrandGlobalisation } from './tools/generate-brand-globalisation.js';
 
 import { registerBrandTemplates } from './resources/brand-templates.js';
 import { registerBrandKnowledge } from './resources/brand-knowledge.js';
@@ -155,7 +158,7 @@ async function main(): Promise<void> {
 
   const server = new McpServer({
     name: '@forgespace/branding-mcp',
-    version: '0.37.0',
+    version: '0.38.0',
   });
 
   registerGenerateBrandIdentity(server);
@@ -197,6 +200,7 @@ async function main(): Promise<void> {
   registerGenerateBrandAnalytics(server);
   registerGenerateBrandCompetitive(server);
   registerGenerateBrandInnovation(server);
+  registerGenerateBrandGlobalisation(server);
 
   registerBrandTemplates(server);
   registerBrandKnowledge(server);

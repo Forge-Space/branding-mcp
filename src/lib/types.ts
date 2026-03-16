@@ -1007,3 +1007,24 @@ export interface BrandInnovationOutput {
   ipStrategy: string;
   innovationBriefSummary: string;
 }
+
+export interface LocaleAdaptation {
+  locale: string;
+  language: string;
+  rtl: boolean;
+  keyAdaptations: string[];
+  colourConsiderations: string;
+  typographyNotes: string;
+}
+
+export interface BrandGlobalisationOutput {
+  localisationApproach: string;
+  brandStandardsFlexibility: string;
+  culturalSensitivityFocus: string[];
+  priorityMarkets: string[];
+  localeAdaptations: LocaleAdaptation[];
+  translationGuidelines: string[];
+  internationalBrandArchitecture: string[];
+  complianceRequirements: string[];
+  globalisationBriefSummary: string;
+}

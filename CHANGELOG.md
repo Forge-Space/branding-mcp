@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [0.38.0] - 2026-03-16
+
+### Added
+
+- `generate_brand_globalisation` tool: international expansion guidelines with locale adaptations (en-US, ar-SA, zh-CN, de-DE, pt-BR), RTL support, translation guidelines, cultural sensitivity notes, brand architecture governance, and regional compliance requirements
+
 ## [0.37.0] - 2026-03-16
 
 ### Added
