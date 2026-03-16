@@ -15,4 +15,16 @@ describe('MCP server', () => {
     expect(mod.generateSvgLogo).toBeDefined();
     expect(mod.defaultLogoConfig).toBeDefined();
   });
+
+  it('v0.8.0 exports are available', async () => {
+    const mod = await import('../../lib/branding-core/index.js');
+    expect(mod.exportStyleDictionary).toBeDefined();
+    expect(mod.generateBrandVoice).toBeDefined();
+    expect(mod.generateGradientSystem).toBeDefined();
+    expect(mod.generateShadowSystem).toBeDefined();
+    expect(mod.generateBorderSystem).toBeDefined();
+    expect(mod.generateMotionSystem).toBeDefined();
+    expect(mod.generateFavicons).toBeDefined();
+    expect(mod.generateOgImage).toBeDefined();
+  });
 });
