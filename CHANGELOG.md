@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [0.24.0] - 2026-03-16
+
+### Added
+
+- `generate_brand_partnership` tool: partnership approach, ideal partner profiles, collaboration themes, screening criteria, 3 partnership tiers (Strategic/Preferred/Affiliate), 4 collaboration formats, outreach email template, negotiation principles, and red flags
+
 ## [0.23.0] - 2026-03-16
 
 ### Added

@@ -710,3 +710,35 @@ export interface BrandUxOutput {
   contentStrategy: Record<string, string[]>;
   uxBriefSummary: string;
 }
+
+// generate_brand_partnership types
+export interface PartnershipTier {
+  tier: string;
+  description: string;
+  commitment: string;
+  investmentLevel: string;
+  benefits: string[];
+  requirements: string[];
+}
+
+export interface CollaborationFormat {
+  format: string;
+  description: string;
+  timeline: string;
+  channels: string[];
+  kpis: string[];
+}
+
+export interface BrandPartnershipOutput {
+  partnershipApproach: string;
+  idealPartnerProfiles: string[];
+  collaborationThemes: string[];
+  partnerValueExchange: string;
+  screeningCriteria: string[];
+  partnershipTiers: PartnershipTier[];
+  collaborationFormats: CollaborationFormat[];
+  outreachTemplate: string;
+  negotiationPrinciples: string[];
+  redFlags: string[];
+  partnershipBriefSummary: string;
+}

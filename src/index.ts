@@ -57,6 +57,9 @@ export type {
   BrandContentOutput,
   ContentPillarItem,
   ContentCalendarWeekItem,
+  BrandPartnershipOutput,
+  PartnershipTier,
+  CollaborationFormat,
 } from './lib/types.js';
 
 import { parseArgs } from 'node:util';
@@ -91,6 +94,7 @@ import { registerGenerateBrandInterior } from './tools/generate-brand-interior.j
 import { registerGenerateBrandDigital } from './tools/generate-brand-digital.js';
 import { registerGenerateBrandUx } from './tools/generate-brand-ux.js';
 import { registerGenerateBrandContent } from './tools/generate-brand-content.js';
+import { registerGenerateBrandPartnership } from './tools/generate-brand-partnership.js';
 
 import { registerBrandTemplates } from './resources/brand-templates.js';
 import { registerBrandKnowledge } from './resources/brand-knowledge.js';
@@ -111,7 +115,7 @@ async function main(): Promise<void> {
 
   const server = new McpServer({
     name: '@forgespace/branding-mcp',
-    version: '0.23.0',
+    version: '0.24.0',
   });
 
   registerGenerateBrandIdentity(server);
@@ -139,6 +143,7 @@ async function main(): Promise<void> {
   registerGenerateBrandDigital(server);
   registerGenerateBrandUx(server);
   registerGenerateBrandContent(server);
+  registerGenerateBrandPartnership(server);
 
   registerBrandTemplates(server);
   registerBrandKnowledge(server);
