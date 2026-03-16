@@ -845,3 +845,15 @@ export interface BrandInvestorOutput {
   faqAnswers: Record<string, string>;
   investorBriefSummary: string;
 }
+
+export interface BrandFranchiseOutput {
+  standardsTone: string;
+  onboardingProgramme: string[];
+  complianceRequirements: string[];
+  approvedSupplierFocus: string;
+  licensingTerms: Record<string, string>;
+  operationsManualOutline: string[];
+  brandProtectionPolicies: string[];
+  franchiseeSupport: string[];
+  franchiseBriefSummary: string;
+}

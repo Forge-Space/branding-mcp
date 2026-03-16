@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [0.31.0] - 2026-03-16
+
+### Added
+
+- `generate_brand_franchise` tool: franchise brand standards with onboarding programme, compliance requirements, licensing terms, operations manual outline, brand protection policies, approved supplier focus, and franchisee support — with BrandFranchiseOutput type
+
 ## [0.30.0] - 2026-03-16
 
 ### Added
