@@ -306,3 +306,23 @@ export interface BrandNamingOutput {
   hashtags: string[];
   namingRationale: string;
 }
+
+export interface BrandMotionPrinciple {
+  name: string;
+  description: string;
+  cssExample: string;
+}
+
+export interface BrandMotionOutput {
+  motionSystem: MotionSystem;
+  principles: BrandMotionPrinciple[];
+  animationScale: 'none' | 'minimal' | 'moderate' | 'expressive' | 'dramatic';
+  preferredEasing: string;
+  guidelines: {
+    microInteractions: string;
+    pageTransitions: string;
+    loadingStates: string;
+    feedback: string;
+  };
+  cssCustomProperties: string;
+}

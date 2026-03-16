@@ -4,6 +4,17 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [0.10.0] - 2026-03-16
+
+### Added
+
+- **`generate_brand_motion` tool** — New MCP tool that generates a complete motion design system
+  for a brand. Returns timing tokens, easing curves (cubic-bezier), transition presets, animation
+  scale classification (none/minimal/moderate/expressive/dramatic), brand-specific design principles,
+  per-style usage guidelines (micro-interactions, page transitions, loading states, feedback), and
+  ready-to-use CSS custom properties
+- **`BrandMotionOutput`, `BrandMotionPrinciple` types** exported from package
+
 ## [0.9.0] - 2026-03-16
 
 ### Added
