@@ -586,3 +586,27 @@ export interface BrandRetailOutput {
   sustainabilityFeatures: string[];
   retailBriefSummary: string;
 }
+
+// Event
+export interface EventFormat {
+  type: string;
+  description: string;
+  capacity: string;
+  duration: string;
+  setupNotes: string;
+}
+
+export interface BrandEventOutput {
+  eventConcept: string;
+  recommendedVenues: string[];
+  decorTheme: string[];
+  cateringApproach: string;
+  entertainmentIdeas: string[];
+  agendaStructure: string;
+  invitationStyle: string;
+  eventFormats: EventFormat[];
+  brandingChecklist: string[];
+  successMetrics: Record<string, string>;
+  budgetGuidance: Record<string, string>;
+  eventBriefSummary: string;
+}

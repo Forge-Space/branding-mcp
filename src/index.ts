@@ -46,6 +46,8 @@ export type {
   PrintAccessibility,
   BrandRetailOutput,
   RetailWindowDisplay,
+  BrandEventOutput,
+  EventFormat,
 } from './lib/types.js';
 
 import { parseArgs } from 'node:util';
@@ -75,6 +77,7 @@ import { registerGenerateBrandCampaign } from './tools/generate-brand-campaign.j
 import { registerGenerateBrandPackaging } from './tools/generate-brand-packaging.js';
 import { registerGenerateBrandPrint } from './tools/generate-brand-print.js';
 import { registerGenerateBrandRetail } from './tools/generate-brand-retail.js';
+import { registerGenerateBrandEvent } from './tools/generate-brand-event.js';
 
 import { registerBrandTemplates } from './resources/brand-templates.js';
 import { registerBrandKnowledge } from './resources/brand-knowledge.js';
@@ -95,7 +98,7 @@ async function main(): Promise<void> {
 
   const server = new McpServer({
     name: '@forgespace/branding-mcp',
-    version: '0.18.0',
+    version: '0.19.0',
   });
 
   registerGenerateBrandIdentity(server);
@@ -118,6 +121,7 @@ async function main(): Promise<void> {
   registerGenerateBrandPackaging(server);
   registerGenerateBrandPrint(server);
   registerGenerateBrandRetail(server);
+  registerGenerateBrandEvent(server);
 
   registerBrandTemplates(server);
   registerBrandKnowledge(server);

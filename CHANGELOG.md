@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [0.19.0] - 2026-03-16
+
+### Added
+
+- `generate_brand_event` MCP tool: generates comprehensive event planning guidelines including event concept, recommended venues, decor themes, catering approach, entertainment ideas, agenda structure, invitation style, 5 event format templates (brand launch, customer appreciation, industry networking, internal team event, pop-up activation), branding checklist, success metrics, and budget allocation guidance
+- `BrandEventOutput` and `EventFormat` TypeScript types exported from the package
+
 ## [0.18.0] - 2026-03-16
 
 ### Added

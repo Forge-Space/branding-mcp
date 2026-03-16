@@ -38,3 +38,4 @@ export { generateBrandCampaign } from './generators/brand-campaign.js';
 export { generateBrandPackaging } from './generators/brand-packaging.js';
 export { generateBrandPrint } from './generators/brand-print.js';
 export { generateBrandRetail } from './generators/brand-retail.js';
+export { generateBrandEvent } from './generators/brand-event.js';
