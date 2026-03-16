@@ -60,6 +60,9 @@ export type {
   BrandPartnershipOutput,
   PartnershipTier,
   CollaborationFormat,
+  BrandPrOutput,
+  PressRelease,
+  MediaContact,
 } from './lib/types.js';
 
 import { parseArgs } from 'node:util';
@@ -95,6 +98,7 @@ import { registerGenerateBrandDigital } from './tools/generate-brand-digital.js'
 import { registerGenerateBrandUx } from './tools/generate-brand-ux.js';
 import { registerGenerateBrandContent } from './tools/generate-brand-content.js';
 import { registerGenerateBrandPartnership } from './tools/generate-brand-partnership.js';
+import { registerGenerateBrandPr } from './tools/generate-brand-pr.js';
 
 import { registerBrandTemplates } from './resources/brand-templates.js';
 import { registerBrandKnowledge } from './resources/brand-knowledge.js';
@@ -115,7 +119,7 @@ async function main(): Promise<void> {
 
   const server = new McpServer({
     name: '@forgespace/branding-mcp',
-    version: '0.24.0',
+    version: '0.25.0',
   });
 
   registerGenerateBrandIdentity(server);
@@ -144,6 +148,7 @@ async function main(): Promise<void> {
   registerGenerateBrandUx(server);
   registerGenerateBrandContent(server);
   registerGenerateBrandPartnership(server);
+  registerGenerateBrandPr(server);
 
   registerBrandTemplates(server);
   registerBrandKnowledge(server);

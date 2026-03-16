@@ -44,3 +44,4 @@ export { generateBrandDigital } from './generators/brand-digital.js';
 export { generateBrandUx } from './generators/brand-ux.js';
 export { generateBrandContent } from './generators/brand-content.js';
 export { generateBrandPartnership } from './generators/brand-partnership.js';
+export { generateBrandPr } from './generators/brand-pr.js';

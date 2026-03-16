@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [0.25.0] - 2026-03-16
+
+### Added
+
+- `generate_brand_pr` tool: PR approach, media angles, headline formula, 3 press release templates (product launch/milestone/partnership), media contacts by tier, media kit contents, spokesperson guidelines, crisis protocol, embargo practices, and measurement KPIs
+
 ## [0.24.0] - 2026-03-16
 
 ### Added

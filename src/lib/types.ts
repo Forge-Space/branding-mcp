@@ -742,3 +742,34 @@ export interface BrandPartnershipOutput {
   redFlags: string[];
   partnershipBriefSummary: string;
 }
+
+export interface PressRelease {
+  type: string;
+  headline: string;
+  subheadline: string;
+  dateline: string;
+  boilerplate: string;
+  quoteGuidance: string;
+  callToAction: string;
+}
+
+export interface MediaContact {
+  tier: string;
+  outlet: string;
+  angle: string;
+  preferredFormat: string;
+}
+
+export interface BrandPrOutput {
+  prApproach: string;
+  mediaAngles: string[];
+  headlineFormula: string;
+  pressReleases: PressRelease[];
+  mediaContacts: MediaContact[];
+  mediaKitContents: string[];
+  spokespeople: string[];
+  crisisProtocol: string[];
+  embargoPractices: string[];
+  measurementKpis: string[];
+  prBriefSummary: string;
+}
