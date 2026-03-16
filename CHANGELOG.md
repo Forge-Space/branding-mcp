@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [0.46.0] - 2026-03-16
+
+### Added
+
+- `generate_brand_loyalty` MCP tool: complete loyalty programme strategy with tiers, earn/redeem mechanics, engagement tactics, expiry policies, and analytics KPIs
+
 ## [0.45.0] - 2026-03-16
 
 ### Added

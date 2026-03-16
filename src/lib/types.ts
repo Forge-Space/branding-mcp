@@ -1151,3 +1151,20 @@ export interface BrandChatbotOutput {
   accessibilityGuidelines: string[];
   chatbotBriefSummary: string;
 }
+
+export interface LoyaltyTierBenefit {
+  tier: string;
+  benefits: string[];
+}
+
+export interface BrandLoyaltyOutput {
+  programApproach: string;
+  tiers: string[];
+  tierBenefits: LoyaltyTierBenefit[];
+  earnMechanisms: string[];
+  redeemOptions: string[];
+  engagementTactics: string[];
+  expiryPolicy: string;
+  analyticsKpis: Record<string, string>;
+  loyaltyBriefSummary: string;
+}

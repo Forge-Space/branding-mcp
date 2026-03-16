@@ -101,6 +101,8 @@ export type {
   BrandAffiliateOutput,
   BrandSeoOutput,
   BrandChatbotOutput,
+  LoyaltyTierBenefit,
+  BrandLoyaltyOutput,
 } from './lib/types.js';
 
 import { parseArgs } from 'node:util';
@@ -157,6 +159,7 @@ import { registerGenerateBrandInfluencer } from './tools/generate-brand-influenc
 import { registerGenerateBrandAffiliate } from './tools/generate-brand-affiliate.js';
 import { registerGenerateBrandSeo } from './tools/generate-brand-seo.js';
 import { registerGenerateBrandChatbot } from './tools/generate-brand-chatbot.js';
+import { registerGenerateBrandLoyalty } from './tools/generate-brand-loyalty.js';
 
 import { registerBrandTemplates } from './resources/brand-templates.js';
 import { registerBrandKnowledge } from './resources/brand-knowledge.js';
@@ -177,7 +180,7 @@ async function main(): Promise<void> {
 
   const server = new McpServer({
     name: '@forgespace/branding-mcp',
-    version: '0.45.0',
+    version: '0.46.0',
   });
 
   registerGenerateBrandIdentity(server);
@@ -227,6 +230,7 @@ async function main(): Promise<void> {
   registerGenerateBrandAffiliate(server);
   registerGenerateBrandSeo(server);
   registerGenerateBrandChatbot(server);
+  registerGenerateBrandLoyalty(server);
 
   registerBrandTemplates(server);
   registerBrandKnowledge(server);
