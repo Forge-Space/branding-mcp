@@ -51,3 +51,4 @@ export { generateBrandSustainability } from './generators/brand-sustainability.j
 export { generateBrandEmployer } from './generators/brand-employer.js';
 export { generateBrandInvestor } from './generators/brand-investor.js';
 export { generateBrandFranchise } from './generators/brand-franchise.js';
+export { generateBrandCommunity } from './generators/brand-community.js';

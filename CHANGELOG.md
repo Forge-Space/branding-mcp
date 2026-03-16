@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [0.32.0] - 2026-03-16
+
+### Added
+
+- `generate_brand_community` tool: community strategy with platforms, engagement tactics, moderation approach, member recognition programme, growth levers, community guidelines, onboarding flow, and success metrics aligned to brand style — with BrandCommunityOutput type
+
 ## [0.31.0] - 2026-03-16
 
 ### Added

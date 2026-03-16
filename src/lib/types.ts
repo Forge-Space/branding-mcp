@@ -857,3 +857,16 @@ export interface BrandFranchiseOutput {
   franchiseeSupport: string[];
   franchiseBriefSummary: string;
 }
+
+export interface BrandCommunityOutput {
+  communityApproach: string;
+  platforms: string[];
+  engagementTactics: string[];
+  moderationApproach: string;
+  memberRecognition: string[];
+  growthLevers: string[];
+  communityGuidelines: string[];
+  onboardingFlow: string[];
+  successMetrics: Record<string, string>;
+  communityBriefSummary: string;
+}
