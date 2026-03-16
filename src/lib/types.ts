@@ -430,3 +430,35 @@ export interface BrandEmailOutput {
   footerElements: string[];
   accessibilityNotes: string[];
 }
+
+// Photography
+export interface PhotoCompositionRule {
+  rule: string;
+  example: string;
+}
+
+export interface PhotoColorTreatment {
+  palette: string;
+  saturation: string;
+  contrast: string;
+  grading: string;
+  filters: string[];
+}
+
+export interface PhotoStyleGuide {
+  aesthetic: string;
+  lighting: string;
+  mood: string;
+  subjects: string[];
+  compositionRules: PhotoCompositionRule[];
+  colorTreatment: PhotoColorTreatment;
+  doAndAvoid: { do: string[]; avoid: string[] };
+}
+
+export interface BrandPhotographyOutput {
+  styleGuide: PhotoStyleGuide;
+  moodBoardKeywords: string[];
+  useCaseGuidelines: Record<string, string>;
+  technicalRequirements: Record<string, string>;
+  shootBriefSummary: string;
+}

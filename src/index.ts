@@ -31,6 +31,10 @@ export type {
   BrandEmailOutput,
   EmailTemplate,
   EmailCampaign,
+  BrandPhotographyOutput,
+  PhotoStyleGuide,
+  PhotoCompositionRule,
+  PhotoColorTreatment,
 } from './lib/types.js';
 
 import { parseArgs } from 'node:util';
@@ -55,6 +59,7 @@ import { registerGenerateBrandMotion } from './tools/generate-brand-motion.js';
 import { registerGenerateBrandSocial } from './tools/generate-brand-social.js';
 import { registerGenerateBrandPitch } from './tools/generate-brand-pitch.js';
 import { registerGenerateBrandEmail } from './tools/generate-brand-email.js';
+import { registerGenerateBrandPhotography } from './tools/generate-brand-photography.js';
 
 import { registerBrandTemplates } from './resources/brand-templates.js';
 import { registerBrandKnowledge } from './resources/brand-knowledge.js';
@@ -75,7 +80,7 @@ async function main(): Promise<void> {
 
   const server = new McpServer({
     name: '@forgespace/branding-mcp',
-    version: '0.13.0',
+    version: '0.14.0',
   });
 
   registerGenerateBrandIdentity(server);
@@ -93,6 +98,7 @@ async function main(): Promise<void> {
   registerGenerateBrandSocial(server);
   registerGenerateBrandPitch(server);
   registerGenerateBrandEmail(server);
+  registerGenerateBrandPhotography(server);
 
   registerBrandTemplates(server);
   registerBrandKnowledge(server);

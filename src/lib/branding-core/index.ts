@@ -33,3 +33,4 @@ export { interpretWithKeywords } from './ai/keyword-interpreter.js';
 export { applyIntent } from './ai/intent-applier.js';
 export type { BrandIntent, ColorIntent, TypographyIntent, InterpreterOptions } from './ai/types.js';
 export type { InterpreterStrategy } from './ai/brand-interpreter.js';
+export { generateBrandPhotography } from './generators/brand-photography.js';

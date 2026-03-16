@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [0.14.0] - 2026-03-16
+
+### Added
+
+- **`generate_brand_photography` tool** — New MCP tool that generates a brand photography style
+  guide including aesthetic direction, lighting recommendations, composition rules, color treatment,
+  mood board keywords, use-case guidelines (website hero, social, email, print, presentations,
+  product catalog), and technical requirements. Adapts to all 8 brand styles. New types exported:
+  `BrandPhotographyOutput`, `PhotoStyleGuide`, `PhotoCompositionRule`, `PhotoColorTreatment`
+
 ## [0.13.0] - 2026-03-16
 
 ### Added
