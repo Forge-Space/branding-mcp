@@ -100,7 +100,6 @@ const STYLE_MOAT_TYPE: Record<BrandStyle, string> = {
 // ------- builders -------
 
 function buildCompetitorProfiles(brand: BrandIdentity): CompetitorProfile[] {
-  const style = brand.style ?? 'minimal';
   const industry = brand.industry.toLowerCase();
 
   const archetypes: Array<{

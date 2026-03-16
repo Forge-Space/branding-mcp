@@ -106,7 +106,6 @@ const STYLE_FEEDBACK_CHANNELS: Record<BrandStyle, string[]> = {
 };
 
 function buildPersonas(brand: BrandIdentity): CustomerPersona[] {
-  const style = brand.style ?? 'minimal';
   const industry = brand.industry.toLowerCase();
 
   const isTech =

@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [0.55.0] - 2026-03-16
+
+### Added
+
+- `generate_brand_fintech` MCP tool — fintech-specific brand strategy with core products, trust signals, regulatory framework (FCA/PSD2/GDPR/MiFID II), security posture, messaging pillars, compliance checklist, and user journey; style-aware with tech/corporate/organic extras
+
 ## [0.54.0] - 2026-03-16
 
 ### Added

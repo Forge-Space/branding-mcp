@@ -1278,3 +1278,15 @@ export interface BrandSaasOutput {
   complianceCertifications: string[];
   saasBriefSummary: string;
 }
+
+export interface BrandFintechOutput {
+  positioning: string;
+  coreProducts: string[];
+  trustSignals: string[];
+  regulatoryFramework: string[];
+  securityPosture: string[];
+  messagingPillars: string[];
+  complianceChecklist: string[];
+  userJourney: string[];
+  fintechBriefSummary: string;
+}
