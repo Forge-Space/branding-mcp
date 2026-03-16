@@ -148,6 +148,14 @@ describe('applyIntent', () => {
     expect(updated.colors).toEqual(brand.colors);
     expect(updated.typography).toEqual(brand.typography);
   });
+
+  it('infers sans-serif category when headingCategory is absent and font is non-serif', () => {
+    const brand = createTestBrand();
+    // brand.typography.headingFont is 'Inter' (non-serif); no headingCategory in intent
+    // intent-applier.ts line 47: (headingCategory ?? brand.typography.headingFont.includes('serif')) → false → 'sans-serif'
+    const updated = applyIntent(brand, { typography: {} });
+    expect(updated.typography).toBeDefined();
+  });
 });
 
 describe('interpretFeedback (strategy selection)', () => {
@@ -167,6 +175,13 @@ describe('interpretFeedback (strategy selection)', () => {
   it('falls back to keywords when ai strategy has no key', async () => {
     const brand = createTestBrand();
     const intent = await interpretFeedback('warm', 'colors', brand, 'ai', {});
+    expect(intent.reasoning).toContain('Keyword');
+  });
+
+  it('uses keywords when strategy is auto but options has no anthropicApiKey', async () => {
+    const brand = createTestBrand();
+    // brand-interpreter.ts line 16: strategy=auto && !options.anthropicApiKey → useAi=false
+    const intent = await interpretFeedback('warm', 'colors', brand, 'auto', {});
     expect(intent.reasoning).toContain('Keyword');
   });
 });

@@ -126,4 +126,66 @@ describe('generateOgImage', () => {
     expect(result.svg).not.toMatch(/undefined/);
     expect(result.svg).toBeTruthy();
   });
+
+  it('article template with logo icon renders logo section', () => {
+    const brandWithIcon: BrandIdentity = {
+      ...brand,
+      logo: {
+        ...brand.logo!,
+        variants: {
+          ...brand.logo!.variants!,
+          icon: '<svg xmlns="http://www.w3.org/2000/svg"><circle r="10"/></svg>',
+        },
+      },
+    };
+    const result = generateOgImage(brandWithIcon, 'article', 'Article', 'Sub');
+    expect(result.svg).toContain('Article');
+    expect(result.svg).toContain('<g transform=');
+  });
+
+  it('article template without logo icon omits logo section', () => {
+    const brandNoIcon: BrandIdentity = {
+      ...brand,
+      logo: {
+        ...brand.logo!,
+        variants: {
+          ...brand.logo!.variants!,
+          icon: '',
+        },
+      },
+    };
+    const result = generateOgImage(brandNoIcon, 'article', 'Article');
+    expect(result.svg).toContain('Article');
+  });
+
+  it('social template with logo icon renders logo section', () => {
+    const brandWithIcon: BrandIdentity = {
+      ...brand,
+      logo: {
+        ...brand.logo!,
+        variants: {
+          ...brand.logo!.variants!,
+          icon: '<svg xmlns="http://www.w3.org/2000/svg"><circle r="10"/></svg>',
+        },
+      },
+    };
+    const result = generateOgImage(brandWithIcon, 'social', 'Social Title');
+    expect(result.svg).toContain('Social Title');
+    expect(result.svg).toContain('<g transform=');
+  });
+
+  it('social template without logo icon omits logo section', () => {
+    const brandNoIcon: BrandIdentity = {
+      ...brand,
+      logo: {
+        ...brand.logo!,
+        variants: {
+          ...brand.logo!.variants!,
+          icon: '',
+        },
+      },
+    };
+    const result = generateOgImage(brandNoIcon, 'social');
+    expect(result.svg).toBeTruthy();
+  });
 });
