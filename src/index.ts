@@ -97,6 +97,8 @@ export type {
   BrandVideoOutput,
   InfluencerTier,
   BrandInfluencerOutput,
+  AffiliateCommissionTier,
+  BrandAffiliateOutput,
 } from './lib/types.js';
 
 import { parseArgs } from 'node:util';
@@ -150,6 +152,7 @@ import { registerGenerateBrandCrisis } from './tools/generate-brand-crisis.js';
 import { registerGenerateBrandAudio } from './tools/generate-brand-audio.js';
 import { registerGenerateBrandVideo } from './tools/generate-brand-video.js';
 import { registerGenerateBrandInfluencer } from './tools/generate-brand-influencer.js';
+import { registerGenerateBrandAffiliate } from './tools/generate-brand-affiliate.js';
 
 import { registerBrandTemplates } from './resources/brand-templates.js';
 import { registerBrandKnowledge } from './resources/brand-knowledge.js';
@@ -170,7 +173,7 @@ async function main(): Promise<void> {
 
   const server = new McpServer({
     name: '@forgespace/branding-mcp',
-    version: '0.42.0',
+    version: '0.43.0',
   });
 
   registerGenerateBrandIdentity(server);
@@ -217,6 +220,7 @@ async function main(): Promise<void> {
   registerGenerateBrandAudio(server);
   registerGenerateBrandVideo(server);
   registerGenerateBrandInfluencer(server);
+  registerGenerateBrandAffiliate(server);
 
   registerBrandTemplates(server);
   registerBrandKnowledge(server);

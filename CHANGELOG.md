@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [0.43.0] - 2026-03-16
+
+### Added
+
+- `generate_brand_affiliate` tool: affiliate programme strategy with commission tiers (Starter/Growth/Elite), content guidelines, recruitment channels, compliance requirements (FTC/ASA + style-specific), payment structure, tracking tools, and onboarding steps
+- `AffiliateCommissionTier` and `BrandAffiliateOutput` TypeScript interfaces exported from package
+
 ## [0.42.0] - 2026-03-16
 
 ### Added

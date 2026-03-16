@@ -1105,3 +1105,24 @@ export interface BrandInfluencerOutput {
   disclosureGuidelines: string[];
   influencerBriefSummary: string;
 }
+
+export interface AffiliateCommissionTier {
+  tier: string;
+  commissionRate: string;
+  minimumSales: number;
+  cookieDuration: string;
+  paymentThreshold: string;
+  benefits: string[];
+}
+
+export interface BrandAffiliateOutput {
+  programApproach: string;
+  commissionTiers: AffiliateCommissionTier[];
+  contentGuidelines: string[];
+  recruitmentChannels: string[];
+  complianceRequirements: string[];
+  paymentStructure: Record<string, string>;
+  trackingTools: string[];
+  onboardingSteps: string[];
+  affiliateBriefSummary: string;
+}
