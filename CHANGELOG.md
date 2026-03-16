@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [0.52.0] - 2026-03-16
+
+### Added
+
+- `generate_brand_subscription` tool: subscription model strategy including pricing tiers, billing cadence, free trial offer, retention tactics, churn prevention flow, onboarding journey, and accessibility notes
+
 ## [0.51.0] - 2026-03-16
 
 ### Added

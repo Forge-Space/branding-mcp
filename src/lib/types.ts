@@ -1232,3 +1232,24 @@ export interface BrandMarketplaceOutput {
   successMetrics: Record<string, string>;
   marketplaceBriefSummary: string;
 }
+
+export interface SubscriptionPricingTier {
+  tier: string;
+  price: string;
+  features: string[];
+  cta: string;
+}
+
+export interface BrandSubscriptionOutput {
+  modelApproach: string;
+  tiers: string[];
+  pricingTiers: SubscriptionPricingTier[];
+  billingCadence: string;
+  freeTrialOffer: string;
+  retentionTactics: string[];
+  churnPreventionFlow: string[];
+  onboardingFlow: string[];
+  accessibilityNotes: string[];
+  copyTone: string;
+  subscriptionBriefSummary: string;
+}

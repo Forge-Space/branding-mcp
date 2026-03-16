@@ -72,3 +72,5 @@ export { generateBrandWebinar } from './generators/brand-webinar.js';
 export { generateBrandNewsletter } from './generators/brand-newsletter.js';
 export { generateBrandEcommerce } from './generators/brand-ecommerce.js';
 export { generateBrandMarketplace } from './generators/brand-marketplace.js';
+
+export { generateBrandSubscription } from './generators/brand-subscription.js';
