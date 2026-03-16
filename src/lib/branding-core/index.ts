@@ -36,3 +36,4 @@ export type { InterpreterStrategy } from './ai/brand-interpreter.js';
 export { generateBrandPhotography } from './generators/brand-photography.js';
 export { generateBrandCampaign } from './generators/brand-campaign.js';
 export { generateBrandPackaging } from './generators/brand-packaging.js';
+export { generateBrandPrint } from './generators/brand-print.js';

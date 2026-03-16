@@ -40,6 +40,10 @@ export type {
   CampaignPhase,
   BrandPackagingOutput,
   PackagingFormat,
+  BrandPrintOutput,
+  PrintTemplate,
+  PrintColourSpec,
+  PrintAccessibility,
 } from './lib/types.js';
 
 import { parseArgs } from 'node:util';
@@ -67,6 +71,7 @@ import { registerGenerateBrandEmail } from './tools/generate-brand-email.js';
 import { registerGenerateBrandPhotography } from './tools/generate-brand-photography.js';
 import { registerGenerateBrandCampaign } from './tools/generate-brand-campaign.js';
 import { registerGenerateBrandPackaging } from './tools/generate-brand-packaging.js';
+import { registerGenerateBrandPrint } from './tools/generate-brand-print.js';
 
 import { registerBrandTemplates } from './resources/brand-templates.js';
 import { registerBrandKnowledge } from './resources/brand-knowledge.js';
@@ -87,7 +92,7 @@ async function main(): Promise<void> {
 
   const server = new McpServer({
     name: '@forgespace/branding-mcp',
-    version: '0.16.0',
+    version: '0.17.0',
   });
 
   registerGenerateBrandIdentity(server);
@@ -108,6 +113,7 @@ async function main(): Promise<void> {
   registerGenerateBrandPhotography(server);
   registerGenerateBrandCampaign(server);
   registerGenerateBrandPackaging(server);
+  registerGenerateBrandPrint(server);
 
   registerBrandTemplates(server);
   registerBrandKnowledge(server);

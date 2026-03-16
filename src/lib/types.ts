@@ -496,6 +496,51 @@ export interface BrandPhotographyOutput {
   shootBriefSummary: string;
 }
 
+// Print
+export interface PrintTemplate {
+  name: string;
+  description: string;
+  dimensions: string;
+  bleed: string;
+  safeZone: string;
+  columns: number;
+  margins: string;
+  primaryUse: string;
+}
+
+export interface PrintColourSpec {
+  mode: string;
+  primaryColour: string;
+  secondaryColour: string;
+  accentColour: string;
+  blackType: string;
+  whiteSpace: string;
+  pantoneBridge: string;
+}
+
+export interface PrintAccessibility {
+  minimumFontSize: string;
+  bodyTextMinContrast: string;
+  headlineMinContrast: string;
+  printOnColourMinSize: string;
+  reverseTypeMinWeight: string;
+  notes: string[];
+}
+
+export interface BrandPrintOutput {
+  gridSystem: string;
+  typographyHierarchy: string;
+  paperStocks: string[];
+  printFinishes: string[];
+  colourApproach: string;
+  imageryGuidelines: string;
+  templates: PrintTemplate[];
+  colourSpec: PrintColourSpec;
+  accessibility: PrintAccessibility;
+  productionNotes: string[];
+  printBriefSummary: string;
+}
+
 // Packaging
 export interface PackagingFormat {
   type: string;

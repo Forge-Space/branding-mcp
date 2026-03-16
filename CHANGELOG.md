@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [0.17.0] - 2026-03-16
+
+### Added
+
+- `generate_brand_print` MCP tool: generates comprehensive print design guidelines including grid system, typography hierarchy, paper stocks, print finishes, colour approach, imagery guidelines, 5 standard templates (A4, A5, DL flyer, business card, A0 poster), CMYK colour specs with brand colour bridge, accessibility notes (contrast ratios, minimum font sizes), and a 6-point production checklist
+- `BrandPrintOutput`, `PrintTemplate`, `PrintColourSpec`, and `PrintAccessibility` TypeScript types exported from the package
+
 ## [0.16.0] - 2026-03-16
 
 ### Added
