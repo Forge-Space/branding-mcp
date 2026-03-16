@@ -60,3 +60,4 @@ export { generateBrandInnovation } from './generators/brand-innovation.js';
 export { generateBrandGlobalisation } from './generators/brand-globalisation.js';
 export { generateBrandCrisis } from './generators/brand-crisis.js';
 export { generateBrandAudio } from './generators/brand-audio.js';
+export { generateBrandVideo } from './generators/brand-video.js';

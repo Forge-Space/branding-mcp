@@ -1067,3 +1067,20 @@ export interface BrandAudioOutput {
   accessibilityNotes: string[];
   audioBriefSummary: string;
 }
+
+export interface VideoProductionNote {
+  category: string;
+  notes: string[];
+}
+
+export interface BrandVideoOutput {
+  videoAesthetic: string;
+  pacing: string;
+  recommendedFormats: string[];
+  colorGrade: string;
+  typographyMotion: string;
+  musicDirection: string[];
+  callToActionApproach: string;
+  productionNotes: VideoProductionNote[];
+  videoBriefSummary: string;
+}

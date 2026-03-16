@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [0.41.0] - 2026-03-16
+
+### Added
+
+- `generate_brand_video` tool: video aesthetic, pacing, recommended formats, colour grade, typography motion, music direction, CTA approach, and production notes for Pre-production, Production, Post-production, and Distribution phases.
+
 ## [0.40.0] - 2026-03-16
 
 ### Added
