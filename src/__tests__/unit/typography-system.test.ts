@@ -68,4 +68,11 @@ describe('generateTypographySystem', () => {
     expect(system.bodyFont).toBeTruthy();
     expect(system.headingFont).not.toBe(system.bodyFont);
   });
+
+  it('falls back to Inter/Inter when no pairing found for category combo', () => {
+    // 'display' heading + 'mono' body has no entry in FONT_PAIRINGS → !options?.length → ['Inter','Inter']
+    const system = generateTypographySystem('display' as never, 'mono' as never);
+    expect(system.headingFont).toBe('Inter');
+    expect(system.bodyFont).toBe('Inter');
+  });
 });

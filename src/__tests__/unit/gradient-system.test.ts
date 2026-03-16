@@ -119,4 +119,13 @@ describe('generateGradientSystem', () => {
     const bold = generateGradientSystem(colors, 'bold');
     expect(minimal.presets.hero.cssValue).not.toBe(bold.presets.hero.cssValue);
   });
+
+  it('falls back to default neutral colors when neutral array is empty', () => {
+    const emptyNeutralColors = { ...colors, neutral: [] };
+    const system = generateGradientSystem(emptyNeutralColors, 'minimal');
+    expect(system.presets.card.cssValue).toBeTruthy();
+    expect(system.presets.background.cssValue).toBeTruthy();
+    expect(system.presets.card.cssValue).toContain('#f5f5f5');
+    expect(system.presets.background.cssValue).toContain('#1a1a1a');
+  });
 });

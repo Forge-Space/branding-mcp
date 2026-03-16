@@ -178,4 +178,9 @@ describe('generateBrandVoice', () => {
     const guidelines = generateBrandVoice(createTestBrand({ industry: 'bakery' }));
     expect(guidelines.audience).toBe('general');
   });
+
+  it('falls back to professional tone for unknown style', () => {
+    const guidelines = generateBrandVoice(createTestBrand({ style: 'unknown' as never }));
+    expect(guidelines.tone).toBe('professional');
+  });
 });

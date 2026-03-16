@@ -143,4 +143,11 @@ describe('generateSvgLogo', () => {
     expect(cfg.width).toBe(400);
     expect(cfg.height).toBe(120);
   });
+
+  it('falls back to thinCircle monogram and minimal abstract for unknown style', () => {
+    const cfg = { ...defaultLogoConfig('Test', '#FF0000'), style: 'unknown' as never };
+    const result = generateSvgLogo(cfg);
+    expect(result.variants.monogram).toContain('<circle');
+    expect(result.variants.abstract).toBeTruthy();
+  });
 });

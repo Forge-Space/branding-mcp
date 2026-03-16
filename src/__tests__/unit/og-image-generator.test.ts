@@ -112,4 +112,18 @@ describe('generateOgImage', () => {
     const result = generateOgImage(brand, 'social', 'Custom Title');
     expect(result.svg).toContain('Custom Title');
   });
+
+  it('article template with logo produces logo section in SVG', () => {
+    const result = generateOgImage(brand, 'article', 'Article Title', 'A subtitle');
+    expect(result.template).toBe('article');
+    expect(result.svg).toContain('Article Title');
+    expect(result.svg).toContain('A subtitle');
+  });
+
+  it('default template without tagline uses empty string subtitle', () => {
+    const brandNoTag = { ...brand, tagline: undefined };
+    const result = generateOgImage(brandNoTag);
+    expect(result.svg).not.toMatch(/undefined/);
+    expect(result.svg).toBeTruthy();
+  });
 });

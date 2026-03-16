@@ -158,4 +158,17 @@ describe('generateColorPalette', () => {
       expect(n.hex).toMatch(hexRegex);
     }
   });
+
+  it('covers g < b branch in hexToHsl (red-dominant with g < b)', () => {
+    // #CC0088: r=0xCC=204, g=0x00=0, b=0x88=136 → max=r, g<b triggers (g < b ? 6 : 0)
+    const palette = generateColorPalette('#CC0088');
+    expect(palette.primary.hex).toMatch(/^#[0-9a-f]{6}$/i);
+    expect(palette.primary.hsl.h).toBeGreaterThanOrEqual(0);
+  });
+
+  it('covers angles[1] nullish fallback for complementary harmony', () => {
+    // complementary has HARMONY_ANGLES=[180] — angles[1] is undefined, falls back to angles[0]
+    const palette = generateColorPalette('#6B4CE6', 'complementary');
+    expect(palette.accent.hex).toMatch(/^#[0-9a-f]{6}$/i);
+  });
 });
