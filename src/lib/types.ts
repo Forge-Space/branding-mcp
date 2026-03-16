@@ -431,6 +431,39 @@ export interface BrandEmailOutput {
   accessibilityNotes: string[];
 }
 
+// Campaign
+export interface CampaignChannel {
+  name: string;
+  role: string;
+  budget: string;
+  tactics: string[];
+}
+
+export interface CampaignPhase {
+  name: string;
+  duration: string;
+  goal: string;
+  tactics: string[];
+  kpis: string[];
+  messaging: string;
+}
+
+export interface BrandCampaignOutput {
+  campaignThemes: string[];
+  primaryObjective: string;
+  secondaryObjectives: string[];
+  targetAudience: { primary: string; secondary: string; psychographics: string[] };
+  channels: CampaignChannel[];
+  phases: CampaignPhase[];
+  messagingPillars: string[];
+  creativeConcept: string;
+  callToAction: string;
+  successMetrics: Record<string, string>;
+  budgetAllocation: Record<string, string>;
+  campaignDuration: string;
+  keyMessages: string[];
+}
+
 // Photography
 export interface PhotoCompositionRule {
   rule: string;

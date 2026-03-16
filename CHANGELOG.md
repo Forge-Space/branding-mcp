@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [0.15.0] - 2026-03-16
+
+### Added
+
+- **`generate_brand_campaign` tool** — New MCP tool that generates a full marketing campaign
+  strategy including campaign themes, objectives, target audience, channel mix, funnel phases
+  (awareness/consideration/conversion/retention), messaging pillars, creative concept, success
+  metrics (with style-specific KPIs), and budget allocation. Adapts to all 8 brand styles.
+  New types exported: `BrandCampaignOutput`, `CampaignChannel`, `CampaignPhase`
+
 ## [0.14.0] - 2026-03-16
 
 ### Added
