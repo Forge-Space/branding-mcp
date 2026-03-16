@@ -926,3 +926,22 @@ export interface BrandTrainingOutput {
   brandChampionProgramme: string[];
   trainingBriefSummary: string;
 }
+
+export interface AnalyticsDashboard {
+  name: string;
+  audience: string;
+  updateFrequency: string;
+  metrics: string[];
+  visualisationType: string;
+}
+
+export interface BrandAnalyticsOutput {
+  analyticsApproach: string;
+  primaryKpis: string[];
+  reportingCadence: string;
+  recommendedTools: string[];
+  attributionModel: string;
+  dashboards: AnalyticsDashboard[];
+  measurementFramework: string[];
+  analyticsBriefSummary: string;
+}

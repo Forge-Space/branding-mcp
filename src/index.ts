@@ -78,6 +78,8 @@ export type {
   BrandTrainingOutput,
   TrainingModule,
   LearningPath,
+  BrandAnalyticsOutput,
+  AnalyticsDashboard,
 } from './lib/types.js';
 
 import { parseArgs } from 'node:util';
@@ -123,6 +125,7 @@ import { registerGenerateBrandFranchise } from './tools/generate-brand-franchise
 import { registerGenerateBrandCommunity } from './tools/generate-brand-community.js';
 import { registerGenerateBrandCustomer } from './tools/generate-brand-customer.js';
 import { registerGenerateBrandTraining } from './tools/generate-brand-training.js';
+import { registerGenerateBrandAnalytics } from './tools/generate-brand-analytics.js';
 
 import { registerBrandTemplates } from './resources/brand-templates.js';
 import { registerBrandKnowledge } from './resources/brand-knowledge.js';
@@ -143,7 +146,7 @@ async function main(): Promise<void> {
 
   const server = new McpServer({
     name: '@forgespace/branding-mcp',
-    version: '0.34.0',
+    version: '0.35.0',
   });
 
   registerGenerateBrandIdentity(server);
@@ -182,6 +185,7 @@ async function main(): Promise<void> {
   registerGenerateBrandCommunity(server);
   registerGenerateBrandCustomer(server);
   registerGenerateBrandTraining(server);
+  registerGenerateBrandAnalytics(server);
 
   registerBrandTemplates(server);
   registerBrandKnowledge(server);

@@ -54,3 +54,4 @@ export { generateBrandFranchise } from './generators/brand-franchise.js';
 export { generateBrandCommunity } from './generators/brand-community.js';
 export { generateBrandCustomer } from './generators/brand-customer.js';
 export { generateBrandTraining } from './generators/brand-training.js';
+export { generateBrandAnalytics } from './generators/brand-analytics.js';

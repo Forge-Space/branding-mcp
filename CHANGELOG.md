@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [0.35.0] - 2026-03-16
+
+### Added
+
+- `generate_brand_analytics` tool: analytics strategy with primary KPIs, reporting cadence, recommended tools, attribution model, dashboards (4+), and measurement framework — style-specific (tech adds product/engineering dashboard and Segment/PostHog instrumentation; organic adds ESG scorecard; corporate uses MMM attribution)
+
 ## [0.34.0] - 2026-03-16
 
 ### Added
