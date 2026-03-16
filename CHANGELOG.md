@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [0.37.0] - 2026-03-16
+
+### Added
+
+- `generate_brand_innovation` MCP tool — innovation playbook with culture, focus areas, technology bets, ideation methods, innovation pillars, success metrics, cadence, open innovation approach, and IP strategy
+
 ## [0.36.0] - 2026-03-16
 
 ### Added

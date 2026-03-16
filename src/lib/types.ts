@@ -978,3 +978,32 @@ export interface BrandCompetitiveOutput {
   objectionHandling: string[];
   competitiveBriefSummary: string;
 }
+
+export interface IdeationMethod {
+  method: string;
+  description: string;
+  bestFor: string;
+  timeInvestment: string;
+}
+
+export interface InnovationPillar {
+  pillar: string;
+  description: string;
+  initiatives: string[];
+  successCriteria: string;
+}
+
+export interface BrandInnovationOutput {
+  innovationCulture: string;
+  focusAreas: string[];
+  innovationThemes: string[];
+  processFrameworks: string[];
+  technologyBets: string[];
+  ideationMethods: IdeationMethod[];
+  innovationPillars: InnovationPillar[];
+  successMetrics: string[];
+  innovationCadence: string;
+  openInnovationApproach: string;
+  ipStrategy: string;
+  innovationBriefSummary: string;
+}
