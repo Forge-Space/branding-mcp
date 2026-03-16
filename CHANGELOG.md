@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [0.55.3] - 2026-03-16
+
+### Improved
+
+- Branch coverage: added 20 tests across 6 generators (`brand-affiliate.ts`, `brand-chatbot.ts`, `brand-crisis.ts`, `brand-ecommerce.ts`, `brand-investor.ts`, `brand-motion.ts`) covering all missing style branches — test count 1090 → 1110, branch coverage 85.74% → 86.35%
+
 ## [0.55.2] - 2026-03-16
 
 ### Improved
