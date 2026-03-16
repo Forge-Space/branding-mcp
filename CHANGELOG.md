@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [0.44.0] - 2026-03-16
+
+### Added
+
+- `generate_brand_seo` tool: comprehensive SEO strategy with keyword targeting, content types per brand style, link building strategy, technical priorities, local SEO guidance, on-page checklist (10 items), and content calendar
+- `BrandSeoOutput` TypeScript interface exported from package
+
 ## [0.43.0] - 2026-03-16
 
 ### Added

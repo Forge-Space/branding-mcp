@@ -1126,3 +1126,15 @@ export interface BrandAffiliateOutput {
   onboardingSteps: string[];
   affiliateBriefSummary: string;
 }
+
+export interface BrandSeoOutput {
+  seoApproach: string;
+  targetKeywords: string[];
+  contentTypes: string[];
+  linkBuildingStrategy: string[];
+  technicalPriorities: string[];
+  localSeoGuidance: string;
+  onPageChecklist: string[];
+  contentCalendar: string[];
+  seoBriefSummary: string;
+}
