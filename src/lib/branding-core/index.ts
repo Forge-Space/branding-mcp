@@ -40,3 +40,4 @@ export { generateBrandPrint } from './generators/brand-print.js';
 export { generateBrandRetail } from './generators/brand-retail.js';
 export { generateBrandEvent } from './generators/brand-event.js';
 export { generateBrandInterior } from './generators/brand-interior.js';
+export { generateBrandDigital } from './generators/brand-digital.js';

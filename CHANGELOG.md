@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [0.21.0] - 2026-03-16
+
+### Added
+
+- `generate_brand_digital` MCP tool: generates digital/UX brand guidelines including UI language, grid system, border radius system, shadow system, animation style, dark mode approach, icon style, form patterns, component patterns, 5 component specs (Primary Button, Text Input, Card, Navigation, Modal/Dialog) each with CSS properties and accessibility notes, a full accessibility specification (WCAG target, contrast ratios, focus indicator, touch targets, reduced motion, screen reader and keyboard navigation guidance), and a CSS custom properties design token snippet
+- `BrandDigitalOutput`, `DigitalComponentSpec`, and `DigitalAccessibilitySpec` TypeScript types exported from the package
+
 ## [0.20.0] - 2026-03-16
 
 ### Added

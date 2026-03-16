@@ -630,3 +630,39 @@ export interface BrandInteriorOutput {
   sustainabilityFeatures: string[];
   interiorBriefSummary: string;
 }
+
+// Digital / UX
+export interface DigitalComponentSpec {
+  component: string;
+  variants: string[];
+  cssProperties: Record<string, string>;
+  accessibilityNotes: string;
+}
+
+export interface DigitalAccessibilitySpec {
+  wcagTarget: string;
+  minimumContrastBody: string;
+  minimumContrastLargeText: string;
+  minimumContrastUI: string;
+  focusIndicator: string;
+  minimumTouchTarget: string;
+  reducedMotionSupport: string;
+  screenReaderNotes: string[];
+  keyboardNavigationNotes: string[];
+}
+
+export interface BrandDigitalOutput {
+  uiLanguage: string;
+  gridSystem: string;
+  borderRadiusSystem: string;
+  shadowSystem: string;
+  animationStyle: string;
+  darkModeApproach: string;
+  iconStyle: string;
+  formPatterns: string;
+  componentPatterns: string[];
+  componentSpecs: DigitalComponentSpec[];
+  accessibilitySpec: DigitalAccessibilitySpec;
+  designTokenSnippet: string;
+  digitalBriefSummary: string;
+}

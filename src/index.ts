@@ -50,6 +50,9 @@ export type {
   EventFormat,
   BrandInteriorOutput,
   InteriorSpaceZone,
+  BrandDigitalOutput,
+  DigitalComponentSpec,
+  DigitalAccessibilitySpec,
 } from './lib/types.js';
 
 import { parseArgs } from 'node:util';
@@ -81,6 +84,7 @@ import { registerGenerateBrandPrint } from './tools/generate-brand-print.js';
 import { registerGenerateBrandRetail } from './tools/generate-brand-retail.js';
 import { registerGenerateBrandEvent } from './tools/generate-brand-event.js';
 import { registerGenerateBrandInterior } from './tools/generate-brand-interior.js';
+import { registerGenerateBrandDigital } from './tools/generate-brand-digital.js';
 
 import { registerBrandTemplates } from './resources/brand-templates.js';
 import { registerBrandKnowledge } from './resources/brand-knowledge.js';
@@ -101,7 +105,7 @@ async function main(): Promise<void> {
 
   const server = new McpServer({
     name: '@forgespace/branding-mcp',
-    version: '0.20.0',
+    version: '0.21.0',
   });
 
   registerGenerateBrandIdentity(server);
@@ -126,6 +130,7 @@ async function main(): Promise<void> {
   registerGenerateBrandRetail(server);
   registerGenerateBrandEvent(server);
   registerGenerateBrandInterior(server);
+  registerGenerateBrandDigital(server);
 
   registerBrandTemplates(server);
   registerBrandKnowledge(server);
