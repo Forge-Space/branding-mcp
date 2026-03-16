@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [0.22.0] - 2026-03-16
+
+### Added
+
+- `generate_brand_ux` MCP tool: UX writing guidelines, microcopy, form patterns, onboarding, loading states, accessibility, and content strategy
+
 ## [0.21.0] - 2026-03-16
 
 ### Added

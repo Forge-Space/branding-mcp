@@ -666,3 +666,21 @@ export interface BrandDigitalOutput {
   designTokenSnippet: string;
   digitalBriefSummary: string;
 }
+
+// generate_brand_ux types
+export interface BrandUxOutput {
+  writingVoice: string;
+  ctaStyle: string[];
+  errorMessageTone: string;
+  emptyStateApproach: string;
+  onboardingPattern: string;
+  loadingCopy: string[];
+  tooltipStyle: string;
+  notificationPattern: string;
+  microcopyExamples: Record<string, string[]>;
+  formGuidelines: Record<string, string>;
+  contentHierarchy: string[];
+  accessibilityGuidelines: string[];
+  contentStrategy: Record<string, string[]>;
+  uxBriefSummary: string;
+}
