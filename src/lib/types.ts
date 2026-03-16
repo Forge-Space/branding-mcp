@@ -1182,3 +1182,16 @@ export interface BrandPodcastOutput {
   accessibilityNotes: string[];
   podcastBriefSummary: string;
 }
+
+export interface BrandWebinarOutput {
+  recommendedFormats: string[];
+  promotionStrategy: string[];
+  hostStyle: string;
+  engagementTactics: string[];
+  followUpSequence: string[];
+  recommendedPlatform: string;
+  productionChecklist: string[];
+  accessibilityNotes: string[];
+  successMetrics: Record<string, string>;
+  webinarBriefSummary: string;
+}

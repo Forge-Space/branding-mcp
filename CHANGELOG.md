@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [0.48.0] - 2026-03-16
+
+### Added
+
+- `generate_brand_webinar` tool: webinar and virtual event brand strategy including recommended formats, promotion, engagement tactics, follow-up sequence, platform recommendation, production checklist, accessibility notes, and success metrics
+
 ## [0.47.0] - 2026-03-16
 
 ### Added
