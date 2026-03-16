@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [0.20.0] - 2026-03-16
+
+### Added
+
+- `generate_brand_interior` MCP tool: generates interior design direction and spatial branding guidelines including space concept, materials palette, lighting approach, colour palette application, furniture direction, signage and wayfinding, biophilic elements, space zone breakdown with percentages and purposes, accessibility notes, and sustainability features
+- `BrandInteriorOutput` and `InteriorSpaceZone` TypeScript types exported from the package
+
 ## [0.19.0] - 2026-03-16
 
 ### Added

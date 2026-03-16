@@ -610,3 +610,23 @@ export interface BrandEventOutput {
   budgetGuidance: Record<string, string>;
   eventBriefSummary: string;
 }
+
+export interface InteriorSpaceZone {
+  zone: string;
+  percentage: string;
+  purpose: string;
+}
+
+export interface BrandInteriorOutput {
+  spaceConcept: string;
+  materials: string[];
+  lightingApproach: string;
+  colourPaletteApplication: string;
+  furnitureDirection: string;
+  signageAndWayfinding: string;
+  biophilicElements: string;
+  spaceZones: InteriorSpaceZone[];
+  accessibilityNotes: string[];
+  sustainabilityFeatures: string[];
+  interiorBriefSummary: string;
+}
