@@ -286,3 +286,23 @@ export interface BrandValidationIssue {
   message: string;
   suggestion?: string;
 }
+
+export interface NameIdea {
+  name: string;
+  type: 'descriptive' | 'evocative' | 'abstract' | 'acronym' | 'portmanteau';
+  rationale: string;
+}
+
+export interface DomainSuggestion {
+  format: string;
+  example: string;
+  notes: string;
+}
+
+export interface BrandNamingOutput {
+  nameIdeas: NameIdea[];
+  taglineVariations: string[];
+  domainSuggestions: DomainSuggestion[];
+  hashtags: string[];
+  namingRationale: string;
+}

@@ -16,6 +16,9 @@ export type {
   BrandVoiceGuidelines,
   BrandVoiceTone,
   BrandVoiceAudience,
+  BrandNamingOutput,
+  NameIdea,
+  DomainSuggestion,
 } from './lib/types.js';
 
 import { parseArgs } from 'node:util';
@@ -35,6 +38,7 @@ import { registerRefineBrandElement } from './tools/refine-brand-element.js';
 import { registerGenerateBrandAssets } from './tools/generate-brand-assets.js';
 import { registerGenerateDesignSystem } from './tools/generate-design-system.js';
 import { registerGenerateBrandVoice } from './tools/generate-brand-voice.js';
+import { registerGenerateBrandNaming } from './tools/generate-brand-naming.js';
 
 import { registerBrandTemplates } from './resources/brand-templates.js';
 import { registerBrandKnowledge } from './resources/brand-knowledge.js';
@@ -55,7 +59,7 @@ async function main(): Promise<void> {
 
   const server = new McpServer({
     name: '@forgespace/branding-mcp',
-    version: '0.8.0',
+    version: '0.9.0',
   });
 
   registerGenerateBrandIdentity(server);
@@ -68,6 +72,7 @@ async function main(): Promise<void> {
   registerGenerateBrandAssets(server);
   registerGenerateDesignSystem(server);
   registerGenerateBrandVoice(server);
+  registerGenerateBrandNaming(server);
 
   registerBrandTemplates(server);
   registerBrandKnowledge(server);

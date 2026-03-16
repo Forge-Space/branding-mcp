@@ -12,7 +12,7 @@
     {
       "registryType": "npm",
       "identifier": "@forgespace/branding-mcp",
-      "version": "0.8.0",
+      "version": "0.9.0",
       "transport": {
         "type": "stdio"
       }

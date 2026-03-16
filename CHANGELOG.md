@@ -4,6 +4,18 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [0.9.0] - 2026-03-16
+
+### Added
+
+- **`generate_brand_naming` tool** — New MCP tool that generates brand name ideas (descriptive,
+  evocative, abstract, acronym, portmanteau), tagline variations, domain name suggestions
+  (.com/.io/get[name].com/.co/try[name].com), hashtags, and a naming rationale based on
+  brand identity, style, and industry
+- **Integration tests expanded** — Full coverage of all 10 MCP tools, all 7 export formats
+  (including style-dictionary), brand voice, favicons, OG images, and validators
+- **`NameIdea`, `DomainSuggestion`, `BrandNamingOutput` types** exported from package
+
 ## [0.8.0] - 2026-03-16
 
 ### Added

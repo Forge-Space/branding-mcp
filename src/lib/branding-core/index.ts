@@ -21,6 +21,7 @@ export { exportReactTheme } from './exporters/react-theme.js';
 export { exportSassVariables } from './exporters/sass-variables.js';
 export { exportStyleDictionary } from './exporters/style-dictionary.js';
 export { generateBrandVoice } from './generators/brand-voice.js';
+export { generateBrandNaming } from './generators/brand-naming.js';
 export { validateBrandConsistency } from './validators/brand-consistency.js';
 export { validateContrast } from './validators/contrast-checker.js';
 export { interpretFeedback } from './ai/brand-interpreter.js';
