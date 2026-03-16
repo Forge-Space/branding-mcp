@@ -68,6 +68,8 @@ export type {
   BrandAccessibilityOutput,
   BrandSustainabilityOutput,
   BrandEmployerOutput,
+  BrandInvestorOutput,
+  InvestorDeckSlide,
 } from './lib/types.js';
 
 import { parseArgs } from 'node:util';
@@ -108,6 +110,7 @@ import { registerGenerateBrandLegal } from './tools/generate-brand-legal.js';
 import { registerGenerateBrandAccessibility } from './tools/generate-brand-accessibility.js';
 import { registerGenerateBrandSustainability } from './tools/generate-brand-sustainability.js';
 import { registerGenerateBrandEmployer } from './tools/generate-brand-employer.js';
+import { registerGenerateBrandInvestor } from './tools/generate-brand-investor.js';
 
 import { registerBrandTemplates } from './resources/brand-templates.js';
 import { registerBrandKnowledge } from './resources/brand-knowledge.js';
@@ -128,7 +131,7 @@ async function main(): Promise<void> {
 
   const server = new McpServer({
     name: '@forgespace/branding-mcp',
-    version: '0.29.0',
+    version: '0.30.0',
   });
 
   registerGenerateBrandIdentity(server);
@@ -162,6 +165,7 @@ async function main(): Promise<void> {
   registerGenerateBrandAccessibility(server);
   registerGenerateBrandSustainability(server);
   registerGenerateBrandEmployer(server);
+  registerGenerateBrandInvestor(server);
 
   registerBrandTemplates(server);
   registerBrandKnowledge(server);

@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [0.30.0] - 2026-03-16
+
+### Added
+
+- `generate_brand_investor` tool: investor relations materials including investment thesis, competitive moat, use-of-funds breakdown, 12-slide pitch deck structure with speaker notes, due diligence checklist, and FAQ answers aligned to brand style
+
 ## [0.29.0] - 2026-03-16
 
 ### Added

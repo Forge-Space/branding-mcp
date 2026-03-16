@@ -49,3 +49,4 @@ export { generateBrandLegal } from './generators/brand-legal.js';
 export { generateBrandAccessibility } from './generators/brand-accessibility.js';
 export { generateBrandSustainability } from './generators/brand-sustainability.js';
 export { generateBrandEmployer } from './generators/brand-employer.js';
+export { generateBrandInvestor } from './generators/brand-investor.js';

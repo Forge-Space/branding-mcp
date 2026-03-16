@@ -825,3 +825,23 @@ export interface BrandEmployerOutput {
   jobAdGuidelines: string[];
   employerBriefSummary: string;
 }
+
+export interface InvestorDeckSlide {
+  slide: string;
+  headline: string;
+  bullets: string[];
+  speakerNotes: string;
+}
+
+export interface BrandInvestorOutput {
+  communicationTone: string;
+  investmentThesis: string;
+  competitiveMoat: string[];
+  useOfFunds: string[];
+  idealInvestorProfile: string[];
+  executiveSummary: string;
+  investorDeck: InvestorDeckSlide[];
+  dueDiligenceChecklist: string[];
+  faqAnswers: Record<string, string>;
+  investorBriefSummary: string;
+}
