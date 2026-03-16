@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [0.29.0] - 2026-03-16
+
+### Added
+
+- `generate_brand_employer` MCP tool — employer branding with EVP statement, culture pillars, benefits framing, candidate persona traits, interview approach, onboarding approach, and job-ad guidelines (style-specific for all 8 brand styles)
+
 ## [0.28.0] - 2026-03-16
 
 ### Added

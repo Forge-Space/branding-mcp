@@ -814,3 +814,14 @@ export interface BrandSustainabilityOutput {
   reportingFramework: string;
   sustainabilityBriefSummary: string;
 }
+
+export interface BrandEmployerOutput {
+  evpStatement: string;
+  culturePillars: string[];
+  benefitsFraming: string[];
+  candidatePersonaTraits: string[];
+  interviewApproach: string;
+  onboardingApproach: string;
+  jobAdGuidelines: string[];
+  employerBriefSummary: string;
+}
