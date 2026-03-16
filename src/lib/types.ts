@@ -1056,3 +1056,14 @@ export interface BrandCrisisOutput {
   doNotSayList: string[];
   crisisBriefSummary: string;
 }
+
+export interface BrandAudioOutput {
+  sonicPersonality: string;
+  musicalDirection: string[];
+  uiSounds: string[];
+  brandJingleBrief: string;
+  podcastApproach: string;
+  voiceoverDirection: string;
+  accessibilityNotes: string[];
+  audioBriefSummary: string;
+}

@@ -92,6 +92,7 @@ export type {
   BrandCrisisOutput,
   CrisisResponsePhase,
   CrisisStakeholder,
+  BrandAudioOutput,
 } from './lib/types.js';
 
 import { parseArgs } from 'node:util';
@@ -142,6 +143,7 @@ import { registerGenerateBrandCompetitive } from './tools/generate-brand-competi
 import { registerGenerateBrandInnovation } from './tools/generate-brand-innovation.js';
 import { registerGenerateBrandGlobalisation } from './tools/generate-brand-globalisation.js';
 import { registerGenerateBrandCrisis } from './tools/generate-brand-crisis.js';
+import { registerGenerateBrandAudio } from './tools/generate-brand-audio.js';
 
 import { registerBrandTemplates } from './resources/brand-templates.js';
 import { registerBrandKnowledge } from './resources/brand-knowledge.js';
@@ -162,7 +164,7 @@ async function main(): Promise<void> {
 
   const server = new McpServer({
     name: '@forgespace/branding-mcp',
-    version: '0.39.0',
+    version: '0.40.0',
   });
 
   registerGenerateBrandIdentity(server);
@@ -206,6 +208,7 @@ async function main(): Promise<void> {
   registerGenerateBrandInnovation(server);
   registerGenerateBrandGlobalisation(server);
   registerGenerateBrandCrisis(server);
+  registerGenerateBrandAudio(server);
 
   registerBrandTemplates(server);
   registerBrandKnowledge(server);

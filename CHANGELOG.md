@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [0.40.0] - 2026-03-16
+
+### Added
+
+- `generate_brand_audio` tool: sonic brand identity system with per-style musical direction (tempo, key, instruments), 5 UI sound descriptions (notification/success/error/click/loading), brand jingle brief, podcast approach, voiceover direction, 7+ WCAG accessibility notes (autoplay prohibition, caption requirements, audio contrast), and style-specific sonic personality for all 8 brand styles
+
 ## [0.39.0] - 2026-03-16
 
 ### Added
