@@ -125,4 +125,34 @@ describe('generateBrandCrisis', () => {
     const res = generateBrandCrisis(noTagBrand);
     expect(res.crisisBriefSummary).not.toContain('undefined');
   });
+
+  it('minimal style uses clear factual tone and press release channel', () => {
+    const res = generateBrandCrisis(createTestBrand({ style: 'minimal' }));
+    expect(res.crisisTone.toLowerCase()).toContain('factual');
+    expect(res.channelPriority.some((c) => c.toLowerCase().includes('press'))).toBe(true);
+  });
+
+  it('elegant style uses composed authoritative tone', () => {
+    const res = generateBrandCrisis(createTestBrand({ style: 'elegant' }));
+    expect(res.crisisTone.toLowerCase()).toContain('composed');
+    expect(res.spokespersonGuidance.toLowerCase()).toContain('ceo');
+  });
+
+  it('playful style uses human empathetic tone and social channel', () => {
+    const res = generateBrandCrisis(createTestBrand({ style: 'playful' }));
+    expect(res.crisisTone.toLowerCase()).toContain('empathetic');
+    expect(res.channelPriority.some((c) => c.toLowerCase().includes('social'))).toBe(true);
+  });
+
+  it('organic style centres stakeholder wellbeing in tone', () => {
+    const res = generateBrandCrisis(createTestBrand({ style: 'organic' }));
+    expect(res.crisisTone.toLowerCase()).toContain('authentic');
+    expect(res.spokespersonGuidance.toLowerCase()).toContain('founder');
+  });
+
+  it('retro style uses honest grounded tone and founder spokesperson', () => {
+    const res = generateBrandCrisis(createTestBrand({ style: 'retro' }));
+    expect(res.crisisTone.toLowerCase()).toContain('honest');
+    expect(res.spokespersonGuidance.toLowerCase()).toContain('founder');
+  });
 });

@@ -117,4 +117,15 @@ describe('generateBrandMotion', () => {
     expect(result.animationScale).toBe('expressive');
     expect(result.principles[0].name).toBe('Deliberate Steps');
   });
+
+  it('brand without style field defaults to minimal motion', () => {
+    const brand = createTestBrand({});
+    const brandWithoutStyle = { ...brand } as Record<string, unknown>;
+    delete brandWithoutStyle['style'];
+    const result = generateBrandMotion(brandWithoutStyle as never);
+    expect(result.animationScale).toBe('minimal');
+    expect(result.principles.length).toBeGreaterThan(0);
+    expect(result.guidelines).toBeTruthy();
+    expect(result.guidelines.microInteractions).toBeTruthy();
+  });
 });

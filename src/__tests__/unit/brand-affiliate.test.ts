@@ -158,4 +158,46 @@ describe('generateBrandAffiliate', () => {
     expect(result.affiliateBriefSummary).not.toMatch(/undefined/);
     expect(result.affiliateBriefSummary).toContain('AffiliateTest');
   });
+
+  it('bold style produces base rate 8% and 60-day elite cookie', () => {
+    const brand = createTestBrand({ style: 'bold', industry: 'retail' });
+    const result = generateBrandAffiliate(brand);
+    const starter = result.commissionTiers.find((t) => t.tier === 'Starter');
+    expect(starter?.commissionRate).toBe('8%');
+    const elite = result.commissionTiers.find((t) => t.tier === 'Elite');
+    expect(elite?.cookieDuration).toBe('60 days');
+  });
+
+  it('playful style produces base rate 8% and non-Net-60 payment schedule', () => {
+    const brand = createTestBrand({ style: 'playful', industry: 'lifestyle' });
+    const result = generateBrandAffiliate(brand);
+    const starter = result.commissionTiers.find((t) => t.tier === 'Starter');
+    expect(starter?.commissionRate).toBe('8%');
+    expect(result.paymentStructure['payment_schedule']).not.toContain('Net-60');
+  });
+
+  it('retro style produces base rate 8% and valid program approach', () => {
+    const brand = createTestBrand({ style: 'retro', industry: 'vintage fashion' });
+    const result = generateBrandAffiliate(brand);
+    const starter = result.commissionTiers.find((t) => t.tier === 'Starter');
+    expect(starter?.commissionRate).toBe('8%');
+    expect(result.programApproach).toBeTruthy();
+    expect(result.contentGuidelines.length).toBeGreaterThan(0);
+    expect(result.recruitmentChannels.length).toBeGreaterThan(0);
+  });
+
+  it('tech industry (isSaas) produces base rate 20%', () => {
+    const brand = createTestBrand({ style: 'minimal', industry: 'saas software' });
+    const result = generateBrandAffiliate(brand);
+    const starter = result.commissionTiers.find((t) => t.tier === 'Starter');
+    expect(starter?.commissionRate).toBe('20%');
+  });
+
+  it('corporate style uses Net-60 payment schedule and 120-day elite cookie', () => {
+    const brand = createTestBrand({ style: 'corporate' });
+    const result = generateBrandAffiliate(brand);
+    expect(result.paymentStructure['payment_schedule']).toContain('Net-60');
+    const elite = result.commissionTiers.find((t) => t.tier === 'Elite');
+    expect(elite?.cookieDuration).toBe('120 days');
+  });
 });

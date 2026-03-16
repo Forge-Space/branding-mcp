@@ -138,4 +138,20 @@ describe('generateBrandChatbot', () => {
     const joined = result.intentCategories.join(' ').toLowerCase();
     expect(joined).toContain('usage');
   });
+
+  it('retail industry adds size/fit and gift intent categories', () => {
+    const brand = createTestBrand({ industry: 'retail fashion' });
+    const result = generateBrandChatbot(brand);
+    const joined = result.intentCategories.join(' ').toLowerCase();
+    expect(joined).toContain('size');
+    expect(joined).toContain('gift');
+  });
+
+  it('fashion industry also adds size/fit and gift intent categories', () => {
+    const brand = createTestBrand({ industry: 'fashion accessories' });
+    const result = generateBrandChatbot(brand);
+    const joined = result.intentCategories.join(' ').toLowerCase();
+    expect(joined).toContain('size');
+    expect(joined).toContain('gift');
+  });
 });

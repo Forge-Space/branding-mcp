@@ -149,4 +149,22 @@ describe('generateBrandEcommerce', () => {
     const minimalResult = generateBrandEcommerce(minimalBrand);
     expect(result.storeConcept).toBe(minimalResult.storeConcept);
   });
+
+  it('playful style produces a distinct store concept', () => {
+    const brand = createTestBrand({ style: 'playful' });
+    const result = generateBrandEcommerce(brand);
+    expect(result.storeConcept).toBeTruthy();
+    expect(result.checkoutPrinciples.length).toBeGreaterThan(0);
+    expect(result.productPageLayout.length).toBeGreaterThan(0);
+    expect(result.merchandisingStrategy.length).toBeGreaterThan(0);
+    expect(result.trustSignals.length).toBeGreaterThan(0);
+  });
+
+  it('retro style produces a distinct store concept', () => {
+    const brand = createTestBrand({ style: 'retro' });
+    const result = generateBrandEcommerce(brand);
+    expect(result.storeConcept).toBeTruthy();
+    const minimalResult = generateBrandEcommerce(createTestBrand({ style: 'minimal' }));
+    expect(result.storeConcept).not.toBe(minimalResult.storeConcept);
+  });
 });

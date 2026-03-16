@@ -124,4 +124,39 @@ describe('generateBrandInvestor', () => {
     expect(r.communicationTone).toBeTruthy();
     expect(r.competitiveMoat.length).toBeGreaterThanOrEqual(2);
   });
+
+  it('bold style leads with vision and scale in tone and thesis', () => {
+    const r = generateBrandInvestor(createTestBrand({ style: 'bold' }));
+    expect(r.communicationTone.toLowerCase()).toContain('vision');
+    expect(r.investmentThesis.toLowerCase()).toContain('category');
+    expect(r.competitiveMoat.some((m) => m.toLowerCase().includes('network'))).toBe(true);
+  });
+
+  it('elegant style emphasises premium positioning in tone and thesis', () => {
+    const r = generateBrandInvestor(createTestBrand({ style: 'elegant' }));
+    expect(r.communicationTone.toLowerCase()).toContain('sophisticated');
+    expect(r.investmentThesis.toLowerCase()).toContain('premium');
+    expect(r.competitiveMoat.some((m) => m.toLowerCase().includes('premium'))).toBe(true);
+  });
+
+  it('playful style is energetic and founder-led in tone', () => {
+    const r = generateBrandInvestor(createTestBrand({ style: 'playful' }));
+    expect(r.communicationTone.toLowerCase()).toContain('energetic');
+    expect(r.investmentThesis.toLowerCase()).toContain('community');
+    expect(r.competitiveMoat.some((m) => m.toLowerCase().includes('community'))).toBe(true);
+  });
+
+  it('retro style leans into nostalgia and loyal community', () => {
+    const r = generateBrandInvestor(createTestBrand({ style: 'retro' }));
+    expect(r.communicationTone.toLowerCase()).toContain('authentic');
+    expect(r.investmentThesis.toLowerCase()).toContain('differentiated');
+    expect(r.competitiveMoat.some((m) => m.toLowerCase().includes('authentic'))).toBe(true);
+  });
+
+  it('minimal style is precise and data-driven', () => {
+    const r = generateBrandInvestor(createTestBrand({ style: 'minimal' }));
+    expect(r.communicationTone.toLowerCase()).toContain('precise');
+    expect(r.investmentThesis.toLowerCase()).toContain('capital-efficient');
+    expect(r.competitiveMoat.some((m) => m.toLowerCase().includes('efficiency'))).toBe(true);
+  });
 });
