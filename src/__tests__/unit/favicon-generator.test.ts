@@ -77,4 +77,10 @@ describe('generateFavicons', () => {
     expect(favicons.sizes[180]).toContain('width="180"');
     expect(favicons.sizes[180]).toContain('height="180"');
   });
+
+  it('injects style color when SVG has no fill= and no <circle element', () => {
+    const plainSvg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64"/></svg>';
+    const favicons = generateFavicons(plainSvg, '#FF0000');
+    expect(favicons.sizes[512]).toContain('style="color:#FF0000"');
+  });
 });

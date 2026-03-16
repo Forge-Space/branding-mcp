@@ -32,6 +32,23 @@ describe('validateContrast', () => {
     const issues = validateContrast(brand);
     expect(issues.length).toBeGreaterThan(0);
   });
+
+  it('reports error when color fails AA on both white and dark backgrounds', () => {
+    const grayPalette = generateColorPalette('#cccccc');
+    const midGraySwatch = { name: 'primary', hex: '#808080', hsl: { h: 0, s: 0, l: 50 }, usage: 'primary' };
+    const brand = createTestBrand({
+      colors: {
+        ...grayPalette,
+        primary: midGraySwatch,
+        secondary: midGraySwatch,
+        accent: midGraySwatch,
+      },
+    });
+    const issues = validateContrast(brand);
+    const errors = issues.filter((i) => i.severity === 'error');
+    expect(errors.length).toBeGreaterThan(0);
+    expect(errors[0].message).toContain('fails WCAG AA on both white and dark');
+  });
 });
 
 describe('validateBrandConsistency', () => {
