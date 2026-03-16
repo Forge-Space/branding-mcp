@@ -1084,3 +1084,24 @@ export interface BrandVideoOutput {
   productionNotes: VideoProductionNote[];
   videoBriefSummary: string;
 }
+
+export interface InfluencerTier {
+  tier: string;
+  followerRange: string;
+  engagementExpectation: string;
+  budgetGuidance: string;
+  idealUseCase: string;
+  selectionCriteria: string[];
+}
+
+export interface BrandInfluencerOutput {
+  influencerApproach: string;
+  contentPreferences: string[];
+  outreachTone: string;
+  influencerTiers: InfluencerTier[];
+  avoidList: string[];
+  campaignBriefTemplate: string;
+  kpis: Record<string, string>;
+  disclosureGuidelines: string[];
+  influencerBriefSummary: string;
+}

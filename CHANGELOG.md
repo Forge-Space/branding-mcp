@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [0.42.0] - 2026-03-16
+
+### Added
+
+- `generate_brand_influencer` tool: influencer marketing strategy with tiered approach (Mega/Macro/Micro/Nano), content preferences, outreach tone, avoid list, campaign brief template, KPIs, and FTC/ASA disclosure guidelines.
+
 ## [0.41.0] - 2026-03-16
 
 ### Added
