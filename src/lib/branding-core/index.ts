@@ -64,3 +64,4 @@ export { generateBrandVideo } from './generators/brand-video.js';
 export { generateBrandInfluencer } from './generators/brand-influencer.js';
 export { generateBrandAffiliate } from './generators/brand-affiliate.js';
 export { generateBrandSeo } from './generators/brand-seo.js';
+export { generateBrandChatbot } from './generators/brand-chatbot.js';

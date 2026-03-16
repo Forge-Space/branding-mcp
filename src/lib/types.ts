@@ -1138,3 +1138,16 @@ export interface BrandSeoOutput {
   contentCalendar: string[];
   seoBriefSummary: string;
 }
+
+export interface BrandChatbotOutput {
+  chatbotPersona: string;
+  toneAttributes: string[];
+  greetingMessage: string;
+  fallbackMessage: string;
+  escalationMessage: string;
+  conversationBoundaries: string[];
+  humanHandoffTrigger: string;
+  intentCategories: string[];
+  accessibilityGuidelines: string[];
+  chatbotBriefSummary: string;
+}
