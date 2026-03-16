@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [0.34.0] - 2026-03-16
+
+### Added
+
+- `generate_brand_training` tool: employee L&D programme with onboarding modules (5), role-based learning paths (4), brand champion programme, knowledge base structure, and delivery format guidance per brand style
+
 ## [0.33.0] - 2026-03-16
 
 ### Added

@@ -899,3 +899,30 @@ export interface BrandCustomerOutput {
   voiceOfCustomerPlan: string[];
   customerBriefSummary: string;
 }
+
+export interface TrainingModule {
+  title: string;
+  duration: string;
+  format: string;
+  objectives: string[];
+  assessmentMethod: string;
+}
+
+export interface LearningPath {
+  role: string;
+  durationWeeks: number;
+  phases: string[];
+  keyResources: string[];
+}
+
+export interface BrandTrainingOutput {
+  trainingCulture: string;
+  deliveryFormats: string[];
+  assessmentApproach: string;
+  learningCadence: string;
+  knowledgeBaseStructure: string[];
+  onboardingModules: TrainingModule[];
+  learningPaths: LearningPath[];
+  brandChampionProgramme: string[];
+  trainingBriefSummary: string;
+}
