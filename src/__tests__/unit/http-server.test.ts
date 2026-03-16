@@ -4,6 +4,7 @@ import { EventEmitter } from 'node:events';
 
 let capturedHandler: ((...a: any[]) => Promise<void>) | undefined;
 let capturedOnsessioninitialized: ((id: string) => void) | undefined;
+let capturedSessionIdGenerator: (() => string) | undefined;
 
 const mockHandleRequest = jest.fn().mockImplementation(() => Promise.resolve());
 const mockClose = jest.fn().mockImplementation(() => Promise.resolve());
@@ -22,6 +23,7 @@ jest.unstable_mockModule('@modelcontextprotocol/sdk/server/streamableHttp.js', (
       onsessioninitialized: (id: string) => void;
     };
     capturedOnsessioninitialized = opts.onsessioninitialized;
+    capturedSessionIdGenerator = opts.sessionIdGenerator;
     mockTransportInstance = {
       sessionId: undefined,
       onclose: null,
@@ -173,5 +175,57 @@ describe('startHttpServer', () => {
     const deleteRes = makeRes();
     await capturedHandler!(deleteReq, deleteRes);
     expect(deleteRes._status).toBe(200);
+  });
+
+  it('routes POST /mcp to existing session transport when session header matches', async () => {
+    // first POST creates a session
+    const initBody = JSON.stringify({ jsonrpc: '2.0', method: 'initialize', id: 10, params: {} });
+    const initReq = makeReq('POST', '/mcp', {}, initBody);
+    const initRes = makeRes();
+    mockHandleRequest.mockClear();
+    await capturedHandler!(initReq, initRes);
+    capturedOnsessioninitialized?.('session-post-existing');
+
+    // second POST with session header routes to the existing transport
+    mockHandleRequest.mockClear();
+    const body2 = JSON.stringify({ jsonrpc: '2.0', method: 'tools/list', id: 11 });
+    const req2 = makeReq('POST', '/mcp', { 'mcp-session-id': 'session-post-existing' }, body2);
+    const res2 = makeRes();
+    await capturedHandler!(req2, res2);
+    expect(mockHandleRequest).toHaveBeenCalled();
+  });
+
+  it('sessionIdGenerator returns a UUID string', async () => {
+    // A POST will construct a new StreamableHTTPServerTransport and capture the generator
+    const body = JSON.stringify({ jsonrpc: '2.0', method: 'initialize', id: 99, params: {} });
+    const req = makeReq('POST', '/mcp', {}, body);
+    const res = makeRes();
+    await capturedHandler!(req, res);
+    // Now capturedSessionIdGenerator was set by the constructor mock
+    expect(capturedSessionIdGenerator).toBeDefined();
+    const id = capturedSessionIdGenerator!();
+    expect(typeof id).toBe('string');
+    expect(id.length).toBeGreaterThan(0);
+  });
+
+  it('triggers onclose callback and removes session from transport map', async () => {
+    // POST to create session
+    const initBody = JSON.stringify({ jsonrpc: '2.0', method: 'initialize', id: 20, params: {} });
+    const initReq = makeReq('POST', '/mcp', {}, initBody);
+    const initRes = makeRes();
+    await capturedHandler!(initReq, initRes);
+    capturedOnsessioninitialized?.('session-onclose-test');
+    if (mockTransportInstance) mockTransportInstance.sessionId = 'session-onclose-test';
+
+    // trigger onclose — session should be removed
+    if (mockTransportInstance?.onclose) {
+      mockTransportInstance.onclose();
+    }
+
+    // subsequent GET for the closed session should return 400
+    const getReq = makeReq('GET', '/mcp', { 'mcp-session-id': 'session-onclose-test' });
+    const getRes = makeRes();
+    await capturedHandler!(getReq, getRes);
+    expect(getRes._status).toBe(400);
   });
 });

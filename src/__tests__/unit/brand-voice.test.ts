@@ -163,4 +163,19 @@ describe('generateBrandVoice', () => {
       expect(() => generateBrandVoice(createTestBrand(), undefined, audience)).not.toThrow();
     }
   });
+
+  it('infers creative audience from creative/design industry', () => {
+    const guidelines = generateBrandVoice(createTestBrand({ industry: 'creative design studio' }));
+    expect(guidelines.audience).toBe('creative');
+  });
+
+  it('infers consumer audience from retail/ecommerce industry', () => {
+    const guidelines = generateBrandVoice(createTestBrand({ industry: 'retail ecommerce' }));
+    expect(guidelines.audience).toBe('consumer');
+  });
+
+  it('infers general audience from unknown industry', () => {
+    const guidelines = generateBrandVoice(createTestBrand({ industry: 'bakery' }));
+    expect(guidelines.audience).toBe('general');
+  });
 });
