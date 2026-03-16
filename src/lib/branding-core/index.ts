@@ -69,3 +69,4 @@ export { generateBrandChatbot } from './generators/brand-chatbot.js';
 export { generateBrandLoyalty } from './generators/brand-loyalty.js';
 export { generateBrandPodcast } from './generators/brand-podcast.js';
 export { generateBrandWebinar } from './generators/brand-webinar.js';
+export { generateBrandNewsletter } from './generators/brand-newsletter.js';

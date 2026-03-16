@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [0.49.0] - 2026-03-16
+
+### Added
+
+- `generate_brand_newsletter` tool: newsletter strategy, format recommendations, publishing cadence, subject line formulas, personalisation strategy, section templates, deliverability checklist, accessibility guidelines, and success metrics
+
 ## [0.48.0] - 2026-03-16
 
 ### Added

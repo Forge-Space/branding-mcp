@@ -1195,3 +1195,16 @@ export interface BrandWebinarOutput {
   successMetrics: Record<string, string>;
   webinarBriefSummary: string;
 }
+
+export interface BrandNewsletterOutput {
+  newsletterApproach: string;
+  recommendedFormats: string[];
+  publishingCadence: string;
+  subjectLineFormula: string;
+  personalisationStrategy: string[];
+  newsletterSections: string[];
+  deliverabilityChecklist: string[];
+  accessibilityGuidelines: string[];
+  successMetrics: Record<string, string>;
+  newsletterBriefSummary: string;
+}
