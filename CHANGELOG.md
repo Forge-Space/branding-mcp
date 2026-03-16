@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [0.33.0] - 2026-03-16
+
+### Added
+
+- `generate_brand_customer` tool: customer experience strategy with personas, 6-stage journey map, loyalty programme, support tone guidelines, feedback channels, and VoC plan
+
 ## [0.32.0] - 2026-03-16
 
 ### Added

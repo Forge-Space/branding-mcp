@@ -870,3 +870,32 @@ export interface BrandCommunityOutput {
   successMetrics: Record<string, string>;
   communityBriefSummary: string;
 }
+
+export interface CustomerPersona {
+  name: string;
+  demographics: string;
+  goals: string[];
+  painPoints: string[];
+  motivations: string[];
+  preferredChannels: string[];
+  messageResonance: string;
+}
+
+export interface CustomerJourneyStage {
+  stage: string;
+  touchpoints: string[];
+  emotions: string;
+  opportunities: string[];
+  kpis: string[];
+}
+
+export interface BrandCustomerOutput {
+  cxApproach: string;
+  loyaltyStrategy: string[];
+  supportTone: string;
+  feedbackChannels: string[];
+  personas: CustomerPersona[];
+  journeyStages: CustomerJourneyStage[];
+  voiceOfCustomerPlan: string[];
+  customerBriefSummary: string;
+}

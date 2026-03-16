@@ -52,3 +52,4 @@ export { generateBrandEmployer } from './generators/brand-employer.js';
 export { generateBrandInvestor } from './generators/brand-investor.js';
 export { generateBrandFranchise } from './generators/brand-franchise.js';
 export { generateBrandCommunity } from './generators/brand-community.js';
+export { generateBrandCustomer } from './generators/brand-customer.js';
