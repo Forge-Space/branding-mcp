@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [0.26.0] - 2026-03-16
+
+### Added
+
+- `generate_brand_legal` MCP tool: trademark guidelines, copyright notices, privacy compliance, disclaimers, and licensing terms
+
 ## [0.25.0] - 2026-03-16
 
 ### Added

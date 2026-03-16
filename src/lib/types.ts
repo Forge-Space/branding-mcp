@@ -773,3 +773,16 @@ export interface BrandPrOutput {
   measurementKpis: string[];
   prBriefSummary: string;
 }
+
+export interface BrandLegalOutput {
+  trademarkTone: string;
+  trademarkGuidelines: string[];
+  brandUsageRules: string[];
+  copyrightNotices: string[];
+  toneOfVoiceLegal: string;
+  privacyCompliance: string[];
+  disclaimers: string[];
+  licensingTerms: Record<string, string>;
+  accessibilityCompliance: string[];
+  legalBriefSummary: string;
+}
