@@ -4,6 +4,25 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [0.8.0] - 2026-03-16
+
+### Added
+
+- **Style Dictionary exporter** — New `style-dictionary` export format in `export_design_tokens`
+  producing a token tree compatible with the Style Dictionary build toolchain (colors, typography,
+  spacing, shadows, borders, motion, gradients)
+- **`generate_brand_voice` tool** — New MCP tool that derives tone-of-voice guidelines from a
+  brand identity: vocabulary rules, sentence style, personality traits, tagline suggestions, sample
+  copy, and do/don't guidelines
+- **HTTP/SSE transport** — Set `MCP_TRANSPORT=http` (and optionally `PORT`) to expose the server
+  over Streamable HTTP instead of stdio, enabling non-CLI integrations and remote MCP clients
+
+### Changed
+
+- **Anthropic SDK migration** — `claude-interpreter.ts` now uses `@anthropic-ai/sdk` client
+  instead of raw `fetch`, gaining type-safe request/response handling
+- **Security** — Resolved `flatted` DoS vulnerability via dependency upgrades
+
 ## [0.7.1] - 2026-03-14
 
 ### Added

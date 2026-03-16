@@ -1,82 +1,59 @@
 # branding-mcp — Project Overview
 
-## Identity
+**Version:** 0.7.1 (pre-release; bump needed before next publish)
+**npm published:** 0.7.1 already on npm — bump to 0.8.0 before next release
+**Updated:** 2026-03-15 (session 3)
 
-- Package: @forgespace/branding-mcp v0.4.0
-- GitHub: Forge-Space/branding-mcp
-- Local: ~/Desenvolvimento/forge-space/branding-mcp
-- Node.js 22, TypeScript, ESM
+## Quality State
+- Tests: 231 passing, 19 suites
+- TypeScript: 0 errors
+- Lint: 0 errors
+- Knip: 0 issues
+- Audit: 0 vulnerabilities
+- Build: clean
+
+## Tools (10 MCP tools)
+1. generate_brand_identity
+2. generate_color_palette
+3. generate_typography_system
+4. export_design_tokens — supports 7 formats: json, css, tailwind, figma, react, sass, style-dictionary
+5. create_brand_guidelines
+6. validate_brand_consistency
+7. refine_brand_element
+8. generate_brand_assets
+9. generate_design_system
+10. generate_brand_voice (NEW in this session)
+
+## Recent Changes (this session)
+- Fixed flatted DoS vulnerability via npm audit fix
+- Migrated claude-interpreter.ts from raw fetch to @anthropic-ai/sdk v0.78.0
+- Added Style Dictionary exporter (src/lib/branding-core/exporters/style-dictionary.ts)
+- Added generate_brand_voice tool with tone/audience inference, vocabulary, do/don't guidelines
+- Added HTTP/SSE transport: MCP_TRANSPORT=http starts StreamableHTTP server on PORT (default 3000)
+  - POST /mcp — JSON-RPC requests
+  - GET /mcp — SSE stream (session-based via mcp-session-id header)
+  - DELETE /mcp — close session
 
 ## Architecture
+- Entry: src/index.ts — branches on config.transport ('stdio' | 'http')
+- HTTP: src/lib/http-server.ts — StreamableHTTPServerTransport with session map
+- Config: src/lib/config.ts — AppConfig adds transport + port fields
+- Tools: src/tools/*.ts — each registers one MCP tool
+- Core: src/lib/branding-core/ — generators, exporters, validators, ai interpreter
+- Tests: src/__tests__/unit/*.test.ts — Jest ESM
 
-- MCP server (stdio transport): 8 tools, 2 resources
-- Algorithmic-first generation (zero external API calls)
-- Optional AI enhancement via Anthropic API (brand-interpreter)
-- Core library: `src/lib/branding-core/` — reusable generators, exporters, validators
+## Run Commands
+```bash
+npm run typecheck     # tsc --noEmit
+NODE_OPTIONS=--experimental-vm-modules npm test
+npm run lint
+npm run knip
+npm run registry:check
+MCP_TRANSPORT=http PORT=3000 node dist/index.js   # HTTP mode
+```
 
-## Tools
-
-1. `generate_brand_identity` — Full brand system (colors + typography + spacing + shadows + borders + motion)
-2. `color_palette` — HSL color harmony with WCAG contrast
-3. `typography_system` — Modular type scale + font pairing
-4. `export_tokens` — Multi-format design token export (W3C JSON, CSS, Tailwind, Figma, React, Sass)
-5. `guidelines` — Brand guidelines document generation (HTML/PDF)
-6. `validate` — Brand consistency scoring + WCAG validation
-7. `refine_brand_element` — AI-powered natural language refinement
-
-## Generators (10 total)
-
-- `color-palette.ts` — HSL harmonies, WCAG contrast, hexToHsl/hslToHex utilities
-- `typography-system.ts` — Modular type scales, curated font pairings
-- `spacing-scale.ts` — Geometric spacing progression
-- `logo-generator.ts` — 4 SVG variants: wordmark, monogram, abstract, icon (v0.4.0)
-- `shadow-system.ts` — 6-level elevation, brand-tinted, light/dark themes (v0.3.0)
-- `border-system.ts` — Style-aware radii + border widths for all 8 brand styles (v0.3.0)
-- `motion-system.ts` — Durations, cubic-bezier easings, transition presets (v0.3.0)
-- `gradient-system.ts` — 5 presets (hero/button/card/text/background), linear/radial/conic (v0.4.0)
-- `favicon-generator.ts` — 4 sizes (16/32/180/512), stroke optimization (v0.4.0)
-- `og-image-generator.ts` — default/article/social templates with brand gradients (v0.4.0)
-
-## Resources
-
-- Templates catalog (`brand://templates`)
-- Knowledge base (`brand://knowledge`)
-
-## Test & Coverage
-
-- 98.36% statement coverage, 100% function coverage, 89.72% branches
-- 15 suites, 188 tests
-- Generators: shadow (8), border (9), motion (10), plus exporter tests (9 new)
-
-## CI Status
-
-- CI: passing (PR #6 merged — v0.3.0 design system completeness)
-- Security scan: passing (trufflehog pinned to @v3.93.4, was @main)
-- Release: v0.3.0 tagged and released on GitHub
-- .gitignore expanded to 18 lines (was 7) — covers .uiforge/, .serena/, .claude/, SQLite
-
-## Key Files
-
-- `src/index.ts` — MCP server entry + tool registration
-- `src/tools/` — 7 tool definitions with Zod schemas
-- `src/lib/branding-core/generators/` — 7 generators (color, typography, spacing, logo, shadow, border, motion)
-- `src/lib/branding-core/exporters/` — 6 format exporters (CSS, Tailwind, W3C JSON, Figma, React, Sass)
-- `src/lib/branding-core/validators/` — WCAG contrast, consistency
-- `src/lib/branding-core/ai/` — Brand interpretation layer (keyword/Claude/auto strategies)
-
-## Release History
-
-- v0.1.0 — Initial: 7 tools, 4 generators, 6 exporters
-- v0.2.0 — AI interpretation layer for natural language refinement
-- v0.3.0 — Design system completeness: shadow, border, motion generators + exporter updates
-- v0.4.0 — Brand asset expansion: gradients, multi-variant logos, favicons, OG images, generate_brand_assets tool
-
-## Key Patterns
-
-- Optional field + if-guard for backward compat (gradients?, shadows?, borders?, motion?)
-- BrandStyle-aware generation: each of 8 styles maps to different configs
-- LogoOutput.svg preserved as wordmark for backward compat; .variants record adds all 4
-
-## Open Issues / PRs
-
-- None
+## Next Steps
+- Bump version to 0.8.0 (server.json + package.json + src/index.ts)
+- Add integration tests for HTTP transport (actual HTTP calls)
+- Consider adding OAuth/bearer auth middleware for HTTP transport
+- Push to remote and create PR/release
