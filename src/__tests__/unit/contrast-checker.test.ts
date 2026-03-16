@@ -35,7 +35,12 @@ describe('validateContrast', () => {
 
   it('reports error when color fails AA on both white and dark backgrounds', () => {
     const grayPalette = generateColorPalette('#cccccc');
-    const midGraySwatch = { name: 'primary', hex: '#808080', hsl: { h: 0, s: 0, l: 50 }, usage: 'primary' };
+    const midGraySwatch = {
+      name: 'primary',
+      hex: '#808080',
+      hsl: { h: 0, s: 0, l: 50 },
+      usage: 'primary',
+    };
     const brand = createTestBrand({
       colors: {
         ...grayPalette,
