@@ -79,3 +79,4 @@ export { generateBrandSubscription } from './generators/brand-subscription.js';
 export { generateBrandB2b } from './generators/brand-b2b.js';
 export { generateBrandSaas } from './generators/brand-saas.js';
 export { generateBrandFintech } from './generators/brand-fintech.js';
+export { generateBrandHealthcare } from './generators/brand-healthcare.js';
