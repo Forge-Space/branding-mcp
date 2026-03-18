@@ -68,17 +68,17 @@ works in algorithmic-only mode without external APIs.
 
 Core and vertical tools are available (58 total). The table below highlights the core set plus key vertical generators, including healthcare.
 
-| Tool                         | Description                                            |
-| ---------------------------- | ------------------------------------------------------ |
-| `generate_brand_identity`    | Complete brand from name, industry, and style          |
-| `generate_color_palette`     | Color palette with harmony and WCAG data               |
-| `generate_typography_system` | Font pairing + modular type scale                      |
-| `export_design_tokens`       | Export brand to JSON/CSS/Tailwind/Figma/React/Sass     |
-| `create_brand_guidelines`    | Generate HTML brand book                               |
-| `validate_brand_consistency` | Check WCAG compliance and completeness                 |
-| `refine_brand_element`       | Iterate on specific brand elements                     |
-| `generate_brand_assets`      | Generate favicons and OG images from brand             |
-| `generate_design_system`     | Complete design system in one call (identity + export) |
+| Tool                         | Description                                             |
+| ---------------------------- | ------------------------------------------------------- |
+| `generate_brand_identity`    | Complete brand from name, industry, and style           |
+| `generate_color_palette`     | Color palette with harmony and WCAG data                |
+| `generate_typography_system` | Font pairing + modular type scale                       |
+| `export_design_tokens`       | Export brand to JSON/CSS/Tailwind/Figma/React/Sass      |
+| `create_brand_guidelines`    | Generate HTML brand book                                |
+| `validate_brand_consistency` | Check WCAG compliance and completeness                  |
+| `refine_brand_element`       | Iterate on specific brand elements                      |
+| `generate_brand_assets`      | Generate favicons and OG images from brand              |
+| `generate_design_system`     | Complete design system in one call (identity + export)  |
 | `generate_brand_fintech`     | Fintech-specific strategy with compliance and security  |
 | `generate_brand_healthcare`  | Healthcare strategy with care models and safety signals |
 
