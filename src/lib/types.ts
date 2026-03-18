@@ -1290,3 +1290,14 @@ export interface BrandFintechOutput {
   userJourney: string[];
   fintechBriefSummary: string;
 }
+
+export interface BrandHealthcareOutput {
+  positioning: string;
+  careSpecialties: string[];
+  trustSignals: string[];
+  regulatoryFramework: string[];
+  communicationPillars: string[];
+  patientJourney: string[];
+  accessibilityRequirements: string[];
+  healthcareBriefSummary: string;
+}

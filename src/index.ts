@@ -113,6 +113,7 @@ export type {
   BrandB2bOutput,
   BrandSaasOutput,
   BrandFintechOutput,
+  BrandHealthcareOutput,
 } from './lib/types.js';
 
 import { parseArgs } from 'node:util';
