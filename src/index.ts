@@ -180,6 +180,7 @@ import { registerGenerateBrandSubscription } from './tools/generate-brand-subscr
 import { registerGenerateBrandB2b } from './tools/generate-brand-b2b.js';
 import { registerGenerateBrandSaas } from './tools/generate-brand-saas.js';
 import { registerGenerateBrandFintech } from './tools/generate-brand-fintech.js';
+import { registerGenerateBrandHealthcare } from './tools/generate-brand-healthcare.js';
 
 import { registerBrandTemplates } from './resources/brand-templates.js';
 import { registerBrandKnowledge } from './resources/brand-knowledge.js';
@@ -260,6 +261,7 @@ async function main(): Promise<void> {
   registerGenerateBrandB2b(server);
   registerGenerateBrandSaas(server);
   registerGenerateBrandFintech(server);
+  registerGenerateBrandHealthcare(server);
 
   registerBrandTemplates(server);
   registerBrandKnowledge(server);
