@@ -1,7 +1,7 @@
 import type { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { registerBrandingMcpSurface } from '../../../index.js';
 
-export type McpToolHandler = (args: Record<string, unknown>) => Promise<unknown> | unknown;
+export type McpToolHandler = (args: Record<string, unknown>) => unknown;
 
 interface RegisteredTool {
   name: string;
@@ -22,7 +22,7 @@ export class McpTestServer {
     this.tools.set(name, { name, description, handler });
   }
 
-  resource(name: string): void {
+  resource(name: string, _uri?: unknown, _handler?: unknown): void {
     this.resources.add(name);
   }
 
@@ -35,7 +35,7 @@ export class McpTestServer {
   }
 
   getDuplicateToolNames(): string[] {
-    return [...this.duplicateToolNames.keys()].sort();
+    return [...this.duplicateToolNames.keys()].sort((a, b) => a.localeCompare(b));
   }
 
   async callTool(name: string, payload: Record<string, unknown>): Promise<unknown> {

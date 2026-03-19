@@ -7,8 +7,8 @@ describe('MCP server registration inventory', () => {
     const duplicates = server.getDuplicateToolNames();
     expect(duplicates).toEqual([]);
 
-    const actual = server.getToolNames().sort();
-    const expected = [...MCP_REGISTERED_TOOL_NAMES].sort();
+    const actual = server.getToolNames().sort((a, b) => a.localeCompare(b));
+    const expected = [...MCP_REGISTERED_TOOL_NAMES].sort((a, b) => a.localeCompare(b));
 
     const actualSet = new Set(actual);
     const expectedSet = new Set(expected);

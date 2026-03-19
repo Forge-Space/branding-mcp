@@ -25,7 +25,13 @@ async function generateBrandIdentity(
     style: 'minimal',
   })) as ToolResponse;
 
-  return response.content[0]?.text ?? '';
+  const generatedBrandJson = response.content[0]?.text;
+
+  if (!generatedBrandJson) {
+    throw new Error(`generate_brand_identity returned empty content: ${JSON.stringify(response)}`);
+  }
+
+  return generatedBrandJson;
 }
 
 function hydratePayload(
