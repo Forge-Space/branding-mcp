@@ -16,14 +16,8 @@ describe('MCP server registration inventory', () => {
     const missing = expected.filter((name) => !actualSet.has(name));
     const extra = actual.filter((name) => !expectedSet.has(name));
 
-    if (missing.length > 0 || extra.length > 0) {
-      const details = [
-        `Missing: ${missing.join(', ') || '(none)'}`,
-        `Extra: ${extra.join(', ') || '(none)'}`,
-      ].join('\n');
-      throw new Error(`MCP registration set mismatch\n${details}`);
-    }
-
+    expect(missing).toEqual([]);
+    expect(extra).toEqual([]);
     expect(actual).toEqual(expected);
   });
 });

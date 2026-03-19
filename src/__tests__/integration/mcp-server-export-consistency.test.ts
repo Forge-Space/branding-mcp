@@ -16,8 +16,6 @@ describe('MCP tool-to-export consistency', () => {
       (entry) => !(entry.expectedExportSymbol in brandingCore)
     ).map((entry) => `${entry.toolName}->${entry.expectedExportSymbol}`);
 
-    if (missingExportSymbols.length > 0) {
-      throw new Error(`Matrix export symbol mismatch:\n${missingExportSymbols.join('\n')}`);
-    }
+    expect(missingExportSymbols).toEqual([]);
   });
 });
