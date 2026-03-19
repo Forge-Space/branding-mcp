@@ -117,6 +117,7 @@ export type {
 } from './lib/types.js';
 
 import { parseArgs } from 'node:util';
+import { pathToFileURL } from 'node:url';
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';
 import { loadConfig } from './lib/config.js';
@@ -185,25 +186,7 @@ import { registerGenerateBrandHealthcare } from './tools/generate-brand-healthca
 import { registerBrandTemplates } from './resources/brand-templates.js';
 import { registerBrandKnowledge } from './resources/brand-knowledge.js';
 
-async function main(): Promise<void> {
-  const { values: cliArgs } = parseArgs({
-    args: process.argv.slice(2),
-    options: { transport: { type: 'string' } },
-    strict: false,
-  });
-
-  if (cliArgs.transport) {
-    process.env.MCP_TRANSPORT = cliArgs.transport as string;
-  }
-
-  const config = loadConfig();
-  logger.info({ env: config.nodeEnv }, 'Starting branding-mcp server');
-
-  const server = new McpServer({
-    name: '@forgespace/branding-mcp',
-    version: '0.55.3',
-  });
-
+export function registerBrandingMcpSurface(server: McpServer): void {
   registerGenerateBrandIdentity(server);
   registerGenerateColorPalette(server);
   registerGenerateTypographySystem(server);
@@ -265,6 +248,37 @@ async function main(): Promise<void> {
 
   registerBrandTemplates(server);
   registerBrandKnowledge(server);
+}
+
+function isMainModule(): boolean {
+  const entry = process.argv[1];
+  if (!entry) {
+    return false;
+  }
+
+  return import.meta.url === pathToFileURL(entry).href;
+}
+
+async function main(): Promise<void> {
+  const { values: cliArgs } = parseArgs({
+    args: process.argv.slice(2),
+    options: { transport: { type: 'string' } },
+    strict: false,
+  });
+
+  if (cliArgs.transport) {
+    process.env.MCP_TRANSPORT = cliArgs.transport as string;
+  }
+
+  const config = loadConfig();
+  logger.info({ env: config.nodeEnv }, 'Starting branding-mcp server');
+
+  const server = new McpServer({
+    name: '@forgespace/branding-mcp',
+    version: '0.55.3',
+  });
+
+  registerBrandingMcpSurface(server);
 
   if (config.transport === 'http') {
     await startHttpServer(server, config.port);
@@ -275,17 +289,19 @@ async function main(): Promise<void> {
   }
 }
 
-main().catch((error) => {
-  logger.fatal(error, 'Failed to start branding-mcp server');
-  process.exit(1);
-});
+if (isMainModule()) {
+  main().catch((error) => {
+    logger.fatal(error, 'Failed to start branding-mcp server');
+    process.exit(1);
+  });
 
-process.on('SIGTERM', () => {
-  logger.info('Received SIGTERM, shutting down');
-  process.exit(0);
-});
+  process.on('SIGTERM', () => {
+    logger.info('Received SIGTERM, shutting down');
+    process.exit(0);
+  });
 
-process.on('SIGINT', () => {
-  logger.info('Received SIGINT, shutting down');
-  process.exit(0);
-});
+  process.on('SIGINT', () => {
+    logger.info('Received SIGINT, shutting down');
+    process.exit(0);
+  });
+}
