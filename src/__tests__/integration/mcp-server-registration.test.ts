@@ -1,0 +1,23 @@
+import { MCP_REGISTERED_TOOL_NAMES } from './helpers/mcp-tool-matrix.js';
+import { registerInTestServer } from './helpers/mcp-test-server.js';
+
+describe('MCP server registration inventory', () => {
+  it('registers the exact MCP tool set with no duplicates', () => {
+    const server = registerInTestServer();
+    const duplicates = server.getDuplicateToolNames();
+    expect(duplicates).toEqual([]);
+
+    const actual = server.getToolNames().sort((a, b) => a.localeCompare(b));
+    const expected = [...MCP_REGISTERED_TOOL_NAMES].sort((a, b) => a.localeCompare(b));
+
+    const actualSet = new Set(actual);
+    const expectedSet = new Set(expected);
+
+    const missing = expected.filter((name) => !actualSet.has(name));
+    const extra = actual.filter((name) => !expectedSet.has(name));
+
+    expect(missing).toEqual([]);
+    expect(extra).toEqual([]);
+    expect(actual).toEqual(expected);
+  });
+});
