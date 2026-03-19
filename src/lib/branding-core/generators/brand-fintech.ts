@@ -1,15 +1,5 @@
 import { BrandIdentity, BrandStyle, BrandFintechOutput } from '../../types.js';
-
-const VALID_STYLES = new Set<BrandStyle>([
-  'minimal',
-  'bold',
-  'elegant',
-  'playful',
-  'corporate',
-  'tech',
-  'organic',
-  'retro',
-]);
+import { resolveBrandStyle } from './brand-style.js';
 
 const STYLE_POSITIONING: Record<BrandStyle, string> = {
   minimal: 'Clean, transparent financial tools that remove complexity from money management.',
@@ -227,7 +217,7 @@ function buildBriefSummary(brand: BrandIdentity, safeStyle: BrandStyle): string 
 }
 
 export function generateBrandFintech(brand: BrandIdentity): BrandFintechOutput {
-  const safeStyle: BrandStyle = VALID_STYLES.has(brand.style) ? brand.style : 'minimal';
+  const safeStyle = resolveBrandStyle(brand.style);
 
   return {
     positioning: STYLE_POSITIONING[safeStyle],

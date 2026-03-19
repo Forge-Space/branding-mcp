@@ -10,7 +10,7 @@
 [![npm version](https://img.shields.io/npm/v/@forgespace/branding-mcp)](https://www.npmjs.com/package/@forgespace/branding-mcp)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Generate complete design systems — colors, typography, spacing, shadows, borders, motion tokens, gradients, multi-variant logos, favicons, and OG images with multi-format export. 9 MCP tools, zero API dependencies, algorithmic-first generation.
+Generate complete design systems — colors, typography, spacing, shadows, borders, motion tokens, gradients, multi-variant logos, favicons, and OG images with multi-format export. 58 MCP tools, zero API dependencies, algorithmic-first generation.
 
 ## Features
 
@@ -66,17 +66,21 @@ works in algorithmic-only mode without external APIs.
 
 ### MCP Tools
 
-| Tool                         | Description                                            |
-| ---------------------------- | ------------------------------------------------------ |
-| `generate_brand_identity`    | Complete brand from name, industry, and style          |
-| `generate_color_palette`     | Color palette with harmony and WCAG data               |
-| `generate_typography_system` | Font pairing + modular type scale                      |
-| `export_design_tokens`       | Export brand to JSON/CSS/Tailwind/Figma/React/Sass     |
-| `create_brand_guidelines`    | Generate HTML brand book                               |
-| `validate_brand_consistency` | Check WCAG compliance and completeness                 |
-| `refine_brand_element`       | Iterate on specific brand elements                     |
-| `generate_brand_assets`      | Generate favicons and OG images from brand             |
-| `generate_design_system`     | Complete design system in one call (identity + export) |
+Core and vertical tools are available (58 total). The table below highlights the core set plus key vertical generators, including healthcare.
+
+| Tool                         | Description                                             |
+| ---------------------------- | ------------------------------------------------------- |
+| `generate_brand_identity`    | Complete brand from name, industry, and style           |
+| `generate_color_palette`     | Color palette with harmony and WCAG data                |
+| `generate_typography_system` | Font pairing + modular type scale                       |
+| `export_design_tokens`       | Export brand to JSON/CSS/Tailwind/Figma/React/Sass      |
+| `create_brand_guidelines`    | Generate HTML brand book                                |
+| `validate_brand_consistency` | Check WCAG compliance and completeness                  |
+| `refine_brand_element`       | Iterate on specific brand elements                      |
+| `generate_brand_assets`      | Generate favicons and OG images from brand              |
+| `generate_design_system`     | Complete design system in one call (identity + export)  |
+| `generate_brand_fintech`     | Fintech-specific strategy with compliance and security  |
+| `generate_brand_healthcare`  | Healthcare strategy with care models and safety signals |
 
 ### MCP Resources
 
@@ -122,7 +126,7 @@ src/
 │   ├── config.ts               # Environment config
 │   ├── logger.ts               # Pino logging
 │   └── types.ts                # TypeScript interfaces
-├── tools/                      # 8 MCP tool registrations
+├── tools/                      # 58 MCP tool registrations
 └── resources/                  # Templates + knowledge base
 ```
 

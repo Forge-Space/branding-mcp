@@ -27,4 +27,9 @@ describe('MCP server', () => {
     expect(mod.generateFavicons).toBeDefined();
     expect(mod.generateOgImage).toBeDefined();
   });
+
+  it('healthcare generator export is available', async () => {
+    const mod = await import('../../lib/branding-core/index.js');
+    expect(mod.generateBrandHealthcare).toBeDefined();
+  });
 });
