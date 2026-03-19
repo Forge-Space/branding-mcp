@@ -7,9 +7,9 @@ describe('MCP tool-to-export consistency', () => {
     const server = registerInTestServer();
     const registeredNames = new Set(server.getToolNames());
 
-    const unregisteredMatrixTools = MCP_TOOL_MATRIX.filter((entry) => !registeredNames.has(entry.toolName)).map(
-      (entry) => entry.toolName
-    );
+    const unregisteredMatrixTools = MCP_TOOL_MATRIX.filter(
+      (entry) => !registeredNames.has(entry.toolName)
+    ).map((entry) => entry.toolName);
     expect(unregisteredMatrixTools).toEqual([]);
 
     const missingExportSymbols = MCP_TOOL_MATRIX.filter(
@@ -17,9 +17,7 @@ describe('MCP tool-to-export consistency', () => {
     ).map((entry) => `${entry.toolName}->${entry.expectedExportSymbol}`);
 
     if (missingExportSymbols.length > 0) {
-      throw new Error(
-        `Matrix export symbol mismatch:\n${missingExportSymbols.join('\n')}`
-      );
+      throw new Error(`Matrix export symbol mismatch:\n${missingExportSymbols.join('\n')}`);
     }
   });
 });
