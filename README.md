@@ -145,6 +145,17 @@ Part of the [Forge Space](https://github.com/Forge-Space) ecosystem:
 - [GitHub Discussions](https://github.com/orgs/Forge-Space/discussions)
 - [Issue tracker](https://github.com/Forge-Space/branding-mcp/issues)
 
+## GitHub Workflow
+
+This repository follows the shared Forge Space GitHub work-management baseline:
+
+- Discussions for ideas, RFCs, Q&A, and announcements
+- Issues for actionable delivery work
+- Projects for roadmap visibility and cross-repo reporting
+
+See [Forge-Space/.github `GOVERNANCE.md`](https://github.com/Forge-Space/.github/blob/main/GOVERNANCE.md)
+for the org-wide contract.
+
 ## License
 
 MIT
