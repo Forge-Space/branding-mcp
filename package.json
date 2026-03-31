@@ -78,7 +78,7 @@
     "@types/node": "^25.5.0",
     "@typescript-eslint/eslint-plugin": "^8.32.0",
     "@typescript-eslint/parser": "^8.32.0",
-    "eslint": "^9.0.0",
+    "eslint": "^10.1.0",
     "husky": "^9.0.0",
     "jest": "^30.3.0",
     "knip": "^6.1.0",
