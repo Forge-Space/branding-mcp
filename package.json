@@ -93,5 +93,8 @@
       "eslint --fix",
       "prettier --write"
     ]
+  },
+  "overrides": {
+    "axios": ">=0.0.0 <0.30.4 || >0.30.4 <1.14.1 || >=1.14.2"
   }
 }
