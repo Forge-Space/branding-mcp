@@ -18,6 +18,7 @@ export default {
     ],
   },
   coverageDirectory: 'coverage',
+  coverageReporters: ['text', 'lcov', 'json-summary'],
   collectCoverageFrom: [
     'src/lib/**/*.ts',
     '!src/lib/config.ts',
