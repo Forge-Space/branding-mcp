@@ -1,0 +1,39 @@
+{
+  "id": "generate-brand-healthcare-tool-06",
+  "seq": "06",
+  "title": "Update tool inventory docs for healthcare vertical",
+  "description": "Current: documentation/tool inventory does not mention generate_brand_healthcare and still reflects older tool counts. Expected: README and related inventory text include the healthcare tool and accurate counts after wiring.",
+  "status": "completed",
+  "depends_on": [
+    "05"
+  ],
+  "parallel": false,
+  "ready": false,
+  "suggested_agent": "DocsEngineer",
+  "context_files": [
+    "/Users/lucassantana/.config/opencode/AGENTS.md"
+  ],
+  "reference_files": [
+    "README.md",
+    "src/index.ts"
+  ],
+  "affected_files": [
+    "README.md"
+  ],
+  "acceptance_criteria": [
+    "README MCP tools list includes generate_brand_healthcare with concise description",
+    "Any stated tool count is consistent with registered tools after this feature",
+    "Documentation changes are limited to healthcare tool inventory accuracy"
+  ],
+  "out_of_scope": [
+    "CHANGELOG release notes",
+    "server.json/package.json version updates"
+  ],
+  "deliverables": [
+    "README.md"
+  ],
+  "agent_id": null,
+  "started_at": null,
+  "completed_at": "2026-03-19T04:05:08.984Z",
+  "completion_summary": "README tool inventory includes healthcare entry and updated tool count consistency."
+}

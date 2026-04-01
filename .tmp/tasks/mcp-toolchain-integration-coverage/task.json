@@ -1,0 +1,29 @@
+{
+  "id": "mcp-toolchain-integration-coverage",
+  "name": "Expand MCP toolchain integration test coverage",
+  "status": "active",
+  "objective": "Expand integration tests so MCP tool registration, invocation contract shape, and branding-core export consistency are verified from a single maintained matrix.",
+  "context_files": [
+    "/Users/lucassantana/.config/opencode/context/core/task-management/standards/task-schema.md",
+    "/Users/lucassantana/.config/opencode/context/core/task-management/guides/splitting-tasks.md",
+    "/Users/lucassantana/.config/opencode/context/core/task-management/guides/managing-tasks.md"
+  ],
+  "reference_files": [
+    "src/__tests__/integration/mcp-server.test.ts",
+    "src/__tests__/unit/design-system-tool.test.ts",
+    "src/index.ts",
+    "src/lib/branding-core/index.ts",
+    "src/tools/generate-brand-identity.ts",
+    "src/tools/generate-design-system.ts",
+    "src/tools/generate-brand-fintech.ts"
+  ],
+  "exit_criteria": [
+    "Integration tests assert the complete registered MCP tool set through a reusable registration path",
+    "Integration tests verify invocation contract shape for core and vertical MCP tools using table-driven fixtures",
+    "Integration tests assert tool-to-branding-core export consistency without changing release/version/publish flows"
+  ],
+  "subtask_count": 6,
+  "completed_count": 0,
+  "created_at": "2026-03-18T00:00:00Z",
+  "completed_at": null
+}

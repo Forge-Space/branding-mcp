@@ -1,0 +1,72 @@
+{
+  "project": "branding-mcp",
+  "generatedAt": 1773955309,
+  "waveHandoffs": {
+    "wave1": {
+      "wave": 1,
+      "branch": "feature/branding-wave1-healthcare-contract-exports",
+      "worktree": "/Users/lucassantana/Desenvolvimento/forge-space/branding-mcp-worktrees/wave1-healthcare-contract-exports",
+      "taskIds": [
+        "task_branding_healthcare_01_define-healthcare-output-contract-and-exports"
+      ],
+      "exists": true,
+      "trusted": true
+    },
+    "wave2": {
+      "wave": 2,
+      "branch": "feature/branding-wave2-healthcare-generator-wrapper-tests",
+      "worktree": "/Users/lucassantana/Desenvolvimento/forge-space/branding-mcp-worktrees/wave2-healthcare-generator-wrapper-tests",
+      "taskIds": [
+        "task_branding_healthcare_02_implement-healthcare-vertical-generator-behavior",
+        "task_branding_healthcare_03_add-healthcare-generator-unit-tests-for-branches-and-fallback",
+        "task_branding_healthcare_04_create-mcp-wrapper-for-generate-brand-healthcare"
+      ],
+      "exists": false,
+      "trusted": true
+    },
+    "wave3": {
+      "wave": 3,
+      "branch": "feature/branding-wave3-healthcare-registration-docs",
+      "worktree": "/Users/lucassantana/Desenvolvimento/forge-space/branding-mcp-worktrees/wave3-healthcare-registration-docs",
+      "taskIds": [
+        "task_branding_healthcare_05_wire-healthcare-tool-into-server-registration-and-integration-coverage",
+        "task_branding_healthcare_06_update-tool-inventory-docs-for-healthcare-vertical"
+      ],
+      "exists": false,
+      "trusted": true
+    },
+    "wave4": {
+      "wave": 4,
+      "branch": "feature/branding-wave4-mcp-matrix-registration-harness",
+      "worktree": "/Users/lucassantana/Desenvolvimento/forge-space/branding-mcp-worktrees/wave4-mcp-matrix-registration-harness",
+      "taskIds": [
+        "task_branding_mcp_01_create-mcp-integration-tool-matrix-fixture",
+        "task_branding_mcp_02_expose-reusable-mcp-registration-function"
+      ],
+      "exists": false,
+      "trusted": true
+    },
+    "wave5": {
+      "wave": 5,
+      "branch": "feature/branding-wave5-registration-invocation-contract-tests",
+      "worktree": "/Users/lucassantana/Desenvolvimento/forge-space/branding-mcp-worktrees/wave5-registration-invocation-contract-tests",
+      "taskIds": [
+        "task_branding_mcp_03_assert-complete-mcp-tool-registration-set",
+        "task_branding_mcp_04_add-core-mcp-tool-invocation-contract-tests",
+        "task_branding_mcp_05_add-vertical-mcp-tool-invocation-contract-tests"
+      ],
+      "exists": false,
+      "trusted": true
+    },
+    "wave6": {
+      "wave": 6,
+      "branch": "feature/branding-wave6-export-consistency-guard",
+      "worktree": "/Users/lucassantana/Desenvolvimento/forge-space/branding-mcp-worktrees/wave6-export-consistency-guard",
+      "taskIds": [
+        "task_branding_mcp_06_assert-tool-to-export-consistency-in-integration-suite"
+      ],
+      "exists": false,
+      "trusted": true
+    }
+  }
+}

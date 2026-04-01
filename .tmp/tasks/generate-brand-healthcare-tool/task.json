@@ -1,0 +1,28 @@
+{
+  "id": "generate-brand-healthcare-tool",
+  "name": "Add generate_brand_healthcare MCP vertical tool",
+  "status": "active",
+  "objective": "Add a new healthcare vertical generator and MCP tool registration with integrated unit and integration test coverage.",
+  "context_files": [
+    "/Users/lucassantana/.config/opencode/AGENTS.md",
+    "/Users/lucassantana/.config/opencode/context/core/task-management/standards/task-schema.md",
+    "/Users/lucassantana/.config/opencode/context/core/task-management/guides/splitting-tasks.md"
+  ],
+  "reference_files": [
+    "src/lib/branding-core/generators/brand-fintech.ts",
+    "src/tools/generate-brand-fintech.ts",
+    "src/lib/branding-core/index.ts",
+    "src/lib/types.ts",
+    "src/index.ts",
+    "src/__tests__/unit/brand-fintech.test.ts"
+  ],
+  "exit_criteria": [
+    "Healthcare generator is implemented and exported through branding-core and MCP entrypoints",
+    "generate_brand_healthcare tool is registered in the MCP server startup flow",
+    "Unit and integration tests covering style branches and fallback behavior pass"
+  ],
+  "subtask_count": 6,
+  "completed_count": 6,
+  "created_at": "2026-03-18T00:00:00Z",
+  "completed_at": null
+}

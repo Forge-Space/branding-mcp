@@ -1,0 +1,37 @@
+{
+  "id": "mcp-toolchain-integration-coverage-04",
+  "seq": "04",
+  "title": "Add core MCP tool invocation contract tests",
+  "description": "Current: integration tests do not execute core MCP handlers end-to-end with a shared contract assertion. Expected: matrix-driven tests invoke core tool handlers and verify consistent MCP response contract shape (content array, serializable payload, no unexpected error flag).",
+  "status": "pending",
+  "depends_on": ["01", "02"],
+  "parallel": true,
+  "suggested_agent": "CoderAgent",
+  "context_files": [
+    "/Users/lucassantana/.config/opencode/context/core/task-management/standards/task-schema.md"
+  ],
+  "reference_files": [
+    "src/__tests__/unit/design-system-tool.test.ts",
+    "src/tools/generate-brand-identity.ts",
+    "src/tools/generate-design-system.ts",
+    "src/__tests__/integration/helpers/mcp-tool-matrix.ts"
+  ],
+  "affected_files": [
+    "src/__tests__/integration/mcp-server-invocation-core.test.ts",
+    "src/__tests__/integration/helpers/mcp-contract-assertions.ts"
+  ],
+  "acceptance_criteria": [
+    "Core-tool matrix entries are invoked through registered handlers in tests",
+    "Each invocation asserts MCP contract shape with shared helper assertions",
+    "Failing contract cases produce actionable assertion messages per tool name"
+  ],
+  "out_of_scope": ["Snapshotting full business payload bodies", "Performance benchmarking"],
+  "deliverables": [
+    "src/__tests__/integration/mcp-server-invocation-core.test.ts",
+    "src/__tests__/integration/helpers/mcp-contract-assertions.ts"
+  ],
+  "agent_id": null,
+  "started_at": null,
+  "completed_at": null,
+  "completion_summary": null
+}

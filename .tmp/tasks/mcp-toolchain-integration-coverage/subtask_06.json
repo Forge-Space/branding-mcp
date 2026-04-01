@@ -1,0 +1,41 @@
+{
+  "id": "mcp-toolchain-integration-coverage-06",
+  "seq": "06",
+  "title": "Assert tool-to-export consistency in integration suite",
+  "description": "Current: no integration test verifies that registered MCP tools remain aligned with branding-core exports, so drift can happen silently. Expected: integration test cross-checks matrix export symbols against branding-core module exports and validates registration/invocation suites stay in sync.",
+  "status": "pending",
+  "depends_on": ["01", "02", "03", "04", "05"],
+  "parallel": false,
+  "suggested_agent": "CoderAgent",
+  "context_files": [
+    "/Users/lucassantana/.config/opencode/context/core/task-management/standards/task-schema.md"
+  ],
+  "reference_files": [
+    "src/lib/branding-core/index.ts",
+    "src/__tests__/integration/helpers/mcp-tool-matrix.ts",
+    "src/__tests__/integration/mcp-server-registration.test.ts",
+    "src/__tests__/integration/mcp-server-invocation-core.test.ts",
+    "src/__tests__/integration/mcp-server-invocation-vertical.test.ts"
+  ],
+  "affected_files": [
+    "src/__tests__/integration/mcp-server-export-consistency.test.ts",
+    "src/__tests__/integration/helpers/mcp-tool-matrix.ts"
+  ],
+  "acceptance_criteria": [
+    "Test fails when a matrix export symbol is missing from branding-core index exports",
+    "Test fails when a registered tool lacks a matrix export mapping",
+    "Integration suite includes a focused command or filter for MCP chain coverage checks"
+  ],
+  "out_of_scope": [
+    "Publishing new package versions",
+    "Changing release notes or changelog workflow"
+  ],
+  "deliverables": [
+    "src/__tests__/integration/mcp-server-export-consistency.test.ts",
+    "src/__tests__/integration/helpers/mcp-tool-matrix.ts"
+  ],
+  "agent_id": null,
+  "started_at": null,
+  "completed_at": null,
+  "completion_summary": null
+}

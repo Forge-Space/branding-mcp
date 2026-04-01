@@ -1,0 +1,40 @@
+{
+  "id": "mcp-toolchain-integration-coverage-05",
+  "seq": "05",
+  "title": "Add vertical MCP tool invocation contract tests",
+  "description": "Current: vertical tool handlers are mostly covered by unit tests, but integration contract checks are inconsistent at MCP handler level. Expected: table-driven integration tests execute vertical MCP handlers with minimal valid payloads and enforce the same response contract assertions used for core tools.",
+  "status": "pending",
+  "depends_on": ["01", "02"],
+  "parallel": true,
+  "suggested_agent": "CoderAgent",
+  "context_files": [
+    "/Users/lucassantana/.config/opencode/context/core/task-management/standards/task-schema.md"
+  ],
+  "reference_files": [
+    "src/tools/generate-brand-fintech.ts",
+    "src/tools/generate-brand-saas.ts",
+    "src/tools/generate-brand-b2b.ts",
+    "src/__tests__/integration/helpers/mcp-tool-matrix.ts"
+  ],
+  "affected_files": [
+    "src/__tests__/integration/mcp-server-invocation-vertical.test.ts",
+    "src/__tests__/integration/helpers/mcp-tool-matrix.ts"
+  ],
+  "acceptance_criteria": [
+    "Vertical-tool matrix entries are invoked through MCP handlers in a single parameterized suite",
+    "Each vertical tool test enforces shared response contract assertions",
+    "Test failures identify the exact tool and payload fixture that broke"
+  ],
+  "out_of_scope": [
+    "Adding new vertical generator capabilities",
+    "Rewriting existing unit tests for tool internals"
+  ],
+  "deliverables": [
+    "src/__tests__/integration/mcp-server-invocation-vertical.test.ts",
+    "src/__tests__/integration/helpers/mcp-tool-matrix.ts"
+  ],
+  "agent_id": null,
+  "started_at": null,
+  "completed_at": null,
+  "completion_summary": null
+}

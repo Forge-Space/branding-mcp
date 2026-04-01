@@ -1,0 +1,40 @@
+{
+  "id": "generate-brand-healthcare-tool-04",
+  "seq": "04",
+  "title": "Create MCP wrapper for generate_brand_healthcare",
+  "description": "Current: MCP tools include fintech and other vertical wrappers but no healthcare tool entrypoint. Expected: a new tool wrapper parses BrandIdentity JSON and returns formatted healthcare output through server.tool.",
+  "status": "completed",
+  "depends_on": [
+    "02"
+  ],
+  "parallel": true,
+  "ready": false,
+  "suggested_agent": "CoderAgent",
+  "context_files": [
+    "/Users/lucassantana/.config/opencode/AGENTS.md"
+  ],
+  "reference_files": [
+    "src/tools/generate-brand-fintech.ts",
+    "src/tools/generate-brand-saas.ts",
+    "src/lib/branding-core/generators/brand-healthcare.ts"
+  ],
+  "affected_files": [
+    "src/tools/generate-brand-healthcare.ts"
+  ],
+  "acceptance_criteria": [
+    "Tool name is exactly generate_brand_healthcare with a clear healthcare-specific description",
+    "Handler parses brand JSON into BrandIdentity and serializes generator output as text content",
+    "Wrapper imports from established module paths without introducing circular imports"
+  ],
+  "out_of_scope": [
+    "Server-level registration in src/index.ts",
+    "README and changelog updates"
+  ],
+  "deliverables": [
+    "src/tools/generate-brand-healthcare.ts"
+  ],
+  "agent_id": null,
+  "started_at": null,
+  "completed_at": "2026-03-19T04:05:07.188Z",
+  "completion_summary": "MCP wrapper generate_brand_healthcare exists and serializes healthcare generator output through brand-tool helper."
+}
