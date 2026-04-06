@@ -1,6 +1,6 @@
 name: Feature request
 description: Propose an actionable improvement with clear outcome and acceptance criteria.
-title: "[Feature] "
+title: '[Feature] '
 body:
   - type: markdown
     attributes:
