@@ -4,9 +4,15 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [0.56.0] - 2026-04-06
+
 ### Fixed
 
 - **SonarCloud coverage**: configured coverage exclusions for non-testable infrastructure files (config, logger, AI interpreters, prompts) and added CPD exclusions for brand generator modules that legitimately share similar structural patterns. Tests remain at 1130 passing with 98.77% coverage.
+
+### Improved
+
+- Branch coverage: added 20 tests across 6 generators (`brand-affiliate.ts`, `brand-chatbot.ts`, `brand-crisis.ts`, `brand-ecommerce.ts`, `brand-investor.ts`, `brand-motion.ts`) covering all missing style branches
 
 ## [0.55.3] - 2026-03-16
 
