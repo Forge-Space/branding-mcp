@@ -1,0 +1,48 @@
+name: Feature request
+description: Propose an actionable improvement with clear outcome and acceptance criteria.
+title: "[Feature] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use Discussions to shape the idea first if the solution is still exploratory or controversial.
+  - type: input
+    id: affected_scope
+    attributes:
+      label: Affected repository or scope
+      description: Which repository, package, or cross-repo area will own this work?
+      placeholder: Forge-Space/core
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem to solve
+      description: What user, product, or operator problem are we solving?
+    validations:
+      required: true
+  - type: textarea
+    id: expected_outcome
+    attributes:
+      label: Expected outcome
+      description: What should be true when this work ships?
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: List objective checks for done.
+    validations:
+      required: true
+  - type: input
+    id: related_discussion
+    attributes:
+      label: Related discussion or RFC
+      description: Link a GitHub Discussion if one already exists.
+      placeholder: https://github.com/orgs/Forge-Space/discussions/123
+  - type: textarea
+    id: constraints
+    attributes:
+      label: Constraints or tradeoffs
+      description: Note constraints, non-goals, or known tradeoffs.
