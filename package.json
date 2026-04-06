@@ -1,6 +1,6 @@
 {
   "name": "@forgespace/branding-mcp",
-  "version": "0.55.3",
+  "version": "0.55.4",
   "mcpName": "io.github.Forge-Space/branding-mcp",
   "description": "MCP server for AI-powered brand identity generation — color palettes, typography systems, design tokens, and brand guidelines with multi-format export",
   "type": "module",
@@ -67,7 +67,7 @@
   },
   "homepage": "https://github.com/Forge-Space/branding-mcp#readme",
   "dependencies": {
-    "@anthropic-ai/sdk": "^0.79.0",
+    "@anthropic-ai/sdk": "^0.81.0",
     "@modelcontextprotocol/sdk": "^1.26.0",
     "pino": "^10.3.1",
     "zod": "^3.24.0"
