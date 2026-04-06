@@ -1,8 +1,11 @@
 blank_issues_enabled: false
 contact_links:
-  - name: Forge Space Discussions
+  - name: RFC or idea discussion
     url: https://github.com/orgs/Forge-Space/discussions
-    about: Ask questions and share ideas
-  - name: Security Policy
+    about: Use Discussions for ideas, RFCs, Q&A, and design review before opening delivery work.
+  - name: Portfolio roadmap
+    url: https://github.com/orgs/Forge-Space/projects
+    about: Use GitHub Projects for roadmap, prioritization, and cross-repo reporting.
+  - name: Security policy
     url: https://github.com/Forge-Space/.github/security/policy
-    about: Report security vulnerabilities
+    about: Report vulnerabilities privately through the shared security policy.
