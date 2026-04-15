@@ -69,7 +69,7 @@
   },
   "homepage": "https://github.com/Forge-Space/branding-mcp#readme",
   "dependencies": {
-    "@anthropic-ai/sdk": "^0.82.0",
+    "@anthropic-ai/sdk": "^0.88.0",
     "@modelcontextprotocol/sdk": "^1.26.0",
     "pino": "^10.3.1",
     "zod": "^3.24.0"
